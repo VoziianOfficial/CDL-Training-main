@@ -704,8 +704,22 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   line-height: 1;
+  text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+a.cdl-direction-strip__item {
+  cursor: pointer;
+}
+
+a.cdl-direction-strip__item:hover,
+a.cdl-direction-strip__item:focus-visible {
+  color: var(--color-accent);
+  transform: translateY(-1px);
 }
 
 .cdl-direction-strip__item::after {

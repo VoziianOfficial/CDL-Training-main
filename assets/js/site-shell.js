@@ -6,6 +6,14 @@
   const MOBILE_BREAKPOINT = 1080;
   const HEADER_SCROLL_THRESHOLD = 24;
   const BACK_TO_TOP_THRESHOLD = 520;
+  const DIRECTION_SERVICE_ORDER = Object.freeze([
+    "classA",
+    "classB",
+    "behindTheWheel",
+    "jobPlacement",
+    "financialAid",
+    "companySponsorships"
+  ]);
 
   window[APP_NAMESPACE] = window[APP_NAMESPACE] || {};
 
@@ -1089,6 +1097,103 @@
       });
   };
 
+  const getDirectionServiceKey = (
+    label,
+    index
+  ) => {
+    const normalized = String(label || "")
+      .trim()
+      .toLowerCase();
+
+    if (/\bclass\s*a\b|combination|tractor|trailer/.test(normalized)) {
+      return "classA";
+    }
+
+    if (/\bclass\s*b\b|straight|single commercial/.test(normalized)) {
+      return "classB";
+    }
+
+    if (/financial|tuition|aid|assistance/.test(normalized)) {
+      return "financialAid";
+    }
+
+    if (/company|sponsor/.test(normalized)) {
+      return "companySponsorships";
+    }
+
+    if (/career|job|placement|employer|resume|application/.test(normalized)) {
+      return "jobPlacement";
+    }
+
+    if (/behind|wheel|pre-trip|inspection|yard|road|backing|coupling|schedule|practice/.test(normalized)) {
+      return "behindTheWheel";
+    }
+
+    return (
+      DIRECTION_SERVICE_ORDER[
+        index % DIRECTION_SERVICE_ORDER.length
+      ] || "classA"
+    );
+  };
+
+  const hydrateDirectionStrips = (
+    root = document,
+    config = window.SITE_CONFIG
+  ) => {
+    if (!root || !config?.servicePages) {
+      return;
+    }
+
+    root
+      .querySelectorAll(
+        ".cdl-direction-strip__track"
+      )
+      .forEach((track) => {
+        track
+          .querySelectorAll(
+            ".cdl-direction-strip__item"
+          )
+          .forEach((item, index) => {
+            if (
+              item instanceof HTMLAnchorElement ||
+              item.dataset.cdlDirectionLinked ===
+                "true"
+            ) {
+              return;
+            }
+
+            const serviceKey =
+              getDirectionServiceKey(
+                item.textContent,
+                index
+              );
+
+            const service =
+              config.servicePages[serviceKey];
+
+            if (!service?.url) {
+              return;
+            }
+
+            const link =
+              document.createElement("a");
+
+            link.className = item.className;
+            link.href = safeLinkUrl(service.url);
+            link.textContent =
+              item.textContent.trim();
+            link.dataset.cdlDirectionLinked =
+              "true";
+            link.setAttribute(
+              "aria-label",
+              `${link.textContent} - open ${service.label || "service"}`
+            );
+
+            item.replaceWith(link);
+          });
+      });
+  };
+
   const setMetaContent = (
     selector,
     attributeName,
@@ -1886,6 +1991,7 @@
 
     cacheElements();
     hydrateConfigBindings(document, config);
+    hydrateDirectionStrips(document, config);
     applySeoMetadata(config);
     syncPageScrollLock();
     bindEvents(config);
