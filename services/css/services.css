@@ -1770,8 +1770,8 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 .service-skills__grid:not(.swiper) .service-skills__item {
-  min-height: 178px;
-  padding: 1.2rem;
+  min-height: 156px;
+  padding: 1rem;
 }
 
 .service-skills__grid:not(.swiper) .service-skills__item h3 {
@@ -1789,19 +1789,16 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 .service-skills__item {
   position: relative;
   display: flex;
-  min-height: clamp(230px, 25vw, 320px);
+  min-height: clamp(168px, 18vw, 220px);
   flex-direction: column;
   justify-content: center;
-  padding: clamp(1.25rem, 3vw, 2.45rem);
+  padding: clamp(1rem, 2vw, 1.45rem);
   overflow: hidden;
-  border: 1px solid var(--skills-card-border, rgba(17, 17, 19, 0.12));
+  border: 2px solid var(--color-dark);
   border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.9), var(--skills-card-bg, rgba(255, 255, 255, 0.78))),
-    var(--color-light);
-  box-shadow:
-    0 24px 60px rgba(17, 17, 19, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  color: var(--color-dark);
+  background-color: var(--color-accent);
+  box-shadow: 4px 4px 0 var(--color-dark);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   backdrop-filter: blur(16px) saturate(1.2);
   counter-increment: service-skill;
@@ -1814,32 +1811,20 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 
 .service-skills__item:nth-child(1),
 .service-skills__item:nth-child(5) {
-  --skills-card-bg: rgba(246, 228, 191, 0.64);
-  --skills-card-border: rgba(229, 158, 31, 0.42);
-  --skills-card-line: var(--color-accent);
-  --skills-card-shadow: rgba(229, 158, 31, 0.36);
+  --skills-card-line: var(--color-dark);
 }
 
 .service-skills__item:nth-child(2),
 .service-skills__item:nth-child(6) {
-  --skills-card-bg: rgba(255, 255, 255, 0.8);
-  --skills-card-border: rgba(17, 17, 19, 0.13);
   --skills-card-line: var(--color-dark);
-  --skills-card-shadow: rgba(17, 17, 19, 0.2);
 }
 
 .service-skills__item:nth-child(3) {
-  --skills-card-bg: rgba(232, 244, 237, 0.72);
-  --skills-card-border: rgba(38, 106, 67, 0.28);
-  --skills-card-line: var(--color-success);
-  --skills-card-shadow: rgba(38, 106, 67, 0.28);
+  --skills-card-line: var(--color-dark);
 }
 
 .service-skills__item:nth-child(4) {
-  --skills-card-bg: rgba(255, 244, 216, 0.74);
-  --skills-card-border: rgba(138, 92, 8, 0.28);
-  --skills-card-line: var(--color-warning);
-  --skills-card-shadow: rgba(138, 92, 8, 0.26);
+  --skills-card-line: var(--color-dark);
 }
 
 .service-skills__item::after {
@@ -1859,12 +1844,10 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 
 .service-skills__item:hover,
 .service-skills__item:focus-within {
-  border-color: var(--skills-card-line, var(--color-accent));
-  box-shadow:
-    0 24px 46px rgba(17, 17, 19, 0.14),
-    8px 8px 0 var(--skills-card-shadow, rgba(229, 158, 31, 0.28)),
-    inset 0 1px 0 rgba(255, 255, 255, 0.94);
-  transform: translateY(-4px);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  box-shadow: 2px 2px 0 var(--color-accent);
+  transform: translate(2px, 2px);
 }
 
 .service-skills__item:hover::after,
@@ -1878,7 +1861,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
   z-index: 1;
   max-width: 18ch;
   margin-bottom: clamp(0.6rem, 1vw, 0.85rem);
-  color: var(--color-dark);
+  color: inherit;
   font-size: clamp(1.45rem, 2.25vw, 2.35rem);
   letter-spacing: 0;
   line-height: 1.06;
@@ -1888,7 +1871,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
   position: relative;
   z-index: 1;
   max-width: 48ch;
-  color: var(--color-muted);
+  color: inherit;
   font-size: clamp(0.9rem, 1.05vw, 1rem);
   line-height: 1.55;
 }
@@ -1991,8 +1974,8 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
   }
 
   .service-skills__item {
-    min-height: 230px;
-    padding: 1.2rem;
+    min-height: 168px;
+    padding: 1rem;
   }
 
   .service-skills__item h3 {
