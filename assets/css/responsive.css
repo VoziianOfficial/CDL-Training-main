@@ -133,15 +133,61 @@
     min-height: auto;
   }
 
+  h1,
+  h2 {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
   .cdl-section__header {
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
+    justify-content: center;
     margin-bottom: 3rem;
+    text-align: center;
   }
 
   .cdl-section__heading-group,
   .cdl-section__aside {
     max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cdl-section__eyebrow,
+  .cdl-section__description {
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .cdl-heading-line {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .contact-programs .cdl-section__header,
+  .legal-section__header {
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .contact-programs .cdl-section__heading-group {
+    flex-basis: auto;
+    max-width: 760px;
+  }
+
+  .legal-section__header {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .legal-section__index {
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .cdl-grid--sidebar {
