@@ -27,7 +27,7 @@
 .service-hero__container {
   display: grid;
   min-height: clamp(610px, 76vh, 790px);
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   align-items: center;
   gap: clamp(2.5rem, 6vw, 6.5rem);
   padding-top: clamp(3.5rem, 6vh, 5.5rem);
@@ -37,7 +37,7 @@
 .service-hero__content {
   position: relative;
   z-index: 5;
-  max-width: 690px;
+  max-width: 820px;
 }
 
 .service-hero__breadcrumbs {
@@ -67,10 +67,10 @@
 }
 
 .service-hero__title {
-  max-width: 760px;
+  max-width: 960px;
   color: var(--color-dark);
   font-size: clamp(2.9rem, 5.4vw, 6rem);
-  letter-spacing: -0.064em;
+  letter-spacing: 0;
   line-height: 0.99;
 }
 
@@ -2280,7 +2280,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
   }
 
   .service-hero__title {
-    font-size: clamp(2.75rem, 12.8vw, 4.65rem);
+    font-size: clamp(2.2rem, 9.3vw, 3.4rem);
   }
 
   .service-hero__text {

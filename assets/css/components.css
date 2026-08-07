@@ -1831,7 +1831,7 @@ select.cdl-form__control {
 }
 
 .cdl-final-cta__title {
-  max-width: 760px;
+  max-width: 920px;
   font-size: clamp(1.8rem, 3.5vw, 3.6rem);
 }
 

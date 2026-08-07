@@ -101,7 +101,7 @@ h6 {
   color: inherit;
   font-family: var(--font-heading);
   font-weight: 700;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
   line-height: 1.08;
 }
 
@@ -242,7 +242,7 @@ img {
 }
 
 .cdl-section__heading-group {
-  max-width: 820px;
+  max-width: 980px;
 }
 
 .cdl-section__eyebrow {
@@ -273,7 +273,7 @@ img {
 }
 
 .cdl-section__title {
-  max-width: 900px;
+  max-width: 1080px;
 }
 
 .cdl-section__description {

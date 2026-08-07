@@ -51,7 +51,7 @@
 }
 
 .legal-hero__content {
-  max-width: 880px;
+  max-width: 980px;
 }
 
 .legal-hero__breadcrumbs {
@@ -93,10 +93,10 @@
 }
 
 .legal-hero__title {
-  max-width: 900px;
+  max-width: 1080px;
   color: var(--color-light);
   font-size: clamp(3rem, 6vw, 6.7rem);
-  letter-spacing: -0.065em;
+  letter-spacing: 0;
   line-height: 0.98;
 }
 
@@ -645,7 +645,7 @@
   margin-top: 0.2rem;
   color: var(--color-dark);
   font-size: clamp(1.45rem, 2.8vw, 2.5rem);
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   line-height: 1.12;
 }
 
