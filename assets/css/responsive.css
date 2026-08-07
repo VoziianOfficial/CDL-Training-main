@@ -900,7 +900,7 @@
 
   .cdl-primary-nav__link,
   .cdl-mobile-nav__link,
-  .cdl-footer__link,
+  .cdl-footer__links a,
   .cdl-footer__legal-link,
   .cdl-service-nav__link {
     min-height: 44px;

@@ -2032,7 +2032,7 @@ select.cdl-form__control {
   list-style: none;
 }
 
-.cdl-footer__link {
+.cdl-footer__links a {
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
@@ -2041,7 +2041,7 @@ select.cdl-form__control {
   line-height: 1.35;
 }
 
-.cdl-footer__link::before {
+.cdl-footer__links a::before {
   width: 0;
   height: 2px;
   background-color: var(--color-accent);
@@ -2049,11 +2049,11 @@ select.cdl-form__control {
   transition: width var(--transition-fast);
 }
 
-.cdl-footer__link:hover {
+.cdl-footer__links a:hover {
   color: var(--color-light);
 }
 
-.cdl-footer__link:hover::before {
+.cdl-footer__links a:hover::before {
   width: 12px;
 }
 

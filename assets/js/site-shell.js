@@ -532,7 +532,6 @@
         return `
           <li>
             <a
-              class="cdl-footer__link"
               href="${escapeHTML(safeLinkUrl(item.url))}"
             >
               ${escapeHTML(item.label)}
