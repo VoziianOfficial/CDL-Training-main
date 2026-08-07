@@ -1212,6 +1212,7 @@ textarea.cdl-form__control {
 }
 
 select.cdl-form__control {
+  appearance: none;
   padding-right: 2.8rem;
   background-image: none;
 }
