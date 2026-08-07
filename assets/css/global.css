@@ -30,6 +30,7 @@
 
   --header-height: 84px;
   --header-height-scrolled: 70px;
+  --sticky-offset: calc(var(--header-height-scrolled) + 2rem);
   --section-space: clamp(4.5rem, 8vw, 8.5rem);
   --section-space-small: clamp(3rem, 5vw, 5rem);
 
@@ -176,7 +177,7 @@ img {
   position: relative;
   min-height: 100vh;
   padding-top: var(--header-height);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .cdl-container {
@@ -679,7 +680,12 @@ img {
 
 .cdl-sticky-panel {
   position: sticky;
-  top: calc(var(--header-height-scrolled) + 2rem);
+  top: var(--sticky-offset);
+  z-index: var(--z-content);
+  align-self: start;
+  max-height: calc(100svh - var(--sticky-offset) - 2rem);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
 }
 
 .cdl-disclaimer {
@@ -849,9 +855,6 @@ html.cdl-no-scroll {
     grid-template-columns: 1fr;
   }
 
-  .cdl-sticky-panel {
-    position: static;
-  }
 }
 
 @media (max-width: 767px) {
@@ -863,6 +866,12 @@ html.cdl-no-scroll {
 
   html {
     scroll-padding-top: calc(var(--header-height) + 1rem);
+  }
+
+  .cdl-sticky-panel {
+    position: static;
+    max-height: none;
+    overflow: visible;
   }
 
   body {

@@ -485,10 +485,14 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 
 .service-overview__sidebar {
   position: sticky;
-  top: calc(var(--header-height-scrolled, 76px) + 2rem);
+  top: var(--sticky-offset, calc(var(--header-height-scrolled, 76px) + 2rem));
+  z-index: var(--z-content);
   align-self: start;
-  max-height: calc(100vh - var(--header-height-scrolled, 76px) - 4rem);
-  overflow: auto;
+  max-height: calc(
+    100svh - var(--sticky-offset, calc(var(--header-height-scrolled, 76px) + 2rem)) - 2rem
+  );
+  overflow-y: auto;
+  scrollbar-gutter: stable;
 }
 
 .service-overview__intro {
@@ -2081,12 +2085,6 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
     grid-template-columns: 1fr;
   }
 
-  .service-overview__sidebar {
-    position: static;
-    max-height: none;
-    overflow: visible;
-  }
-
   .service-overview__quick-facts {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2289,6 +2287,12 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 
   .service-hero__text {
     font-size: 1rem;
+  }
+
+  .service-overview__sidebar {
+    position: static;
+    max-height: none;
+    overflow: visible;
   }
 
   .service-hero__actions {

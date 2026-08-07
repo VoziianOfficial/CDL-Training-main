@@ -775,7 +775,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
    ========================================================================== */
 
 .home-why {
-  overflow: hidden;
+  overflow: clip;
 }
 
 .home-why__layout {
@@ -786,7 +786,14 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-why__visual {
-  position: relative;
+  position: sticky;
+  top: var(--sticky-offset);
+  z-index: var(--z-content);
+  align-self: start;
+}
+
+.home-why__visual[data-aos] {
+  transform: none !important;
 }
 
 .home-why__visual::before {
@@ -1302,7 +1309,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
    ========================================================================== */
 
 .home-program-content {
-  overflow: hidden;
+  overflow: clip;
 }
 
 .home-program-content__layout {
@@ -1313,7 +1320,15 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-program-content__intro {
+  position: sticky;
+  top: var(--sticky-offset);
+  z-index: var(--z-content);
+  align-self: start;
   min-width: 0;
+}
+
+.home-program-content__intro[data-aos] {
+  transform: none !important;
 }
 
 .home-program-content__download {
@@ -2749,6 +2764,11 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   .home-why__visual-note {
     right: 1rem;
     bottom: 1rem;
+  }
+
+  .home-why__visual,
+  .home-program-content__intro {
+    position: static;
   }
 
   .home-why__benefits {

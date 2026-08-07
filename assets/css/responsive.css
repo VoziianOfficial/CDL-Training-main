@@ -148,10 +148,6 @@
     grid-template-columns: 1fr;
   }
 
-  .cdl-sticky-panel {
-    position: static;
-  }
-
   .cdl-media--diagonal-left,
   .cdl-media--diagonal-right {
     clip-path: polygon(
@@ -245,7 +241,13 @@
   }
 
   .cdl-page-shell {
-    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  .cdl-sticky-panel {
+    position: static;
+    max-height: none;
+    overflow: visible;
   }
 
   .cdl-section__header {
