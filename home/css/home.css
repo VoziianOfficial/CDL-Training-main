@@ -849,6 +849,10 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   max-width: 420px;
 }
 
+.home-comparison__intro[data-aos] {
+  transform: none !important;
+}
+
 .home-comparison__marker {
   display: grid;
   width: min(100%, 320px);

@@ -938,7 +938,7 @@ html.cdl-js .contact-hero__slide.swiper-slide-active .contact-hero__wordmark {
    ========================================================================== */
 
 .contact-faq {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .contact-faq::before {
@@ -964,6 +964,10 @@ html.cdl-js .contact-hero__slide.swiper-slide-active .contact-hero__wordmark {
 .contact-faq__intro {
   position: sticky;
   top: calc(var(--header-height-scrolled) + 2rem);
+}
+
+.contact-faq__intro[data-aos] {
+  transform: none !important;
 }
 
 .contact-faq__email-card {
@@ -1237,14 +1241,6 @@ html.cdl-js .contact-hero__slide.swiper-slide-active .contact-hero__wordmark {
     max-width: 920px;
   }
 
-  .contact-faq__layout {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-faq__intro {
-    position: static;
-    max-width: 790px;
-  }
 }
 
 @media (max-width: 900px) {
