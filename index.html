@@ -1579,52 +1579,89 @@
             data-cdl-tabs
           >
             <div
-              class="cdl-tabs__list"
+              class="cdl-tabs__list home-schedule__switcher"
               role="tablist"
               aria-label="Training schedule formats"
+              data-aos="fade-up"
             >
               <button
-                class="cdl-tabs__button is-active"
+                class="cdl-tabs__button home-schedule__switch is-active"
                 id="schedule-tab-weekday"
                 type="button"
                 role="tab"
                 aria-selected="true"
                 aria-controls="schedule-panel-weekday"
               >
-                Weekday
+                <span class="home-schedule__switch-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                  </svg>
+                </span>
+
+                <span class="home-schedule__switch-label">Weekday</span>
               </button>
 
               <button
-                class="cdl-tabs__button"
+                class="cdl-tabs__button home-schedule__switch"
                 id="schedule-tab-evening"
                 type="button"
                 role="tab"
                 aria-selected="false"
                 aria-controls="schedule-panel-evening"
               >
-                Evening
+                <span class="home-schedule__switch-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                  </svg>
+                </span>
+
+                <span class="home-schedule__switch-label">Evening</span>
               </button>
 
               <button
-                class="cdl-tabs__button"
+                class="cdl-tabs__button home-schedule__switch"
                 id="schedule-tab-weekend"
                 type="button"
                 role="tab"
                 aria-selected="false"
                 aria-controls="schedule-panel-weekend"
               >
-                Weekend
+                <span class="home-schedule__switch-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 2v4"></path>
+                    <path d="M16 2v4"></path>
+                    <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                    <path d="M3 10h18"></path>
+                    <path d="m9 16 2 2 4-4"></path>
+                  </svg>
+                </span>
+
+                <span class="home-schedule__switch-label">Weekend</span>
               </button>
 
               <button
-                class="cdl-tabs__button"
+                class="cdl-tabs__button home-schedule__switch"
                 id="schedule-tab-accelerated"
                 type="button"
                 role="tab"
                 aria-selected="false"
                 aria-controls="schedule-panel-accelerated"
               >
-                Accelerated
+                <span class="home-schedule__switch-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                  </svg>
+                </span>
+
+                <span class="home-schedule__switch-label">Accelerated</span>
               </button>
             </div>
 
@@ -1644,26 +1681,54 @@
                   </p>
                 </div>
 
-                <div class="home-schedule__timeline">
-                  <article>
-                    <span>Stage</span>
-                    <strong>Classroom Preparation</strong>
-                  </article>
+                <div class="home-schedule__route">
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 7v14"></path>
+                        <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Knowledge</span>
+                    <strong class="home-schedule__stop-title">Knowledge</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Inspection and Controls</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect width="8" height="4" x="8" y="2" rx="1"></rect>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <path d="m9 14 2 2 4-4"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Inspection</span>
+                    <strong class="home-schedule__stop-title">Inspection</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Yard and Road Skills</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <circle cx="12" cy="12" r="2.5"></circle>
+                        <path d="M12 5v4.3"></path>
+                        <path d="m7.8 14.3-3 2.6"></path>
+                        <path d="m16.2 14.3 3 2.6"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Yard Skills</span>
+                    <strong class="home-schedule__stop-title">Skills</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Testing Preparation</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                        <path d="M4 22V4"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Testing</span>
+                    <strong class="home-schedule__stop-title">Preparation</strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1685,26 +1750,56 @@
                   </p>
                 </div>
 
-                <div class="home-schedule__timeline">
-                  <article>
-                    <span>Stage</span>
-                    <strong>Evening Knowledge Sessions</strong>
-                  </article>
+                <div class="home-schedule__route">
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 7v14"></path>
+                        <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Knowledge</span>
+                    <strong class="home-schedule__stop-title">Knowledge</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Scheduled Yard Practice</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <circle cx="12" cy="12" r="2.5"></circle>
+                        <path d="M12 5v4.3"></path>
+                        <path d="m7.8 14.3-3 2.6"></path>
+                        <path d="m16.2 14.3 3 2.6"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Yard Skills</span>
+                    <strong class="home-schedule__stop-title">Practice</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Instructor Road Sessions</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
+                        <path d="M15 18H9"></path>
+                        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14v10"></path>
+                        <circle cx="17" cy="18" r="2"></circle>
+                        <circle cx="7" cy="18" r="2"></circle>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Road Skills</span>
+                    <strong class="home-schedule__stop-title">Instructor</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Test Review</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                        <path d="M4 22V4"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Testing</span>
+                    <strong class="home-schedule__stop-title">Test Review</strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1726,26 +1821,57 @@
                   </p>
                 </div>
 
-                <div class="home-schedule__timeline">
-                  <article>
-                    <span>Stage</span>
-                    <strong>Knowledge Review</strong>
-                  </article>
+                <div class="home-schedule__route">
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 7v14"></path>
+                        <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Knowledge</span>
+                    <strong class="home-schedule__stop-title">Knowledge</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Inspection Practice</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect width="8" height="4" x="8" y="2" rx="1"></rect>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <path d="m9 14 2 2 4-4"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Inspection</span>
+                    <strong class="home-schedule__stop-title">Practice</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Extended Yard Sessions</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <circle cx="12" cy="12" r="2.5"></circle>
+                        <path d="M12 5v4.3"></path>
+                        <path d="m7.8 14.3-3 2.6"></path>
+                        <path d="m16.2 14.3 3 2.6"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Yard Skills</span>
+                    <strong class="home-schedule__stop-title">Sessions</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Road Preparation</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
+                        <path d="M15 18H9"></path>
+                        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14v10"></path>
+                        <circle cx="17" cy="18" r="2"></circle>
+                        <circle cx="7" cy="18" r="2"></circle>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Road Skills</span>
+                    <strong class="home-schedule__stop-title">Preparation</strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1767,26 +1893,56 @@
                   </p>
                 </div>
 
-                <div class="home-schedule__timeline">
-                  <article>
-                    <span>Stage</span>
-                    <strong>Focused Knowledge Preparation</strong>
-                  </article>
+                <div class="home-schedule__route">
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 7v14"></path>
+                        <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Knowledge</span>
+                    <strong class="home-schedule__stop-title">Preparation</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Daily Yard Development</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <circle cx="12" cy="12" r="2.5"></circle>
+                        <path d="M12 5v4.3"></path>
+                        <path d="m7.8 14.3-3 2.6"></path>
+                        <path d="m16.2 14.3 3 2.6"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Yard Skills</span>
+                    <strong class="home-schedule__stop-title">Development</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Frequent Road Practice</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
+                        <path d="M15 18H9"></path>
+                        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14v10"></path>
+                        <circle cx="17" cy="18" r="2"></circle>
+                        <circle cx="7" cy="18" r="2"></circle>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Road Skills</span>
+                    <strong class="home-schedule__stop-title">Practice</strong>
+                  </div>
 
-                  <article>
-                    <span>Stage</span>
-                    <strong>Testing Readiness</strong>
-                  </article>
+                  <div class="home-schedule__stop">
+                    <span class="home-schedule__stop-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                        <path d="M4 22V4"></path>
+                      </svg>
+                    </span>
+                    <span class="home-schedule__stop-label">Testing</span>
+                    <strong class="home-schedule__stop-title">Readiness</strong>
+                  </div>
                 </div>
               </div>
             </div>
