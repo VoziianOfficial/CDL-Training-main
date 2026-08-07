@@ -838,6 +838,7 @@ html.cdl-js .contact-hero__slide.swiper-slide-active .contact-hero__wordmark {
    ========================================================================== */
 
 .contact-collaboration {
+  padding-block: calc(var(--section-space) / 2);
   overflow: visible;
 }
 
@@ -1087,6 +1088,7 @@ html.cdl-js .contact-hero__slide.swiper-slide-active .contact-hero__wordmark {
    ========================================================================== */
 
 .contact-faq {
+  padding-block: calc(var(--section-space) / 2);
   overflow: visible;
 }
 
