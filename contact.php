@@ -7,6 +7,15 @@ const RATE_LIMIT_REQUESTS = 6;
 const RATE_LIMIT_WINDOW_SECONDS = 300;
 
 $formDefinitions = [
+    'program_info' => [
+        'subject' => 'CDL Program Information Request',
+        'required' => [
+            'fullName',
+            'email',
+            'program',
+            'consent',
+        ],
+    ],
     'quick_request' => [
         'subject' => 'Quick CDL Information Request',
         'required' => [
@@ -23,6 +32,13 @@ $formDefinitions = [
             'email',
             'program',
             'message',
+            'consent',
+        ],
+    ],
+    'newsletter' => [
+        'subject' => 'CDL Program Updates Subscription',
+        'required' => [
+            'email',
             'consent',
         ],
     ],
@@ -1022,7 +1038,7 @@ function loadSiteConfig(): array
         . DIRECTORY_SEPARATOR
         . 'config'
         . DIRECTORY_SEPARATOR
-        . 'site-config.json';
+        . 'config.js';
 
     if (!is_file($configPath)) {
         return [];
@@ -1039,9 +1055,19 @@ function loadSiteConfig(): array
         return [];
     }
 
+    if (
+        preg_match(
+            '/const\s+SITE_CONFIG_DATA\s*=\s*(\{.*?\n\s*\});\s*\n\s*const\s+findConfigScript\b/s',
+            $content,
+            $matches
+        ) !== 1
+    ) {
+        return [];
+    }
+
     try {
         $config = json_decode(
-            $content,
+            $matches[1],
             true,
             64,
             JSON_THROW_ON_ERROR
@@ -1179,6 +1205,10 @@ function getBrandName(array $config): string
                 $config,
                 [
                     'brandName',
+                    'shortBrandName',
+                    'siteName',
+                    'companyName',
+                    'logoText',
                     'company.name',
                     'site.name',
                 ]
@@ -1511,7 +1541,7 @@ if (
             'success' => false,
             'message' => 'Form delivery has not been configured yet.',
             'errors' => [
-                'request' => 'Add a real recipient email address to config/site-config.json or set the CDL_CONTACT_RECIPIENT environment variable.',
+                'request' => 'Add a real recipient email address to config/config.js or set the CDL_CONTACT_RECIPIENT environment variable.',
             ],
         ],
         $returnUrl
