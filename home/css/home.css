@@ -1564,9 +1564,11 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-process__play svg {
   width: 1.65rem;
   height: 1.65rem;
-  fill: currentColor;
+  fill: none;
   stroke: currentColor;
-  stroke-width: 1.5;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .home-process__sample-card {
