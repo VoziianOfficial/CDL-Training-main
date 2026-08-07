@@ -292,6 +292,7 @@
       "companyAddress",
       "copyrightText",
       "footerDescription",
+      "footerDisclaimer",
       "successMessage",
       "forms.action",
       "forms.method",

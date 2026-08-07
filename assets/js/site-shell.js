@@ -665,6 +665,15 @@
           </div>
         </div>
 
+        <div class="cdl-container">
+          <p
+            class="cdl-footer__disclaimer"
+            data-config-text="footerDisclaimer"
+          >
+            ${escapeHTML(config.footerDisclaimer)}
+          </p>
+        </div>
+
         <div class="cdl-footer__bottom">
           <div class="cdl-container cdl-footer__bottom-inner">
             <p
