@@ -840,6 +840,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-why__benefits {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 0.9rem;
   margin-top: 2.5rem;
 }
@@ -847,9 +848,10 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-why__benefits .cdl-feature-card {
   position: relative;
   display: flex;
-  min-height: 0;
+  min-height: auto;
   flex-direction: column;
-  padding: clamp(1.2rem, 2vw, 1.5rem) clamp(1.15rem, 2vw, 1.45rem) clamp(1.3rem, 2.2vw, 1.6rem);
+  align-self: start;
+  padding: clamp(1.05rem, 1.6vw, 1.25rem) clamp(1rem, 1.7vw, 1.25rem) clamp(1.1rem, 1.8vw, 1.35rem);
   border: 1.5px solid var(--color-border);
   background-color: var(--color-surface);
   clip-path: none;
@@ -888,12 +890,13 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-why__benefits .cdl-feature-card__icon {
-  position: relative;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   display: grid;
   width: 48px;
   height: 48px;
   align-self: flex-start;
-  margin-bottom: 1.15rem;
   place-items: center;
   filter: drop-shadow(5px 5px 0 var(--color-accent));
   transition:
@@ -944,11 +947,13 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-why__benefits .cdl-feature-card__title {
+  padding-right: 4rem;
   margin-bottom: 0.5rem;
   font-size: 1.05rem;
 }
 
 .home-why__benefits .cdl-feature-card__text {
+  padding-right: 4rem;
   margin-bottom: 0;
   color: var(--color-muted);
   font-size: 0.87rem;
@@ -1337,14 +1342,16 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-real-world__cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 1rem;
   margin-top: 2.7rem;
 }
 
 .home-real-world__card {
   position: relative;
-  min-height: 190px;
-  padding: 1.5rem 1.4rem;
+  min-height: auto;
+  align-self: start;
+  padding: 1.2rem 1.25rem;
   border: 1.5px solid var(--color-border-dark);
   background-color: var(--color-dark-tertiary);
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
@@ -1365,11 +1372,13 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-real-world__card-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   display: grid;
   width: 46px;
   height: 46px;
   place-items: center;
-  margin-bottom: 1.1rem;
   background-color: var(--color-accent);
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
   transition:
@@ -1396,12 +1405,14 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-real-world__card h3 {
+  padding-right: 3.8rem;
   margin-bottom: 0.6rem;
   color: var(--color-light);
   font-size: 1.08rem;
 }
 
 .home-real-world__card p {
+  padding-right: 3.8rem;
   color: #b8b8bd;
   font-size: 0.8rem;
   line-height: 1.6;
@@ -1983,13 +1994,16 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-career__services {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 1rem;
   margin-top: 2.5rem;
 }
 
 .home-career__service {
-  min-height: 180px;
-  padding: 1.4rem;
+  position: relative;
+  min-height: auto;
+  align-self: start;
+  padding: 1.15rem 1.25rem;
   border: 1.5px solid var(--color-border);
   background-color: var(--color-light);
   box-shadow: 4px 4px 0 rgba(17, 17, 19, 0.06);
@@ -2010,11 +2024,13 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-career__service-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   display: grid;
   width: 46px;
   height: 46px;
   place-items: center;
-  margin-bottom: 1.2rem;
   background-color: var(--color-accent);
   clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
   transition: transform var(--transition-base);
@@ -2048,11 +2064,13 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-career__service h3 {
+  padding-right: 3.8rem;
   margin-bottom: 0.65rem;
   font-size: 1.08rem;
 }
 
 .home-career__service p {
+  padding-right: 3.8rem;
   color: var(--color-muted);
   font-size: 0.8rem;
   line-height: 1.6;
@@ -2147,7 +2165,34 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 
 .home-financial__grid {
   position: relative;
+  align-items: start;
   z-index: 2;
+}
+
+.home-financial__grid .cdl-feature-card {
+  min-height: auto;
+  align-self: start;
+  padding: clamp(1.15rem, 1.7vw, 1.4rem);
+}
+
+.home-financial__grid .cdl-feature-card__icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin-bottom: 0;
+}
+
+.home-financial__grid .cdl-feature-card__title {
+  padding-right: 4.2rem;
+}
+
+.home-financial__grid .cdl-feature-card__text,
+.home-financial__grid .cdl-feature-card__link {
+  padding-right: 4.2rem;
+}
+
+.home-financial__grid .cdl-feature-card__link {
+  margin-top: 0.35rem;
 }
 
 .home-financial__disclaimer {
