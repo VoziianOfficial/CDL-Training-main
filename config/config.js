@@ -1,6 +1,475 @@
 (() => {
   "use strict";
 
+  const SITE_CONFIG_DATA = {
+    "version": "1.0.0",
+    "environment": "demo",
+    "locale": "en-US",
+
+    "brandName": "CDLWAY",
+    "logoIconPath": "/assets/images/brand/truck-logo.svg",
+
+    "corporateEmail": "support@cdlway.example",
+    "companyAddress": "Training location details are provided with program information.",
+    "faviconPath": "/assets/images/brand/truck-logo.svg",
+    "siteUrl": "https://www.cdlway.example",
+    "canonicalDomain": "https://www.cdlway.example",
+
+
+    "defaultOgImage": "/images/card-6.jpg",
+    "copyrightText": "© {year} {siteName}. All rights reserved.",
+    "footerDescription": "Professional CDL training pathways designed to help adult learners prepare for commercial driving tests, build practical skills, and explore transportation careers.",
+    "footerDisclaimer": "{brandName} provides informational CDL training content. Program availability, pricing, schedules, eligibility, licensing requirements, and job placement outcomes are not guaranteed and must be confirmed with the training provider and applicable state agencies.",
+    "navigationLabels": {
+      "start": "Start",
+      "whyTrainWithUs": "Why Train With Us",
+      "cdlPaths": "CDL Paths",
+      "careerSupport": "Career Support",
+      "studentStories": "Student Stories",
+      "connect": "Connect"
+    },
+    "navigationLinks": {
+      "start": "/",
+      "whyTrainWithUs": "/#why-train-with-us",
+      "cdlPaths": "/#cdl-paths",
+      "careerSupport": "/#career-support",
+      "studentStories": "/#student-stories",
+      "connect": "/contact/"
+    },
+    "ctaLabels": {
+      "requestInfo": "Request Program Info",
+      "comparePrograms": "Compare CDL Programs",
+      "exploreClassA": "Explore Class A",
+      "exploreClassB": "Explore Class B",
+      "viewTrainingPath": "View Training Path",
+      "checkRequirements": "Check Requirements",
+      "startApplication": "Start Your Application",
+      "discussSponsorship": "Discuss Sponsorship",
+      "enrollToday": "Enroll Today",
+      "requestCurrentStartDates": "Request Current Start Dates",
+      "startRequest": "Start Your Request",
+      "readProgram": "Read Program",
+      "downloadGuide": "Download Guide",
+      "submitRequest": "Send Request"
+    },
+    "servicePages": {
+      "classA": {
+        "label": "Class A CDL",
+        "url": "/services/cdl-class-a.html",
+        "formType": "service_cdl_class_a"
+      },
+      "classB": {
+        "label": "Class B CDL",
+        "url": "/services/cdl-class-b.html",
+        "formType": "service_cdl_class_b"
+      },
+      "behindTheWheel": {
+        "label": "Behind-the-Wheel",
+        "url": "/services/behind-the-wheel.html",
+        "formType": "service_behind_the_wheel"
+      },
+      "jobPlacement": {
+        "label": "Job Placement",
+        "url": "/services/job-placement.html",
+        "formType": "service_job_placement"
+      },
+      "financialAid": {
+        "label": "Financial Aid",
+        "url": "/services/financial-aid.html",
+        "formType": "service_financial_aid"
+      },
+      "companySponsorships": {
+        "label": "Company Sponsorships",
+        "url": "/services/company-sponsorships.html",
+        "formType": "service_company_sponsorships"
+      }
+    },
+    "socialLinks": [
+      {
+        "label": "LinkedIn",
+        "url": "",
+        "icon": "linkedin",
+        "enabled": false
+      },
+      {
+        "label": "Facebook",
+        "url": "",
+        "icon": "facebook",
+        "enabled": false
+      },
+      {
+        "label": "Instagram",
+        "url": "",
+        "icon": "instagram",
+        "enabled": false
+      }
+    ],
+    "heroSlides": [
+      {
+        "id": "hero-01",
+        "eyebrow": "Class A CDL Training",
+        "title": "Train for the Road Ahead",
+        "text": "Build the skills required for Class A commercial driving and prepare for a career in transportation.",
+        "ctaLabel": "Explore Class A",
+        "ctaLink": "/services/cdl-class-a.html",
+        "image": "/images/card-2.jpg",
+        "imageAlt": "CDL instructor guiding a trainee inside a commercial truck cab"
+      },
+      {
+        "id": "hero-02",
+        "eyebrow": "Hands-On Practice",
+        "title": "Hands-On Practice",
+        "text": "Develop confidence through structured yard sessions, pre-trip inspection practice, and behind-the-wheel training.",
+        "ctaLabel": "View Training Path",
+        "ctaLink": "/services/behind-the-wheel.html",
+        "image": "/images/card-13.jpg",
+        "imageAlt": "Adult CDL trainee beside a commercial tractor-trailer"
+      },
+      {
+        "id": "hero-03",
+        "eyebrow": "Career-Focused Support",
+        "title": "Earn Your CDL",
+        "text": "Compare CDL pathways, explore career support, and request information about your next available start date.",
+        "ctaLabel": "Request Program Info",
+        "ctaLink": "/contact/#request-info",
+        "image": "/images/card-8.jpg",
+        "imageAlt": "Commercial driver reviewing career information with a training advisor"
+      }
+    ],
+    "companyStatistics": [
+      {
+        "value": "2",
+        "label": "CDL License Paths",
+        "note": "Class A and Class B",
+        "verified": true
+      },
+      {
+        "value": "4",
+        "label": "Training Stages",
+        "note": "Preparation, yard, road, and testing",
+        "verified": true
+      },
+      {
+        "value": "1:1",
+        "label": "Coaching Options",
+        "note": "Availability varies by program",
+        "verified": false
+      },
+      {
+        "value": "Available",
+        "label": "Career Support",
+        "note": "Employment is not guaranteed",
+        "verified": true
+      }
+    ],
+    "programOptions": [
+      {
+        "value": "",
+        "label": "Select a program"
+      },
+      {
+        "value": "undecided",
+        "label": "I am not sure yet"
+      },
+      {
+        "value": "class-a",
+        "label": "Class A CDL Training"
+      },
+      {
+        "value": "class-b",
+        "label": "Class B CDL Training"
+      },
+      {
+        "value": "behind-the-wheel",
+        "label": "Behind-the-Wheel Training"
+      },
+      {
+        "value": "job-placement",
+        "label": "Job Placement Assistance"
+      },
+      {
+        "value": "financial-aid",
+        "label": "Financial Aid Information"
+      },
+      {
+        "value": "company-sponsorships",
+        "label": "Company Sponsorships"
+      }
+    ],
+    "licenseStatusOptions": [
+      "No current driver's license",
+      "Valid non-commercial driver's license",
+      "Commercial learner's permit",
+      "Current Class B CDL",
+      "Current Class A CDL",
+      "Other or unsure"
+    ],
+    "trainingFormatOptions": [
+      "Weekday",
+      "Evening",
+      "Weekend",
+      "Accelerated",
+      "Flexible or unsure"
+    ],
+    "preferredStartOptions": [
+      "As soon as possible",
+      "Within 30 days",
+      "Within 60 days",
+      "Within 90 days",
+      "Later this year",
+      "I am still planning"
+    ],
+    "contactFormHeadings": {
+      "primaryEyebrow": "Program Inquiry",
+      "primaryTitle": "Request CDL Program Information",
+      "primaryText": "Share your goals and preferred training path. We will review your request and respond by email.",
+      "shortTitle": "Start Your Request",
+      "shortText": "Ask about a program, training format, or next available start option.",
+      "newsletterTitle": "Stay Ahead of Start Dates",
+      "newsletterText": "Subscribe by email for program updates and resource announcements.",
+      "scheduleTitle": "Training Schedule Inquiry",
+      "scheduleText": "Request current information about weekday, evening, weekend, or accelerated formats."
+    },
+    "forms": {
+      "action": "/contact.php",
+      "method": "POST",
+      "allowedFormTypes": [
+        "program_info",
+        "contact",
+        "newsletter",
+        "schedule_inquiry",
+        "advertise_collaborate",
+        "service_cdl_class_a",
+        "service_cdl_class_b",
+        "service_behind_the_wheel",
+        "service_job_placement",
+        "service_financial_aid",
+        "service_company_sponsorships"
+      ],
+      "honeypotField": "companyWebsite",
+      "consentLabel": "I agree that the information I submit may be used to respond to my request.",
+      "loadingMessage": "Sending your request...",
+      "errorMessage": "We could not send your request. Please review the form and try again.",
+      "networkErrorMessage": "A network error occurred. Please try again in a moment.",
+      "invalidEmailMessage": "Enter a valid email address.",
+      "requiredFieldMessage": "This field is required."
+    },
+    "successMessage": "Thank you! We have successfully received your request. Our team will review your information and get back to you shortly.",
+    "advertiseCollaborate": {
+      "heading": "Advertise & Collaborate",
+      "text": "We are always open to new opportunities, high-impact collaborations, and tailored business partnerships. Whether you want to advertise your brand to our audience, launch a joint project, or book our professional services, we are ready to bring your ideas to life. Every business is unique, and we don't believe in one-size-fits-all solutions. Please reach out to us using the contact form below, tell us a bit about your goals, and our team will get back to you with an exclusive, custom-tailored proposal designed strictly for your budget and objectives. Let’s build something great together.",
+      "emailCardLabel": "Corporate Email",
+      "formTitle": "Tell Us About Your Goals",
+      "formText": "Share the type of collaboration, your objectives, and any useful timing or budget context."
+    },
+    "legalBanner": {
+      "storageKey": "cdlwayLegalAcknowledged",
+      "text": "By continuing, you acknowledge our Privacy Policy, Cookie Policy, and Terms.",
+      "buttonLabel": "I Understand",
+      "privacyLabel": "Privacy Policy",
+      "cookieLabel": "Cookie Policy",
+      "termsLabel": "Terms and Conditions"
+    },
+    "legalLinks": [
+      {
+        "key": "privacy",
+        "label": "Privacy Policy",
+        "url": "/legal/privacy-policy.html"
+      },
+      {
+        "key": "terms",
+        "label": "Terms and Conditions",
+        "url": "/legal/terms-and-conditions.html"
+      },
+      {
+        "key": "cookies",
+        "label": "Cookie Policy",
+        "url": "/legal/cookie-policy.html"
+      }
+    ],
+    "footerLinks": {
+      "quickLinkKeys": [
+        "start",
+        "whyTrainWithUs",
+        "cdlPaths",
+        "careerSupport",
+        "studentStories",
+        "connect"
+      ],
+      "programLinkKeys": [
+        "classA",
+        "classB",
+        "behindTheWheel",
+        "jobPlacement",
+        "financialAid",
+        "companySponsorships"
+      ],
+      "supportLinks": [
+        {
+          "label": "Request Program Info",
+          "url": "/contact/#request-info"
+        },
+        {
+          "label": "Training Schedule",
+          "url": "/contact/#schedule-inquiry"
+        },
+        {
+          "label": "Advertise",
+          "url": "/contact/#advertise-collaborate"
+        }
+      ]
+    },
+    "testimonials": {
+      "isDemoContent": true,
+      "overallRating": "4.8",
+      "reviewCountLabel": "Demo rating data",
+      "items": [
+        {
+          "name": "Jordan Brooks",
+          "program": "Class A CDL Training",
+          "location": "Demo location",
+          "rating": 5,
+          "quote": "The structured mix of classroom preparation and yard practice helped me understand what to work on before each session.",
+          "avatar": "/images/card-12.jpg",
+          "isDemo": true
+        },
+        {
+          "name": "Maria Torres",
+          "program": "Behind-the-Wheel Training",
+          "location": "Demo location",
+          "rating": 5,
+          "quote": "The instructors explained each maneuver clearly and gave me practical feedback I could apply during the next attempt.",
+          "avatar": "/images/card-3.jpg",
+          "isDemo": true
+        },
+        {
+          "name": "Ethan Cole",
+          "program": "Class B CDL Training",
+          "location": "Demo location",
+          "rating": 4,
+          "quote": "Comparing the program options made it easier to choose the commercial license path that matched my goals.",
+          "avatar": "/images/card-7.jpg",
+          "isDemo": true
+        }
+      ]
+    },
+    "disclaimers": {
+      "employment": "Job placement assistance does not guarantee employment. Outcomes depend on qualifications, employer requirements, location, and market conditions.",
+      "financialAssistance": "Financial aid and sponsorship availability depend on eligibility, program requirements, provider policies, and available funding.",
+      "stateRequirements": "CDL requirements and testing procedures may vary by state.",
+      "pricing": "Tuition, fees, and payment options must be confirmed directly with the training provider.",
+      "startDates": "Training dates and schedule availability are subject to change."
+    },
+    "resources": {
+      "programGuide": {
+        "label": "Download Program Guide",
+        "path": "/assets/images/resources/cdl-program-guide.pdf",
+        "isPlaceholder": true
+      },
+      "studyGuide": {
+        "label": "Download CDL Study Guide",
+        "path": "/assets/images/resources/cdl-study-guide.pdf",
+        "isPlaceholder": true
+      }
+    },
+    "seoTitleTemplates": {
+      "default": "{pageTitle} | {siteName}",
+      "home": "CDL Training Programs & Career Support | {siteName}",
+      "contact": "Request CDL Program Information | {siteName}",
+      "cdlClassA": "Class A CDL Training Program | {siteName}",
+      "cdlClassB": "Class B CDL Training Program | {siteName}",
+      "behindTheWheel": "Behind-the-Wheel CDL Training | {siteName}",
+      "jobPlacement": "CDL Job Placement Assistance | {siteName}",
+      "financialAid": "CDL Financial Aid Information | {siteName}",
+      "companySponsorships": "Company-Sponsored CDL Training | {siteName}",
+      "privacyPolicy": "Privacy Policy | {siteName}",
+      "termsAndConditions": "Terms and Conditions | {siteName}",
+      "cookiePolicy": "Cookie Policy | {siteName}"
+    },
+    "seoDescriptionTemplates": {
+      "home": "Compare Class A and Class B CDL training paths, explore behind-the-wheel practice, career support, financial assistance options, and request program information.",
+      "contact": "Request information about CDL programs, training schedules, financial assistance, company sponsorships, or business collaboration opportunities.",
+      "cdlClassA": "Explore Class A CDL training focused on combination vehicles, pre-trip inspection, backing, yard skills, road preparation, and career directions.",
+      "cdlClassB": "Explore Class B CDL training for applicable straight trucks, buses, commercial vehicle controls, backing, road preparation, and program comparison.",
+      "behindTheWheel": "Learn how instructor-led CDL practice can develop yard skills, backing fundamentals, turns, observation, vehicle control, and safer road habits.",
+      "jobPlacement": "Explore CDL career support services such as resume preparation, employer connections, interview readiness, and application support.",
+      "financialAid": "Request information about CDL training payment planning, eligibility-based assistance, documentation, and current financial support options.",
+      "companySponsorships": "Compare employer-sponsored CDL training routes, eligibility questions, program expectations, commitments, and application steps.",
+      "privacyPolicy": "Read the demonstration privacy policy for the {brandName} training website and learn how submitted information may be handled.",
+      "termsAndConditions": "Read the demonstration terms and conditions governing use of the {brandName} training website.",
+      "cookiePolicy": "Read the demonstration cookie policy for the {brandName} training website."
+    },
+    "seoPages": {
+      "home": {
+        "canonicalPath": "/",
+        "ogImage": "/images/card-1.jpg"
+      },
+      "contact": {
+        "canonicalPath": "/contact/",
+        "ogImage": "/images/card-4.jpg"
+      },
+      "cdlClassA": {
+        "canonicalPath": "/services/cdl-class-a.html",
+        "ogImage": "/images/card-5.jpg"
+      },
+      "cdlClassB": {
+        "canonicalPath": "/services/cdl-class-b.html",
+        "ogImage": "/images/card-11.jpg"
+      },
+      "behindTheWheel": {
+        "canonicalPath": "/services/behind-the-wheel.html",
+        "ogImage": "/images/card-15.jpg"
+      },
+      "jobPlacement": {
+        "canonicalPath": "/services/job-placement.html",
+        "ogImage": "/images/card-10.jpg"
+      },
+      "financialAid": {
+        "canonicalPath": "/services/financial-aid.html",
+        "ogImage": "/images/card-9.jpg"
+      },
+      "companySponsorships": {
+        "canonicalPath": "/services/company-sponsorships.html",
+        "ogImage": "/images/card-14.jpg"
+      },
+      "privacyPolicy": {
+        "canonicalPath": "/legal/privacy-policy.html",
+        "ogImage": "/images/card-6.jpg"
+      },
+      "termsAndConditions": {
+        "canonicalPath": "/legal/terms-and-conditions.html",
+        "ogImage": "/images/card-13.jpg"
+      },
+      "cookiePolicy": {
+        "canonicalPath": "/legal/cookie-policy.html",
+        "ogImage": "/images/card-2.jpg"
+      }
+    },
+    "organizationSchema": {
+      "type": "EducationalOrganization",
+      "name": "{companyName}",
+      "url": "{siteUrl}",
+      "logo": "{siteUrl}{logoIconPath}",
+      "email": "{corporateEmail}",
+      "description": "{footerDescription}",
+      "addressText": "{companyAddress}",
+      "areaServed": "United States"
+    },
+    "demoContent": {
+      "requiresReplacementBeforeLaunch": true,
+      "items": [
+        "The corporate email uses the reserved .example domain.",
+        "The canonical domain is a placeholder.",
+        "Hero and section image paths require final local image files.",
+        "Program and study guide PDF paths are placeholders.",
+        "Testimonial names, avatars, ratings, and quotes are demonstration content.",
+        "Any unverified coaching availability must be confirmed by the client.",
+        "Legal documents must be reviewed by a qualified professional for the applicable jurisdiction."
+      ]
+    }
+  };
+
+
   const APP_NAMESPACE = "CDLApp";
   const CONFIG_READY_EVENT = "cdl:config-ready";
   const CONFIG_ERROR_EVENT = "cdl:config-error";
@@ -268,10 +737,34 @@
     });
   };
 
-  const validateConfig = (config) => {
-    if (!isPlainObject(config)) {
+  const normalizeConfigAliases = (config) => {
+    const brandName =
+      typeof config.brandName === "string" && config.brandName.trim() !== ""
+        ? config.brandName.trim()
+        : String(
+          config.shortBrandName ||
+          config.siteName ||
+          config.logoText ||
+          config.companyName ||
+          "CDL Training"
+        ).trim();
+
+    config.brandName = brandName;
+    config.siteName = brandName;
+    config.shortBrandName = brandName;
+    config.logoText = brandName;
+    config.companyName = `${brandName} Training Institute`;
+    config.logoAlt = `${brandName} commercial truck logo`;
+
+    return config;
+  };
+
+  const validateConfig = (rawConfig) => {
+    if (!isPlainObject(rawConfig)) {
       throw new Error("The site config root must be a JSON object.");
     }
+
+    const config = normalizeConfigAliases(rawConfig);
 
     assertSafeObjectKeys(config);
     validateNoPhoneData(config);
@@ -280,6 +773,7 @@
       "version",
       "environment",
       "locale",
+      "brandName",
       "siteName",
       "shortBrandName",
       "companyName",
@@ -349,473 +843,6 @@
     return config;
   };
 
-  const SITE_CONFIG_DATA = {
-  "version": "1.0.0",
-  "environment": "demo",
-  "locale": "en-US",
-  "siteName": "CDLWAY",
-  "shortBrandName": "CDLWAY",
-  "companyName": "CDLWAY Training Institute",
-  "logoText": "CDLWAY",
-  "logoIconPath": "/assets/images/brand/truck-logo.svg",
-  "logoAlt": "CDLWAY commercial truck logo",
-  "siteUrl": "https://www.cdlway.example",
-  "canonicalDomain": "https://www.cdlway.example",
-  "corporateEmail": "hello@cdlway.example",
-  "companyAddress": "Training location details are provided with program information.",
-  "faviconPath": "/assets/images/brand/truck-logo.svg",
-  "defaultOgImage": "/images/card-6.jpg",
-  "copyrightText": "© {year} {siteName}. All rights reserved.",
-  "footerDescription": "Professional CDL training pathways designed to help adult learners prepare for commercial driving tests, build practical skills, and explore transportation careers.",
-  "footerDisclaimer": "CDLWAY provides informational CDL training content. Program availability, pricing, schedules, eligibility, licensing requirements, and job placement outcomes are not guaranteed and must be confirmed with the training provider and applicable state agencies.",
-  "navigationLabels": {
-    "start": "Start",
-    "whyTrainWithUs": "Why Train With Us",
-    "cdlPaths": "CDL Paths",
-    "careerSupport": "Career Support",
-    "studentStories": "Student Stories",
-    "connect": "Connect"
-  },
-  "navigationLinks": {
-    "start": "/",
-    "whyTrainWithUs": "/#why-train-with-us",
-    "cdlPaths": "/#cdl-paths",
-    "careerSupport": "/#career-support",
-    "studentStories": "/#student-stories",
-    "connect": "/contact/"
-  },
-  "ctaLabels": {
-    "requestInfo": "Request Program Info",
-    "comparePrograms": "Compare CDL Programs",
-    "exploreClassA": "Explore Class A",
-    "exploreClassB": "Explore Class B",
-    "viewTrainingPath": "View Training Path",
-    "checkRequirements": "Check Requirements",
-    "startApplication": "Start Your Application",
-    "discussSponsorship": "Discuss Sponsorship",
-    "enrollToday": "Enroll Today",
-    "requestCurrentStartDates": "Request Current Start Dates",
-    "startRequest": "Start Your Request",
-    "readProgram": "Read Program",
-    "downloadGuide": "Download Guide",
-    "submitRequest": "Send Request"
-  },
-  "servicePages": {
-    "classA": {
-      "label": "Class A CDL",
-      "url": "/services/cdl-class-a.html",
-      "formType": "service_cdl_class_a"
-    },
-    "classB": {
-      "label": "Class B CDL",
-      "url": "/services/cdl-class-b.html",
-      "formType": "service_cdl_class_b"
-    },
-    "behindTheWheel": {
-      "label": "Behind-the-Wheel",
-      "url": "/services/behind-the-wheel.html",
-      "formType": "service_behind_the_wheel"
-    },
-    "jobPlacement": {
-      "label": "Job Placement",
-      "url": "/services/job-placement.html",
-      "formType": "service_job_placement"
-    },
-    "financialAid": {
-      "label": "Financial Aid",
-      "url": "/services/financial-aid.html",
-      "formType": "service_financial_aid"
-    },
-    "companySponsorships": {
-      "label": "Company Sponsorships",
-      "url": "/services/company-sponsorships.html",
-      "formType": "service_company_sponsorships"
-    }
-  },
-  "socialLinks": [
-    {
-      "label": "LinkedIn",
-      "url": "",
-      "icon": "linkedin",
-      "enabled": false
-    },
-    {
-      "label": "Facebook",
-      "url": "",
-      "icon": "facebook",
-      "enabled": false
-    },
-    {
-      "label": "Instagram",
-      "url": "",
-      "icon": "instagram",
-      "enabled": false
-    }
-  ],
-  "heroSlides": [
-    {
-      "id": "hero-01",
-      "eyebrow": "Class A CDL Training",
-      "title": "Train for the Road Ahead",
-      "text": "Build the skills required for Class A commercial driving and prepare for a career in transportation.",
-      "ctaLabel": "Explore Class A",
-      "ctaLink": "/services/cdl-class-a.html",
-      "image": "/images/card-2.jpg",
-      "imageAlt": "CDL instructor guiding a trainee inside a commercial truck cab"
-    },
-    {
-      "id": "hero-02",
-      "eyebrow": "Hands-On Practice",
-      "title": "Hands-On Practice",
-      "text": "Develop confidence through structured yard sessions, pre-trip inspection practice, and behind-the-wheel training.",
-      "ctaLabel": "View Training Path",
-      "ctaLink": "/services/behind-the-wheel.html",
-      "image": "/images/card-13.jpg",
-      "imageAlt": "Adult CDL trainee beside a commercial tractor-trailer"
-    },
-    {
-      "id": "hero-03",
-      "eyebrow": "Career-Focused Support",
-      "title": "Earn Your CDL",
-      "text": "Compare CDL pathways, explore career support, and request information about your next available start date.",
-      "ctaLabel": "Request Program Info",
-      "ctaLink": "/contact/#request-info",
-      "image": "/images/card-8.jpg",
-      "imageAlt": "Commercial driver reviewing career information with a training advisor"
-    }
-  ],
-  "companyStatistics": [
-    {
-      "value": "2",
-      "label": "CDL License Paths",
-      "note": "Class A and Class B",
-      "verified": true
-    },
-    {
-      "value": "4",
-      "label": "Training Stages",
-      "note": "Preparation, yard, road, and testing",
-      "verified": true
-    },
-    {
-      "value": "1:1",
-      "label": "Coaching Options",
-      "note": "Availability varies by program",
-      "verified": false
-    },
-    {
-      "value": "Available",
-      "label": "Career Support",
-      "note": "Employment is not guaranteed",
-      "verified": true
-    }
-  ],
-  "programOptions": [
-    {
-      "value": "",
-      "label": "Select a program"
-    },
-    {
-      "value": "undecided",
-      "label": "I am not sure yet"
-    },
-    {
-      "value": "class-a",
-      "label": "Class A CDL Training"
-    },
-    {
-      "value": "class-b",
-      "label": "Class B CDL Training"
-    },
-    {
-      "value": "behind-the-wheel",
-      "label": "Behind-the-Wheel Training"
-    },
-    {
-      "value": "job-placement",
-      "label": "Job Placement Assistance"
-    },
-    {
-      "value": "financial-aid",
-      "label": "Financial Aid Information"
-    },
-    {
-      "value": "company-sponsorships",
-      "label": "Company Sponsorships"
-    }
-  ],
-  "licenseStatusOptions": [
-    "No current driver's license",
-    "Valid non-commercial driver's license",
-    "Commercial learner's permit",
-    "Current Class B CDL",
-    "Current Class A CDL",
-    "Other or unsure"
-  ],
-  "trainingFormatOptions": [
-    "Weekday",
-    "Evening",
-    "Weekend",
-    "Accelerated",
-    "Flexible or unsure"
-  ],
-  "preferredStartOptions": [
-    "As soon as possible",
-    "Within 30 days",
-    "Within 60 days",
-    "Within 90 days",
-    "Later this year",
-    "I am still planning"
-  ],
-  "contactFormHeadings": {
-    "primaryEyebrow": "Program Inquiry",
-    "primaryTitle": "Request CDL Program Information",
-    "primaryText": "Share your goals and preferred training path. We will review your request and respond by email.",
-    "shortTitle": "Start Your Request",
-    "shortText": "Ask about a program, training format, or next available start option.",
-    "newsletterTitle": "Stay Ahead of Start Dates",
-    "newsletterText": "Subscribe by email for program updates and resource announcements.",
-    "scheduleTitle": "Training Schedule Inquiry",
-    "scheduleText": "Request current information about weekday, evening, weekend, or accelerated formats."
-  },
-  "forms": {
-    "action": "/contact.php",
-    "method": "POST",
-    "allowedFormTypes": [
-      "program_info",
-      "contact",
-      "newsletter",
-      "schedule_inquiry",
-      "advertise_collaborate",
-      "service_cdl_class_a",
-      "service_cdl_class_b",
-      "service_behind_the_wheel",
-      "service_job_placement",
-      "service_financial_aid",
-      "service_company_sponsorships"
-    ],
-    "honeypotField": "companyWebsite",
-    "consentLabel": "I agree that the information I submit may be used to respond to my request.",
-    "loadingMessage": "Sending your request...",
-    "errorMessage": "We could not send your request. Please review the form and try again.",
-    "networkErrorMessage": "A network error occurred. Please try again in a moment.",
-    "invalidEmailMessage": "Enter a valid email address.",
-    "requiredFieldMessage": "This field is required."
-  },
-  "successMessage": "Thank you! We have successfully received your request. Our team will review your information and get back to you shortly.",
-  "advertiseCollaborate": {
-    "heading": "Advertise & Collaborate",
-    "text": "We are always open to new opportunities, high-impact collaborations, and tailored business partnerships. Whether you want to advertise your brand to our audience, launch a joint project, or book our professional services, we are ready to bring your ideas to life. Every business is unique, and we don't believe in one-size-fits-all solutions. Please reach out to us using the contact form below, tell us a bit about your goals, and our team will get back to you with an exclusive, custom-tailored proposal designed strictly for your budget and objectives. Let’s build something great together.",
-    "emailCardLabel": "Corporate Email",
-    "formTitle": "Tell Us About Your Goals",
-    "formText": "Share the type of collaboration, your objectives, and any useful timing or budget context."
-  },
-  "legalBanner": {
-    "storageKey": "cdlwayLegalAcknowledged",
-    "text": "By continuing, you acknowledge our Privacy Policy, Cookie Policy, and Terms.",
-    "buttonLabel": "I Understand",
-    "privacyLabel": "Privacy Policy",
-    "cookieLabel": "Cookie Policy",
-    "termsLabel": "Terms and Conditions"
-  },
-  "legalLinks": [
-    {
-      "key": "privacy",
-      "label": "Privacy Policy",
-      "url": "/legal/privacy-policy.html"
-    },
-    {
-      "key": "terms",
-      "label": "Terms and Conditions",
-      "url": "/legal/terms-and-conditions.html"
-    },
-    {
-      "key": "cookies",
-      "label": "Cookie Policy",
-      "url": "/legal/cookie-policy.html"
-    }
-  ],
-  "footerLinks": {
-    "quickLinkKeys": [
-      "start",
-      "whyTrainWithUs",
-      "cdlPaths",
-      "careerSupport",
-      "studentStories",
-      "connect"
-    ],
-    "programLinkKeys": [
-      "classA",
-      "classB",
-      "behindTheWheel",
-      "jobPlacement",
-      "financialAid",
-      "companySponsorships"
-    ],
-    "supportLinks": [
-      {
-        "label": "Request Program Info",
-        "url": "/contact/#request-info"
-      },
-      {
-        "label": "Training Schedule",
-        "url": "/contact/#schedule-inquiry"
-      },
-      {
-        "label": "Advertise",
-        "url": "/contact/#advertise-collaborate"
-      }
-    ]
-  },
-  "testimonials": {
-    "isDemoContent": true,
-    "overallRating": "4.8",
-    "reviewCountLabel": "Demo rating data",
-    "items": [
-      {
-        "name": "Jordan Brooks",
-        "program": "Class A CDL Training",
-        "location": "Demo location",
-        "rating": 5,
-        "quote": "The structured mix of classroom preparation and yard practice helped me understand what to work on before each session.",
-        "avatar": "/images/card-12.jpg",
-        "isDemo": true
-      },
-      {
-        "name": "Maria Torres",
-        "program": "Behind-the-Wheel Training",
-        "location": "Demo location",
-        "rating": 5,
-        "quote": "The instructors explained each maneuver clearly and gave me practical feedback I could apply during the next attempt.",
-        "avatar": "/images/card-3.jpg",
-        "isDemo": true
-      },
-      {
-        "name": "Ethan Cole",
-        "program": "Class B CDL Training",
-        "location": "Demo location",
-        "rating": 4,
-        "quote": "Comparing the program options made it easier to choose the commercial license path that matched my goals.",
-        "avatar": "/images/card-7.jpg",
-        "isDemo": true
-      }
-    ]
-  },
-  "disclaimers": {
-    "employment": "Job placement assistance does not guarantee employment. Outcomes depend on qualifications, employer requirements, location, and market conditions.",
-    "financialAssistance": "Financial aid and sponsorship availability depend on eligibility, program requirements, provider policies, and available funding.",
-    "stateRequirements": "CDL requirements and testing procedures may vary by state.",
-    "pricing": "Tuition, fees, and payment options must be confirmed directly with the training provider.",
-    "startDates": "Training dates and schedule availability are subject to change."
-  },
-  "resources": {
-    "programGuide": {
-      "label": "Download Program Guide",
-      "path": "/assets/images/resources/cdl-program-guide.pdf",
-      "isPlaceholder": true
-    },
-    "studyGuide": {
-      "label": "Download CDL Study Guide",
-      "path": "/assets/images/resources/cdl-study-guide.pdf",
-      "isPlaceholder": true
-    }
-  },
-  "seoTitleTemplates": {
-    "default": "{pageTitle} | {siteName}",
-    "home": "CDL Training Programs & Career Support | {siteName}",
-    "contact": "Request CDL Program Information | {siteName}",
-    "cdlClassA": "Class A CDL Training Program | {siteName}",
-    "cdlClassB": "Class B CDL Training Program | {siteName}",
-    "behindTheWheel": "Behind-the-Wheel CDL Training | {siteName}",
-    "jobPlacement": "CDL Job Placement Assistance | {siteName}",
-    "financialAid": "CDL Financial Aid Information | {siteName}",
-    "companySponsorships": "Company-Sponsored CDL Training | {siteName}",
-    "privacyPolicy": "Privacy Policy | {siteName}",
-    "termsAndConditions": "Terms and Conditions | {siteName}",
-    "cookiePolicy": "Cookie Policy | {siteName}"
-  },
-  "seoDescriptionTemplates": {
-    "home": "Compare Class A and Class B CDL training paths, explore behind-the-wheel practice, career support, financial assistance options, and request program information.",
-    "contact": "Request information about CDL programs, training schedules, financial assistance, company sponsorships, or business collaboration opportunities.",
-    "cdlClassA": "Explore Class A CDL training focused on combination vehicles, pre-trip inspection, backing, yard skills, road preparation, and career directions.",
-    "cdlClassB": "Explore Class B CDL training for applicable straight trucks, buses, commercial vehicle controls, backing, road preparation, and program comparison.",
-    "behindTheWheel": "Learn how instructor-led CDL practice can develop yard skills, backing fundamentals, turns, observation, vehicle control, and safer road habits.",
-    "jobPlacement": "Explore CDL career support services such as resume preparation, employer connections, interview readiness, and application support.",
-    "financialAid": "Request information about CDL training payment planning, eligibility-based assistance, documentation, and current financial support options.",
-    "companySponsorships": "Compare employer-sponsored CDL training routes, eligibility questions, program expectations, commitments, and application steps.",
-    "privacyPolicy": "Read the demonstration privacy policy for the CDLWAY training website and learn how submitted information may be handled.",
-    "termsAndConditions": "Read the demonstration terms and conditions governing use of the CDLWAY training website.",
-    "cookiePolicy": "Read the demonstration cookie policy for the CDLWAY training website."
-  },
-  "seoPages": {
-    "home": {
-      "canonicalPath": "/",
-      "ogImage": "/images/card-1.jpg"
-    },
-    "contact": {
-      "canonicalPath": "/contact/",
-      "ogImage": "/images/card-4.jpg"
-    },
-    "cdlClassA": {
-      "canonicalPath": "/services/cdl-class-a.html",
-      "ogImage": "/images/card-5.jpg"
-    },
-    "cdlClassB": {
-      "canonicalPath": "/services/cdl-class-b.html",
-      "ogImage": "/images/card-11.jpg"
-    },
-    "behindTheWheel": {
-      "canonicalPath": "/services/behind-the-wheel.html",
-      "ogImage": "/images/card-15.jpg"
-    },
-    "jobPlacement": {
-      "canonicalPath": "/services/job-placement.html",
-      "ogImage": "/images/card-10.jpg"
-    },
-    "financialAid": {
-      "canonicalPath": "/services/financial-aid.html",
-      "ogImage": "/images/card-9.jpg"
-    },
-    "companySponsorships": {
-      "canonicalPath": "/services/company-sponsorships.html",
-      "ogImage": "/images/card-14.jpg"
-    },
-    "privacyPolicy": {
-      "canonicalPath": "/legal/privacy-policy.html",
-      "ogImage": "/images/card-6.jpg"
-    },
-    "termsAndConditions": {
-      "canonicalPath": "/legal/terms-and-conditions.html",
-      "ogImage": "/images/card-13.jpg"
-    },
-    "cookiePolicy": {
-      "canonicalPath": "/legal/cookie-policy.html",
-      "ogImage": "/images/card-2.jpg"
-    }
-  },
-  "organizationSchema": {
-    "type": "EducationalOrganization",
-    "name": "{companyName}",
-    "url": "{siteUrl}",
-    "logo": "{siteUrl}{logoIconPath}",
-    "email": "{corporateEmail}",
-    "description": "{footerDescription}",
-    "addressText": "{companyAddress}",
-    "areaServed": "United States"
-  },
-  "demoContent": {
-    "requiresReplacementBeforeLaunch": true,
-    "items": [
-      "The corporate email uses the reserved .example domain.",
-      "The canonical domain is a placeholder.",
-      "Hero and section image paths require final local image files.",
-      "Program and study guide PDF paths are placeholders.",
-      "Testimonial names, avatars, ratings, and quotes are demonstration content.",
-      "Any unverified coaching availability must be confirmed by the client.",
-      "Legal documents must be reviewed by a qualified professional for the applicable jurisdiction."
-    ]
-  }
-};
 
   const findConfigScript = () => {
     if (

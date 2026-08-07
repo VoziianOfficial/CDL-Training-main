@@ -985,7 +985,10 @@
           typeof value === "string" ||
           typeof value === "number"
         ) {
-          element.textContent = String(value);
+          element.textContent =
+            typeof value === "string"
+              ? formatTemplate(config, value)
+              : String(value);
         }
 
         element.dataset.configPending = "false";
@@ -1334,9 +1337,11 @@
         pageTitle
       }
     );
-    const description =
+    const description = formatTemplate(
+      config,
       config.seoDescriptionTemplates?.[seoKey] ||
-      "";
+        ""
+    );
     const seoPage =
       config.seoPages?.[seoKey] || {};
     const canonicalUrl =

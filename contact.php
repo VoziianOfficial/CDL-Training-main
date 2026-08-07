@@ -215,6 +215,8 @@ function renderHtmlResponse(
     array $payload,
     ?string $returnUrl = null
 ): never {
+    $config = loadSiteConfig();
+    $brandName = getBrandName($config);
     $success = (bool) ($payload['success'] ?? false);
     $message = (string) (
         $payload['message']
@@ -231,6 +233,12 @@ function renderHtmlResponse(
 
     $safeTitle = htmlspecialchars(
         $title,
+        ENT_QUOTES | ENT_SUBSTITUTE,
+        'UTF-8'
+    );
+
+    $safeBrandName = htmlspecialchars(
+        $brandName,
         ENT_QUOTES | ENT_SUBSTITUTE,
         'UTF-8'
     );
@@ -290,7 +298,7 @@ function renderHtmlResponse(
     content="width=device-width, initial-scale=1"
   >
   <meta name="robots" content="noindex, nofollow">
-  <title>{$safeTitle} | CDLWAY</title>
+  <title>{$safeTitle} | {$safeBrandName}</title>
   <style>
     :root {
       color-scheme: light;
@@ -381,7 +389,7 @@ function renderHtmlResponse(
 <body>
   <main class="response-card">
     <p class="response-card__eyebrow">
-      CDLWAY Website Form
+      {$safeBrandName} Website Form
     </p>
 
     <h1>{$safeTitle}</h1>
@@ -1221,6 +1229,22 @@ function getBrandName(array $config): string
         : 'CDLWAY';
 }
 
+function getCompanyAddress(array $config): string
+{
+    return normalizeSingleLine(
+        getNestedConfigValue(
+            $config,
+            [
+                'companyAddress',
+                'address',
+                'company.address',
+                'contact.address',
+            ]
+        ),
+        500
+    );
+}
+
 function getFromEmail(array $config): string
 {
     $environmentFrom =
@@ -1247,6 +1271,7 @@ function getFromEmail(array $config): string
                 [
                     'forms.fromEmail',
                     'contact.fromEmail',
+                    'corporateEmail',
                 ]
             ),
             254
@@ -1300,7 +1325,8 @@ function buildMailBody(
     array $data,
     array $fieldLabels,
     string $subject,
-    string $brandName
+    string $brandName,
+    string $companyAddress
 ): string {
     $lines = [
         $brandName . ' Website Submission',
@@ -1308,8 +1334,13 @@ function buildMailBody(
         '',
         'Inquiry: ' . $subject,
         'Submitted: ' . gmdate('Y-m-d H:i:s') . ' UTC',
-        '',
     ];
+
+    if ($companyAddress !== '') {
+        $lines[] = 'Configured site address: ' . $companyAddress;
+    }
+
+    $lines[] = '';
 
     $orderedFields = [
         'fullName',
@@ -1573,6 +1604,10 @@ $brandName = getBrandName(
     $config
 );
 
+$companyAddress = getCompanyAddress(
+    $config
+);
+
 $subject =
     $definition['subject'];
 
@@ -1580,7 +1615,8 @@ $message = buildMailBody(
     $cleanData,
     $fieldLabels,
     $subject,
-    $brandName
+    $brandName,
+    $companyAddress
 );
 
 $delivered = deliverMail(
