@@ -720,8 +720,13 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-story__intro-head {
-  max-width: 1080px;
+  max-width: none;
   margin-bottom: 2.75rem;
+}
+
+.home-story__intro-head .cdl-section__title {
+  max-width: none;
+  text-align: center;
 }
 
 .home-story__intro-icon {
