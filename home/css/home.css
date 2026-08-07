@@ -1396,36 +1396,78 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-comparison__cards {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.25rem;
 }
 
 .home-comparison__card {
   position: relative;
-  padding: clamp(1.5rem, 3.4vw, 3rem);
+  z-index: 1;
+  padding: clamp(2rem, 3.6vw, 3.6rem) clamp(1.75rem, 3.6vw, 3.6rem);
   overflow: hidden;
   border: 1px solid var(--color-border);
+  border-radius: 22px;
   background-color: var(--color-light);
+  box-shadow:
+    0 1px 2px rgba(17, 17, 19, 0.04),
+    0 24px 48px -22px rgba(17, 17, 19, 0.22);
+  transition:
+    transform var(--transition-slow),
+    box-shadow var(--transition-slow),
+    border-color var(--transition-base);
+}
+
+.home-comparison__card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-accent);
+  content: "";
+}
+
+.home-comparison__card--class-b::before {
+  background-color: var(--color-dark);
 }
 
 .home-comparison__card::after {
   position: absolute;
-  top: -55px;
-  right: -55px;
-  width: 155px;
-  height: 155px;
-  border: 24px solid var(--color-accent);
-  border-radius: 50%;
-  content: "";
-  opacity: 0.1;
+  top: -0.28em;
+  right: 0.15em;
+  z-index: 1;
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: clamp(9rem, 15vw, 15.5rem);
+  font-weight: 800;
+  line-height: 1;
+  content: "A";
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
 }
 
 .home-comparison__card--class-b::after {
-  top: auto;
-  right: auto;
-  bottom: -55px;
-  left: -55px;
+  color: var(--color-dark);
+  content: "B";
+  opacity: 0.04;
+}
+
+.home-comparison__card:hover {
   border-color: var(--color-dark);
-  opacity: 0.055;
+  box-shadow:
+    0 1px 2px rgba(17, 17, 19, 0.04),
+    0 36px 60px -20px rgba(17, 17, 19, 0.28),
+    var(--shadow-offset-accent);
+  transform: translateY(-10px);
+}
+
+.home-comparison__card--class-b:hover {
+  border-color: var(--color-accent);
+  box-shadow:
+    0 1px 2px rgba(17, 17, 19, 0.04),
+    0 36px 60px -20px rgba(17, 17, 19, 0.28),
+    var(--shadow-offset);
 }
 
 .home-comparison__card-header {
@@ -1434,29 +1476,31 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.home-comparison__card-index {
-  display: grid;
-  width: 54px;
-  height: 54px;
-  place-items: center;
-  flex: 0 0 auto;
-  color: var(--color-dark);
-  background-color: var(--color-accent);
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
-  font-weight: 800;
+  margin-bottom: 2.2rem;
 }
 
 .home-comparison__card-header p {
-  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
   color: var(--color-muted);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
+}
+
+.home-comparison__card-header p::before {
+  display: inline-block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--color-accent);
+  content: "";
+}
+
+.home-comparison__card--class-b .home-comparison__card-header p::before {
+  background-color: var(--color-dark);
 }
 
 .home-comparison__card-header h3 {
@@ -1466,16 +1510,89 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-comparison__rows {
   position: relative;
   z-index: 2;
-  margin-bottom: 2rem;
-  border-top: 1px solid var(--color-border);
+  margin-bottom: 2.2rem;
+  overflow: hidden;
+  padding: 0.35rem 1.25rem;
+  border-radius: 16px;
+  background-color: var(--color-surface);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.home-comparison__card--class-b .home-comparison__rows {
+  background-color: var(--color-surface-secondary);
 }
 
 .home-comparison__row {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(130px, 0.55fr) minmax(0, 1.45fr);
+  align-items: center;
   gap: 1.2rem;
-  padding-block: 1rem;
+  margin-inline: -1.25rem;
+  padding: 1.1rem 1.25rem 1.1rem 1.5rem;
   border-bottom: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base),
+    padding-left var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.home-comparison__row:last-child {
+  border-bottom: none;
+}
+
+.home-comparison__row::before {
+  position: absolute;
+  top: 0.55rem;
+  bottom: 0.55rem;
+  left: 0.25rem;
+  width: 3px;
+  border-radius: 2px;
+  background-color: var(--color-accent);
+  content: "";
+  transform: scaleY(0);
+  transition: transform var(--transition-base);
+}
+
+.home-comparison__card--class-b .home-comparison__row::before {
+  background-color: var(--color-dark);
+}
+
+.home-comparison__row::after {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  color: var(--color-accent);
+  font-size: 1.15rem;
+  content: "\2192";
+  opacity: 0;
+  transform: translate(-8px, -50%);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+  pointer-events: none;
+}
+
+.home-comparison__card--class-b .home-comparison__row::after {
+  color: var(--color-dark);
+}
+
+.home-comparison__row:hover {
+  padding-left: 1.85rem;
+  border-color: transparent;
+  background-color: var(--color-light);
+  box-shadow: 0 8px 20px rgba(17, 17, 19, 0.08);
+}
+
+.home-comparison__row:hover::before {
+  transform: scaleY(1);
+}
+
+.home-comparison__row:hover::after {
+  opacity: 1;
+  transform: translate(0, -50%);
 }
 
 .home-comparison__row span {
@@ -1484,12 +1601,26 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: color var(--transition-base);
+}
+
+.home-comparison__row:hover span {
+  color: var(--color-dark);
 }
 
 .home-comparison__row strong {
+  display: inline-block;
   color: var(--color-text);
   font-size: 0.9rem;
   line-height: 1.55;
+  transition:
+    color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.home-comparison__row:hover strong {
+  color: var(--color-dark);
+  transform: translateX(3px);
 }
 
 /* ==========================================================================
@@ -3648,12 +3779,31 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   }
 
   .home-comparison__card {
-    padding: 1.3rem;
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+
+  .home-comparison__card::after {
+    font-size: 7rem;
+  }
+
+  .home-comparison__rows {
+    padding: 0.3rem 0.85rem;
   }
 
   .home-comparison__row {
     grid-template-columns: 1fr;
     gap: 0.35rem;
+    margin-inline: -0.85rem;
+    padding: 0.9rem 0.85rem;
+  }
+
+  .home-comparison__row::after {
+    display: none;
+  }
+
+  .home-comparison__row:hover {
+    padding-left: 0.85rem;
   }
 
   .home-process__image {
