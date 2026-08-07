@@ -863,6 +863,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 
 .home-why__benefits .cdl-feature-card--cut {
   clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
+  filter: none;
 }
 
 .home-why__benefits .cdl-feature-card:nth-child(4) {
@@ -880,23 +881,37 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   transform: translate(-6px, -6px);
 }
 
+.home-why__benefits .cdl-feature-card--cut:hover {
+  border-color: var(--color-accent);
+  filter: none;
+  box-shadow: inset 0 0 0 2px var(--color-accent);
+}
+
 .home-why__benefits .cdl-feature-card__icon {
+  position: relative;
   display: grid;
   width: 48px;
   height: 48px;
   align-self: flex-start;
   margin-bottom: 1.15rem;
-  border: none;
   place-items: center;
-  background-color: var(--color-dark);
-  clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 0 100%);
   filter: drop-shadow(5px 5px 0 var(--color-accent));
   transition:
     transform var(--transition-base),
     filter var(--transition-base);
 }
 
+.home-why__benefits .cdl-feature-card__icon::before {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-dark);
+  clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 0 100%);
+  content: "";
+}
+
 .home-why__benefits .cdl-feature-card__icon svg {
+  position: relative;
+  z-index: 1;
   width: 1.4rem;
   height: 1.4rem;
   fill: none;
@@ -908,8 +923,11 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-why__benefits .cdl-feature-card:nth-child(even) .cdl-feature-card__icon {
-  background-color: var(--color-accent);
   filter: drop-shadow(5px 5px 0 var(--color-dark));
+}
+
+.home-why__benefits .cdl-feature-card:nth-child(even) .cdl-feature-card__icon::before {
+  background-color: var(--color-accent);
 }
 
 .home-why__benefits .cdl-feature-card:nth-child(even) .cdl-feature-card__icon svg {
@@ -1997,28 +2015,36 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   height: 46px;
   place-items: center;
   margin-bottom: 1.2rem;
-  border: 2px solid var(--color-accent);
-  color: var(--color-dark);
-  background-color: transparent;
+  background-color: var(--color-accent);
   clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-  transition:
-    background-color var(--transition-base),
-    transform var(--transition-base);
+  transition: transform var(--transition-base);
 }
 
 .home-career__service-icon svg {
   width: 1.3rem;
   height: 1.3rem;
   fill: none;
-  stroke: currentColor;
+  stroke: var(--color-dark);
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: transform var(--transition-base);
+}
+
+.home-career__service:nth-child(even) .home-career__service-icon {
+  background-color: var(--color-dark);
+}
+
+.home-career__service:nth-child(even) .home-career__service-icon svg {
+  stroke: var(--color-accent);
 }
 
 .home-career__service:hover .home-career__service-icon {
-  background-color: var(--color-accent);
   transform: rotate(90deg);
+}
+
+.home-career__service:hover .home-career__service-icon svg {
+  transform: rotate(-90deg);
 }
 
 .home-career__service h3 {
