@@ -891,7 +891,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-story__skew {
-  padding-block: clamp(1.5rem, 3vw, 2rem) clamp(3rem, 6vw, 5rem);
+  padding-block: clamp(1rem, 2vw, 1.5rem) clamp(2rem, 4vw, 3.25rem);
 }
 
 .home-story__skew-inner {
@@ -906,10 +906,10 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-story__skew-card {
   position: relative;
   display: flex;
-  min-height: clamp(230px, 22vw, 290px);
+  min-height: clamp(150px, 14vw, 190px);
   flex-direction: column;
   justify-content: center;
-  padding: clamp(2.25rem, 3.4vw, 3.35rem);
+  padding: clamp(1.35rem, 2.2vw, 2rem);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-top: 5px solid var(--color-accent);
@@ -926,34 +926,11 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-story__skew-card::before {
-  position: absolute;
-  top: clamp(1.2rem, 2vw, 1.8rem);
-  right: clamp(1.2rem, 2.8vw, 2.4rem);
-  z-index: 0;
-  width: clamp(120px, 16vw, 220px);
-  height: clamp(120px, 16vw, 220px);
-  border: 1px solid rgba(229, 158, 31, 0.34);
-  border-radius: 50%;
-  box-shadow:
-    inset 0 0 0 18px rgba(255, 255, 255, 0.025),
-    inset 0 0 0 38px rgba(229, 158, 31, 0.055);
-  content: "";
-  opacity: 0.9;
-  pointer-events: none;
+  content: none;
 }
 
 .home-story__skew-card::after {
-  position: absolute;
-  right: clamp(1rem, 2vw, 1.7rem);
-  bottom: clamp(1rem, 2vw, 1.7rem);
-  z-index: 0;
-  width: clamp(96px, 14vw, 170px);
-  height: clamp(58px, 7vw, 88px);
-  border-right: 5px solid var(--color-accent);
-  border-bottom: 5px solid var(--color-accent);
-  content: "";
-  opacity: 0.56;
-  pointer-events: none;
+  content: none;
 }
 
 .home-story__skew-card:hover {
@@ -966,12 +943,12 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-story__skew-card--left {
-  padding-right: clamp(4.5rem, 8vw, 7.8rem);
+  padding-right: clamp(2.5rem, 5vw, 4.8rem);
   clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
 }
 
 .home-story__skew-card--right {
-  padding-left: clamp(4.5rem, 8vw, 7.8rem);
+  padding-left: clamp(2.5rem, 5vw, 4.8rem);
   background-color: #252529;
   box-shadow:
     0 28px 64px rgba(0, 0, 0, 0.34),
@@ -987,18 +964,6 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
-.home-story__skew-card--right::before {
-  right: auto;
-  left: clamp(1.2rem, 2.8vw, 2.4rem);
-}
-
-.home-story__skew-card--right::after {
-  right: auto;
-  left: clamp(1rem, 2vw, 1.7rem);
-  border-right: 0;
-  border-left: 5px solid var(--color-accent);
-}
-
 .home-story__skew-icon {
   display: none;
 }
@@ -1006,10 +971,9 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-story__skew-card h3 {
   position: relative;
   z-index: 1;
-  max-width: 15ch;
-  margin-bottom: 0.85rem;
-  padding-bottom: 1rem;
-  font-size: clamp(1.55rem, 2.3vw, 2.18rem);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.7rem;
+  font-size: clamp(1.28rem, 1.8vw, 1.72rem);
   line-height: 1.02;
 }
 
@@ -1017,8 +981,8 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 76px;
-  height: 5px;
+  width: 58px;
+  height: 4px;
   background-color: var(--color-accent);
   box-shadow: 18px 0 0 rgba(255, 255, 255, 0.18);
   content: "";
@@ -1029,8 +993,8 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   z-index: 1;
   max-width: 42ch;
   color: #e2e2e6;
-  font-size: 1rem;
-  line-height: 1.78;
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 /* ==========================================================================
@@ -3492,7 +3456,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   .home-story__skew-card--left,
   .home-story__skew-card--right {
     min-height: auto;
-    padding: 1.75rem 1.9rem;
+    padding: 1.35rem 1.5rem;
     clip-path: none;
   }
 
