@@ -640,6 +640,959 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 /* ==========================================================================
+   Service Story — Class A (Cab Split)
+   ========================================================================== */
+
+.story-cab {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--section-space);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+.story-cab__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  align-items: start;
+  gap: clamp(2.5rem, 5vw, 5.5rem);
+}
+
+.story-cab__visual {
+  position: relative;
+}
+
+.story-cab__media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: var(--color-dark-tertiary);
+  clip-path: polygon(0 0, 88% 0, 100% 10%, 100% 100%, 0 100%);
+}
+
+.story-cab__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-cab__tag {
+  position: absolute;
+  left: -1px;
+  bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.85rem 1.2rem;
+  border-top: 3px solid var(--color-accent);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  box-shadow: var(--shadow-offset-accent);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-cab__tag svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-cab__icon {
+  display: inline-grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-accent);
+  background-color: var(--color-dark-tertiary);
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
+}
+
+.story-cab__icon svg {
+  width: 1.55rem;
+  height: 1.55rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-cab .cdl-section__description {
+  color: #b8b8bd;
+}
+
+.story-cab__rows {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.25rem;
+  border-top: 1px solid var(--color-border-dark);
+}
+
+.story-cab__row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 1.15rem;
+  padding-block: 1.35rem;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.story-cab__row-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 50%;
+  color: var(--color-accent);
+}
+
+.story-cab__row-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-cab__row h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+}
+
+.story-cab__row p {
+  color: #b8b8bd;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.story-cab__aside {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+  padding: 1.1rem;
+  border-left: 3px solid var(--color-accent);
+  background-color: var(--color-dark-secondary);
+}
+
+.story-cab__aside-media {
+  width: 84px;
+  height: 84px;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.story-cab__aside-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-cab__aside p {
+  max-width: 46ch;
+  color: #d8d8dc;
+  font-family: var(--font-heading);
+  font-size: 0.94rem;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   Service Story — Class B (Two Yards)
+   ========================================================================== */
+
+.story-yards {
+  position: relative;
+  padding-block: var(--section-space);
+}
+
+.story-yards__head {
+  max-width: 780px;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.story-yards__panels {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+.story-yards__panel {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-surface-secondary);
+}
+
+.story-yards__panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-yards__panel--left {
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+}
+
+.story-yards__panel--right {
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.story-yards__panel figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.1rem 1.3rem 1.25rem;
+  border-top: 3px solid var(--color-accent);
+  background-color: rgba(17, 17, 19, 0.82);
+}
+
+.story-yards__panel figcaption strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-light);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+}
+
+.story-yards__panel figcaption span {
+  display: block;
+  color: #d8d8dc;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.story-yards__badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  color: var(--color-dark);
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-offset);
+  transform: translate(-50%, -50%);
+}
+
+.story-yards__badge svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-yards__chips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.story-yards__chip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.4rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-light);
+  transition:
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.story-yards__chip:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.story-yards__chip > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  color: var(--color-dark);
+  background-color: var(--color-surface);
+}
+
+.story-yards__chip > span svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-yards__chip strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+}
+
+.story-yards__chip p {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   Service Story — Behind-the-Wheel (Practice Mosaic)
+   ========================================================================== */
+
+.story-mosaic {
+  position: relative;
+  padding-block: var(--section-space);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+.story-mosaic__head {
+  max-width: 760px;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.story-mosaic .cdl-section__description {
+  color: #b8b8bd;
+}
+
+.story-mosaic__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: stretch;
+}
+
+.story-mosaic__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-rows: repeat(2, minmax(160px, 1fr));
+  gap: 0.9rem;
+}
+
+.story-mosaic__tile {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-dark-tertiary);
+}
+
+.story-mosaic__tile--big {
+  grid-row: 1 / span 2;
+}
+
+.story-mosaic__tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-mosaic__tile figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 1.1rem 1.1rem;
+  border-top: 3px solid var(--color-accent);
+  background-color: rgba(17, 17, 19, 0.82);
+}
+
+.story-mosaic__tile figcaption strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  color: var(--color-light);
+}
+
+.story-mosaic__tile figcaption span {
+  display: block;
+  color: #d8d8dc;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.story-mosaic__tile--accent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.35rem;
+  border: 1px solid var(--color-border-dark);
+  background-color: var(--color-dark-secondary);
+}
+
+.story-mosaic__tile--accent > span:first-child {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  margin-bottom: 0.9rem;
+  color: var(--color-dark);
+  background-color: var(--color-accent);
+}
+
+.story-mosaic__tile--accent > span:first-child svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-mosaic__tile--accent strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+}
+
+.story-mosaic__tile--accent > span:last-child {
+  display: block;
+  color: #b8b8bd;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.story-mosaic__checklist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.story-mosaic__check {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 1.1rem;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.story-mosaic__check:first-child {
+  padding-top: 0;
+}
+
+.story-mosaic__check > span {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--color-accent);
+}
+
+.story-mosaic__check > span svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-mosaic__check h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.story-mosaic__check p {
+  color: #b8b8bd;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Service Story — Job Placement (Pathway)
+   ========================================================================== */
+
+.story-path {
+  position: relative;
+  padding-block: var(--section-space);
+}
+
+.story-path__head {
+  max-width: 760px;
+  margin-bottom: clamp(2.75rem, 5vw, 4rem);
+}
+
+.story-path__route {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+  padding-top: 34px;
+}
+
+.story-path__line {
+  position: absolute;
+  top: 34px;
+  right: 8%;
+  left: 8%;
+  border-top: 2px dashed var(--color-border);
+}
+
+.story-path__stop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.story-path__stop-icon {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  margin-top: -34px;
+  margin-bottom: 1.1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  color: var(--color-accent);
+  background-color: var(--color-light);
+}
+
+.story-path__stop-icon svg {
+  width: 1.55rem;
+  height: 1.55rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-path__stop h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.02rem;
+}
+
+.story-path__stop p {
+  max-width: 24ch;
+  color: var(--color-muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.story-path__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: stretch;
+}
+
+.story-path__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-surface-secondary);
+  clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 0 100%);
+}
+
+.story-path__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-path__media figcaption {
+  position: absolute;
+  bottom: 1.25rem;
+  left: -1px;
+  padding: 0.8rem 1.15rem;
+  border-top: 3px solid var(--color-accent);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  box-shadow: var(--shadow-offset-accent);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-path__quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border-left: 4px solid var(--color-accent);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.story-path__quote-icon {
+  display: inline-grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  margin-bottom: 1.1rem;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+.story-path__quote-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-path__quote h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+}
+
+.story-path__quote p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   Service Story — Financial Aid (Document Deck)
+   ========================================================================== */
+
+.story-deck {
+  position: relative;
+  padding-block: var(--section-space);
+}
+
+.story-deck__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: clamp(3rem, 6vw, 6rem);
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.story-deck__stack {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.story-deck__card {
+  position: absolute;
+  width: 74%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 8px solid var(--color-light);
+  background-color: var(--color-surface-secondary);
+  box-shadow: var(--shadow-soft);
+}
+
+.story-deck__card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-deck__card--back {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transform: rotate(-6deg);
+}
+
+.story-deck__card--front {
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  transform: rotate(4deg);
+  box-shadow: var(--shadow-offset);
+}
+
+.story-deck__checklist {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.story-deck__check {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 1.15rem;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.story-deck__check > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+.story-deck__check > span svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-deck__check h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.story-deck__check p {
+  color: var(--color-muted);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.story-deck__banner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+.story-deck__banner-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--color-dark);
+  background-color: var(--color-accent);
+}
+
+.story-deck__banner-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-deck__banner strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.story-deck__banner p {
+  color: #b8b8bd;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Service Story — Company Sponsorships (Partner Line)
+   ========================================================================== */
+
+.story-partner {
+  position: relative;
+  padding-block: var(--section-space);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+.story-partner__title {
+  max-width: 900px;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.story-partner__banner {
+  position: relative;
+  margin-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.story-partner__banner-media {
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  background-color: var(--color-dark-tertiary);
+}
+
+.story-partner__banner-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-partner__banner-card {
+  position: absolute;
+  bottom: 0;
+  left: clamp(1.25rem, 4vw, 3.5rem);
+  z-index: 2;
+  width: min(360px, calc(100% - 2.5rem));
+  padding: 1.5rem 1.65rem;
+  border-top: 4px solid var(--color-accent);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  box-shadow: var(--shadow-offset-accent);
+  transform: translateY(45%);
+}
+
+.story-partner__banner-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.story-partner__banner-card p {
+  color: #b8b8bd;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.story-partner__tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.story-partner__tile {
+  padding: clamp(1.5rem, 2.5vw, 1.9rem);
+  border: 1px solid var(--color-border-dark);
+  background-color: var(--color-dark-secondary);
+  transition:
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.story-partner__tile:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.story-partner__tile > span {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  margin-bottom: 1.1rem;
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-accent);
+  background-color: var(--color-dark-tertiary);
+}
+
+.story-partner__tile > span svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-partner__tile h3 {
+  margin-bottom: 0.55rem;
+  font-size: 1.05rem;
+}
+
+.story-partner__tile p {
+  color: #b8b8bd;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.story-partner__quote {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-left: 4px solid var(--color-accent);
+  background-color: var(--color-dark-secondary);
+}
+
+.story-partner__quote > span {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--color-accent);
+}
+
+.story-partner__quote > span svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-partner__quote p {
+  color: #d8d8dc;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.story-partner__quote strong {
+  color: var(--color-light);
+  font-family: var(--font-heading);
+}
+
+/* ==========================================================================
    Service Statistics
    ========================================================================== */
 
@@ -2055,6 +3008,60 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
    ========================================================================== */
 
 @media (max-width: 1024px) {
+  .story-cab__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .story-cab__media {
+    max-width: 420px;
+    aspect-ratio: 16 / 11;
+  }
+
+  .story-deck__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .story-deck__stack {
+    max-width: 340px;
+  }
+
+  .story-yards__chips {
+    grid-template-columns: 1fr;
+  }
+
+  .story-mosaic__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .story-mosaic__checklist {
+    margin-top: 0.5rem;
+  }
+
+  .story-mosaic__check:first-child {
+    padding-top: 1.25rem;
+  }
+
+  .story-path__route {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2.5rem;
+  }
+
+  .story-path__line {
+    display: none;
+  }
+
+  .story-path__stop-icon {
+    margin-top: 0;
+  }
+
+  .story-path__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .story-path__media {
+    max-width: 480px;
+  }
+
   .service-hero__container {
     min-height: auto;
     grid-template-columns: 1fr;
@@ -2238,6 +3245,10 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 @media (max-width: 900px) {
+  .story-partner__tiles {
+    grid-template-columns: 1fr;
+  }
+
   .service-hero__visual {
     min-height: 540px;
   }
@@ -2271,6 +3282,86 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
    ========================================================================== */
 
 @media (max-width: 767px) {
+  .story-partner__banner-card {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .story-partner__banner {
+    margin-bottom: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .story-partner__quote {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .story-deck__stack {
+    max-width: 300px;
+  }
+
+  .story-deck__banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .story-cab__media {
+    max-width: none;
+    aspect-ratio: 4 / 3;
+    clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 0 100%);
+  }
+
+  .story-cab__tag {
+    position: static;
+    margin-top: 1rem;
+    box-shadow: none;
+  }
+
+  .story-cab__aside {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .story-cab__aside-media {
+    width: 100%;
+    height: 160px;
+  }
+
+  .story-yards__panels {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .story-yards__panel--left,
+  .story-yards__panel--right {
+    clip-path: none;
+  }
+
+  .story-yards__badge {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: -1.25rem auto;
+    transform: none;
+  }
+
+  .story-mosaic__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .story-mosaic__tile--big {
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .story-mosaic__tile:not(.story-mosaic__tile--big):not(.story-mosaic__tile--accent) {
+    aspect-ratio: 16 / 10;
+  }
+
   .service-hero__container {
     gap: 2rem;
     padding-top: 3.2rem;
@@ -2612,6 +3703,11 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 @media (max-width: 520px) {
+  .story-path__route {
+    grid-template-columns: 1fr;
+    row-gap: 1.75rem;
+  }
+
   .service-hero__eyebrow {
     font-size: 0.66rem;
   }
