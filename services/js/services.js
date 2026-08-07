@@ -1259,6 +1259,11 @@
               sourceImage.currentSrc ||
               sourceImage.src;
 
+            item.style.setProperty(
+              "--process-card-image",
+              `url("${imageSource}")`
+            );
+
             thumb.className = "service-process__thumb";
             thumb.setAttribute("aria-hidden", "true");
             image.src = imageSource;
@@ -1291,15 +1296,9 @@
               isActive ? "true" : "false"
             );
           });
-
-          refreshAOS();
         };
 
         items.forEach((item) => {
-          item.addEventListener("mouseenter", () => {
-            openItem(item);
-          });
-
           item.addEventListener("focus", () => {
             openItem(item);
           });
