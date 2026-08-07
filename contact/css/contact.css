@@ -943,19 +943,52 @@ html.cdl-js .contact-hero__slide.swiper-slide-active .contact-hero__wordmark {
 .contact-collaboration__form-panel {
   position: relative;
   z-index: 3;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  transform: none;
+  padding: clamp(1.35rem, 3vw, 2.5rem);
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 19, 0.16);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 245, 243, 0.94)),
+    var(--color-light);
+  box-shadow:
+    12px 12px 0 var(--color-accent),
+    0 34px 78px rgba(17, 17, 19, 0.22),
+    0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  transform: translateZ(0);
 }
 
 .contact-collaboration__form-panel::before {
-  content: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  height: 8px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-accent) 0 34%,
+      var(--color-dark) 34% 50%,
+      var(--color-accent) 50% 74%,
+      var(--color-dark) 74% 100%
+    );
+  content: "";
 }
 
 .contact-collaboration__form-panel::after {
-  content: none;
+  position: absolute;
+  right: -72px;
+  bottom: -72px;
+  z-index: 0;
+  width: 210px;
+  height: 210px;
+  border: 34px solid rgba(229, 158, 31, 0.2);
+  border-radius: 50%;
+  content: "";
+}
+
+.contact-collaboration__form-panel > * {
+  position: relative;
+  z-index: 1;
 }
 
 .contact-collaboration__form-panel .cdl-section__eyebrow {
@@ -977,9 +1010,9 @@ html.cdl-js .contact-hero__slide.swiper-slide-active .contact-hero__wordmark {
 }
 
 .contact-collaboration__form-panel .cdl-form-panel__header {
-  margin-bottom: 1.45rem;
-  padding-bottom: 1.35rem;
-  border-bottom: 1px solid rgba(28, 28, 32, 0.09);
+  margin-bottom: 1.65rem;
+  padding-bottom: 1.45rem;
+  border-bottom: 1px solid rgba(28, 28, 32, 0.12);
 }
 
 .contact-collaboration__form-panel .cdl-form-panel__title {
@@ -1044,16 +1077,77 @@ html.cdl-js .contact-hero__slide.swiper-slide-active .contact-hero__wordmark {
 }
 
 .contact-collaboration__form .cdl-form__checkbox {
-  padding: 1rem;
-  border: 1px solid rgba(28, 28, 32, 0.1);
-  border-radius: 6px;
-  background-color: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 10px 22px rgba(19, 19, 24, 0.05);
+  position: relative;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(28, 28, 32, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(246, 246, 244, 0.9));
+  box-shadow:
+    0 16px 28px rgba(19, 19, 24, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.96) inset;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.contact-collaboration__form .cdl-form__checkbox:hover {
+  border-color: rgba(229, 158, 31, 0.55);
+  box-shadow:
+    0 20px 32px rgba(19, 19, 24, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.96) inset;
+  transform: translateY(-1px);
+}
+
+.contact-collaboration__form .cdl-form__checkbox-input {
+  appearance: none;
 }
 
 .contact-collaboration__form .cdl-form__checkbox-box {
-  border-color: rgba(28, 28, 32, 0.32);
-  border-radius: 4px;
+  width: 26px;
+  height: 26px;
+  border: 2px solid rgba(28, 28, 32, 0.42);
+  border-radius: 6px;
+  background:
+    linear-gradient(180deg, #ffffff, #f1f1ee);
+  box-shadow:
+    0 8px 14px rgba(17, 17, 19, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.contact-collaboration__form .cdl-form__checkbox-box::after {
+  width: 12px;
+  height: 7px;
+  border-bottom: 3px solid var(--color-dark);
+  border-left: 3px solid var(--color-dark);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.contact-collaboration__form
+  .cdl-form__checkbox-input:checked
+  + .cdl-form__checkbox-box {
+  border-color: var(--color-dark);
+  background:
+    linear-gradient(135deg, var(--color-accent), #f2b847);
+  box-shadow:
+    0 10px 18px rgba(229, 158, 31, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.55) inset;
+}
+
+.contact-collaboration__form
+  .cdl-form__checkbox-input:focus-visible
+  + .cdl-form__checkbox-box {
+  outline: 3px solid rgba(229, 158, 31, 0.45);
+  outline-offset: 3px;
+}
+
+.contact-collaboration__form .cdl-form__checkbox-text {
+  color: #3f4045;
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
 .contact-collaboration__form .cdl-form__actions {
@@ -1528,8 +1622,7 @@ html.cdl-js .contact-hero__slide.swiper-slide-active .contact-hero__wordmark {
     grid-template-columns: 44px minmax(0, 1fr);
   }
 
-  .contact-request__form-panel::before,
-  .contact-collaboration__form-panel::before {
+  .contact-request__form-panel::before {
     top: -10px;
     left: 24px;
     width: 60px;

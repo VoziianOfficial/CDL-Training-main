@@ -474,10 +474,6 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
    Service Direction Strip
    ========================================================================== */
 
-.service-direction-strip .cdl-direction-strip__track {
-  justify-content: flex-start;
-}
-
 /* ==========================================================================
    Service Overview
    ========================================================================== */

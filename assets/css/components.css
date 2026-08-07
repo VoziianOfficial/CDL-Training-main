@@ -685,11 +685,12 @@
 
 .cdl-direction-strip__track {
   display: flex;
-  width: max-content;
+  width: 100%;
   min-width: 100%;
   align-items: center;
   justify-content: center;
   gap: clamp(1.25rem, 3vw, 3rem);
+  margin-inline: auto;
   padding: 0.85rem var(--container-gutter);
 }
 
@@ -2445,7 +2446,7 @@ select.cdl-form__control {
   }
 
   .cdl-direction-strip__track {
-    justify-content: flex-start;
+    justify-content: center;
     overflow-x: auto;
     scrollbar-width: none;
   }
