@@ -496,9 +496,10 @@
   flex-direction: column;
   max-height: calc(100vh - var(--header-height-scrolled) - 190px);
   overflow-y: auto;
-  overscroll-behavior: contain;
+  overscroll-behavior: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--color-accent) var(--color-surface);
+  -webkit-overflow-scrolling: touch;
 }
 
 .legal-toc__link {
@@ -1413,6 +1414,11 @@ html.cdl-js.cdl-legal-ready .legal-hero__document {
     grid-template-columns: 1fr;
   }
 
+  .legal-document__sidebar {
+    position: static;
+    z-index: auto;
+  }
+
   .legal-document__sidebar-card {
     display: grid;
     grid-template-columns: 230px minmax(0, 1fr);
@@ -1420,9 +1426,9 @@ html.cdl-js.cdl-legal-ready .legal-hero__document {
 
   .legal-toc {
     display: grid;
-    max-height: calc(100dvh - var(--header-height) - 7rem);
+    max-height: none;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    overflow-y: auto;
+    overflow: visible;
   }
 
   .legal-toc__link {
@@ -1528,8 +1534,9 @@ html.cdl-js.cdl-legal-ready .legal-hero__document {
 
   .legal-toc {
     display: flex;
-    max-height: calc(100dvh - var(--header-height) - 6rem);
+    max-height: none;
     grid-template-columns: none;
+    overflow: visible;
   }
 
   .legal-toc__link {
