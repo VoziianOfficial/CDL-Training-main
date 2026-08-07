@@ -2006,7 +2006,64 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-program-content__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
   margin-block: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.home-program-content__list .cdl-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  min-height: 0;
+  padding: 0.85rem 0.5rem 0.85rem 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.005em;
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.home-program-content__list .cdl-list__item::before {
+  position: static;
+  top: auto;
+  left: auto;
+  flex: 0 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.42rem;
+  border: 2px solid var(--color-accent);
+  background-color: transparent;
+  transform: rotate(45deg);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.home-program-content__list .cdl-list__item:nth-child(odd) {
+  padding-right: 1.1rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.home-program-content__list .cdl-list__item:nth-child(even) {
+  padding-left: 1.1rem;
+}
+
+.home-program-content__list .cdl-list__item:hover {
+  padding-left: 0.3rem;
+  color: var(--color-accent-hover);
+}
+
+.home-program-content__list .cdl-list__item:nth-child(even):hover {
+  padding-left: 1.4rem;
+}
+
+.home-program-content__list .cdl-list__item:hover::before {
+  background-color: var(--color-accent);
+  transform: rotate(45deg) scale(1.25);
 }
 
 /* ==========================================================================
@@ -3763,6 +3820,23 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 @media (max-width: 520px) {
+  .home-program-content__list {
+    grid-template-columns: 1fr;
+  }
+
+  .home-program-content__list .cdl-list__item:nth-child(odd) {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .home-program-content__list .cdl-list__item:nth-child(even) {
+    padding-left: 0;
+  }
+
+  .home-program-content__list .cdl-list__item:nth-child(even):hover {
+    padding-left: 0.3rem;
+  }
+
   .home-story__point {
     width: 100%;
   }
