@@ -1,0 +1,984 @@
+/* ==========================================================================
+   CDLWAY — Shared Responsive System
+   ========================================================================== */
+
+/* ==========================================================================
+   Large Desktop — 1600px and wider
+   ========================================================================== */
+
+@media (min-width: 1600px) {
+  .cdl-section__header {
+    gap: 6rem;
+  }
+
+  .cdl-grid {
+    gap: 2.75rem;
+  }
+
+  .cdl-header__shell {
+    padding-inline: clamp(2.5rem, 4vw, 4.5rem);
+  }
+
+  .cdl-footer__main {
+    gap: 5rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .cdl-section {
+    padding-block: clamp(7rem, 8vw, 10rem);
+  }
+
+  .cdl-section--compact {
+    padding-block: clamp(4rem, 5vw, 6rem);
+  }
+
+  .cdl-feature-card,
+  .cdl-stat-card,
+  .cdl-testimonial-card,
+  .cdl-contact-card {
+    padding: 2.35rem;
+  }
+
+  .cdl-program-card__body {
+    padding: 2.3rem;
+  }
+
+  .cdl-form-panel {
+    padding: 3.25rem;
+  }
+}
+
+/* ==========================================================================
+   Desktop and Small Laptop — up to 1280px
+   ========================================================================== */
+
+@media (max-width: 1280px) {
+  .cdl-container,
+  .cdl-container--wide {
+    width: min(
+      calc(100% - (var(--container-gutter) * 2)),
+      1180px
+    );
+  }
+
+  .cdl-section__description {
+    max-width: 580px;
+  }
+
+  .cdl-grid--four {
+    gap: 1.5rem;
+  }
+
+  .cdl-final-cta {
+    padding: 2.5rem;
+  }
+
+  .cdl-footer__main {
+    gap: 2.75rem;
+  }
+}
+
+/* ==========================================================================
+   Tablet Landscape / Small Laptop — up to 1100px
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .cdl-section__header {
+    gap: 2rem;
+  }
+
+  .cdl-grid--three {
+    gap: 1.5rem;
+  }
+
+  .cdl-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cdl-grid--sidebar {
+    grid-template-columns: minmax(220px, 0.62fr) minmax(0, 1.38fr);
+    gap: 2rem;
+  }
+
+  .cdl-feature-card__title {
+    font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  }
+
+  .cdl-program-card__title {
+    font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  }
+
+  .cdl-form-panel {
+    padding: 2rem;
+  }
+
+  .cdl-final-cta {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+/* ==========================================================================
+   Tablet — up to 1024px
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  :root {
+    --container-gutter: clamp(1.25rem, 3vw, 2rem);
+    --section-space: clamp(4.5rem, 8vw, 6.5rem);
+    --section-space-small: clamp(3rem, 5vw, 4.25rem);
+  }
+
+  .cdl-section {
+    min-height: auto;
+  }
+
+  .cdl-section__header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+
+  .cdl-section__heading-group,
+  .cdl-section__aside {
+    max-width: 760px;
+  }
+
+  .cdl-grid--sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .cdl-sticky-panel {
+    position: static;
+  }
+
+  .cdl-media--diagonal-left,
+  .cdl-media--diagonal-right {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 34px) 0,
+      100% 34px,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .cdl-final-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cdl-final-cta__actions {
+    justify-content: flex-start;
+  }
+
+  .cdl-footer__main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================================================
+   Tablet Portrait — up to 900px
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .cdl-grid--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cdl-section__description {
+    max-width: 680px;
+  }
+
+  .cdl-feature-card,
+  .cdl-stat-card,
+  .cdl-testimonial-card,
+  .cdl-contact-card {
+    min-height: auto;
+  }
+
+  .cdl-form__grid {
+    gap: 1rem;
+  }
+
+  .cdl-form-panel--cut {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 24px) 0,
+      100% 24px,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .cdl-tabs__list {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.4rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) var(--color-border);
+  }
+
+  .cdl-tabs__button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .cdl-footer__brand-column {
+    grid-column: 1 / -1;
+    max-width: 660px;
+  }
+}
+
+/* ==========================================================================
+   Mobile — up to 767px
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  :root {
+    --container-gutter: 1.1rem;
+    --section-space: clamp(4rem, 14vw, 5.5rem);
+    --section-space-small: clamp(2.8rem, 10vw, 4rem);
+  }
+
+  html {
+    scroll-padding-top: calc(var(--header-height) + 1rem);
+  }
+
+  .cdl-page-shell {
+    overflow-x: hidden;
+  }
+
+  .cdl-section__header {
+    gap: 1.4rem;
+    margin-bottom: 2.35rem;
+  }
+
+  .cdl-section__eyebrow {
+    margin-bottom: 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .cdl-section__eyebrow::before {
+    width: 1.6rem;
+  }
+
+  .cdl-section__description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .cdl-grid--two,
+  .cdl-grid--three,
+  .cdl-grid--four,
+  .cdl-grid--sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .cdl-grid {
+    gap: 1.25rem;
+  }
+
+  .cdl-cluster {
+    gap: 0.8rem;
+  }
+
+  .cdl-wordmark {
+    font-size: clamp(4.25rem, 23vw, 8rem);
+    white-space: normal;
+  }
+
+  .cdl-dot-pattern {
+    transform: scale(0.8);
+    transform-origin: left top;
+  }
+
+  .cdl-diagonal-mark {
+    gap: 5px;
+  }
+
+  .cdl-diagonal-mark span {
+    width: 4px;
+    height: 21px;
+  }
+
+  .cdl-media--portrait {
+    aspect-ratio: 4 / 4.7;
+  }
+
+  .cdl-media--landscape {
+    aspect-ratio: 16 / 11;
+  }
+
+  .cdl-media--wide {
+    aspect-ratio: 16 / 10;
+  }
+
+  .cdl-media--cut-top-right,
+  .cdl-media--cut-bottom-left,
+  .cdl-media--diagonal-right,
+  .cdl-media--diagonal-left {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 24px) 0,
+      100% 24px,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .cdl-list {
+    gap: 0.8rem;
+  }
+
+  .cdl-list__item {
+    padding-left: 1.7rem;
+  }
+
+  .cdl-breadcrumbs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.3rem;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .cdl-breadcrumbs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cdl-disclaimer {
+    padding: 0.9rem 0.9rem 0.9rem 1.15rem;
+    font-size: 0.8rem;
+  }
+
+  .cdl-feature-card {
+    padding: 1.4rem;
+  }
+
+  .cdl-feature-card__index {
+    margin-bottom: 1.5rem;
+  }
+
+  .cdl-feature-card__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cdl-feature-card--cut {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 22px) 0,
+      100% 22px,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .cdl-stat-card {
+    min-height: 180px;
+    padding: 1.4rem;
+  }
+
+  .cdl-stat-card__value {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .cdl-program-card__body {
+    padding: 1.4rem;
+  }
+
+  .cdl-program-card__media {
+    aspect-ratio: 16 / 10.5;
+  }
+
+  .cdl-program-card__footer {
+    align-items: flex-end;
+  }
+
+  .cdl-testimonial-card {
+    padding: 1.4rem;
+  }
+
+  .cdl-testimonial-card::before {
+    top: 1rem;
+    right: 1rem;
+    font-size: 3.8rem;
+  }
+
+  .cdl-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cdl-form__field--full {
+    grid-column: auto;
+  }
+
+  .cdl-form__control {
+    min-height: 50px;
+    font-size: 1rem;
+  }
+
+  textarea.cdl-form__control {
+    min-height: 130px;
+  }
+
+  .cdl-form__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cdl-form__actions .cdl-btn {
+    width: 100%;
+  }
+
+  .cdl-form-panel {
+    padding: 1.35rem;
+  }
+
+  .cdl-form-panel--cut {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 20px) 0,
+      100% 20px,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .cdl-contact-card {
+    min-height: 155px;
+    padding: 1.35rem;
+  }
+
+  .cdl-tabs__list {
+    margin-right: calc(var(--container-gutter) * -1);
+    margin-bottom: 1.5rem;
+    padding-right: var(--container-gutter);
+  }
+
+  .cdl-tabs__button {
+    min-height: 42px;
+  }
+
+  .cdl-faq__question {
+    min-height: 70px;
+    gap: 0.8rem;
+  }
+
+  .cdl-faq__answer-content {
+    padding: 0 0 1.4rem 3rem;
+  }
+
+  .cdl-slider-controls {
+    gap: 0.55rem;
+  }
+
+  .cdl-slider-arrow {
+    width: 46px;
+    height: 46px;
+  }
+
+  .cdl-slider-dots .swiper-pagination-bullet {
+    width: 18px;
+  }
+
+  .cdl-slider-dots .swiper-pagination-bullet-active {
+    width: 36px;
+  }
+
+  .cdl-final-cta {
+    gap: 1.4rem;
+    padding: 1.6rem;
+  }
+
+  .cdl-final-cta::before {
+    right: 2%;
+    width: 68px;
+  }
+
+  .cdl-final-cta::after {
+    top: -60px;
+    right: -60px;
+    width: 135px;
+    height: 135px;
+  }
+
+  .cdl-final-cta__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cdl-final-cta__actions .cdl-btn {
+    width: 100%;
+  }
+
+  .cdl-footer__main {
+    grid-template-columns: 1fr;
+    gap: 2.15rem;
+    padding-block: 3.4rem;
+  }
+
+  .cdl-footer__brand-column {
+    grid-column: auto;
+  }
+
+  .cdl-footer__bottom-inner {
+    min-height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 1.25rem;
+  }
+
+  .cdl-footer__legal {
+    justify-content: flex-start;
+  }
+
+  .cdl-footer__legal-link {
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .cdl-service-nav__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cdl-service-nav__link {
+    min-height: 56px;
+  }
+
+  .cdl-back-to-top {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cdl-desktop-only {
+    display: none;
+  }
+
+  .cdl-mobile-only {
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   Small Mobile — up to 520px
+   ========================================================================== */
+
+@media (max-width: 520px) {
+  .cdl-section__title {
+    max-width: 100%;
+  }
+
+  .cdl-btn {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .cdl-btn--full {
+    width: 100%;
+  }
+
+  .cdl-cluster {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cdl-cluster .cdl-btn {
+    width: 100%;
+  }
+
+  .cdl-feature-card,
+  .cdl-stat-card,
+  .cdl-program-card__body,
+  .cdl-testimonial-card,
+  .cdl-contact-card,
+  .cdl-form-panel {
+    padding: 1.2rem;
+  }
+
+  .cdl-program-card__footer {
+    align-items: flex-start;
+  }
+
+  .cdl-testimonial-card__person {
+    align-items: flex-start;
+  }
+
+  .cdl-form__checkbox {
+    gap: 0.65rem;
+  }
+
+  .cdl-form__checkbox-text {
+    font-size: 0.75rem;
+  }
+
+  .cdl-faq__question {
+    grid-template-columns: 32px minmax(0, 1fr) 32px;
+    gap: 0.65rem;
+  }
+
+  .cdl-faq__index,
+  .cdl-faq__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .cdl-faq__answer-content {
+    padding-left: 2.45rem;
+  }
+
+  .cdl-slider-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cdl-slider-progress {
+    flex: 1;
+  }
+
+  .cdl-final-cta {
+    padding: 1.35rem;
+  }
+
+  .cdl-service-nav__list {
+    grid-template-columns: 1fr;
+  }
+
+  .cdl-service-nav__item {
+    border-right: 0;
+  }
+}
+
+/* ==========================================================================
+   Narrow Mobile — up to 430px
+   ========================================================================== */
+
+@media (max-width: 430px) {
+  :root {
+    --container-gutter: 1rem;
+  }
+
+  .cdl-section__eyebrow {
+    letter-spacing: 0.12em;
+  }
+
+  .cdl-section__eyebrow::before {
+    width: 1.35rem;
+  }
+
+  .cdl-index-label {
+    gap: 0.55rem;
+    letter-spacing: 0.1em;
+  }
+
+  .cdl-index-label__number {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .cdl-heading-line {
+    height: 4px;
+    margin-top: 1rem;
+  }
+
+  .cdl-wordmark {
+    font-size: clamp(3.6rem, 22vw, 6.5rem);
+  }
+
+  .cdl-program-card__meta {
+    gap: 0.4rem;
+  }
+
+  .cdl-program-card__tag {
+    min-height: 27px;
+    padding-inline: 0.55rem;
+    font-size: 0.65rem;
+  }
+
+  .cdl-contact-card__value {
+    font-size: 1rem;
+  }
+
+  .cdl-form__label {
+    font-size: 0.73rem;
+  }
+
+  .cdl-form__control {
+    padding-inline: 0.8rem;
+  }
+
+  .cdl-form__note,
+  .cdl-form__help,
+  .cdl-form__error {
+    font-size: 0.71rem;
+  }
+
+  .cdl-faq__title {
+    font-size: 0.94rem;
+  }
+
+  .cdl-final-cta__title {
+    font-size: clamp(1.65rem, 8vw, 2.3rem);
+  }
+
+  .cdl-footer__description {
+    font-size: 0.84rem;
+  }
+}
+
+/* ==========================================================================
+   Minimum Supported Width — 320px
+   ========================================================================== */
+
+@media (max-width: 360px) {
+  :root {
+    --container-gutter: 0.85rem;
+  }
+
+  .cdl-section__description {
+    font-size: 0.95rem;
+  }
+
+  .cdl-btn {
+    min-height: 46px;
+    padding: 0.8rem 0.95rem;
+    font-size: 0.7rem;
+  }
+
+  .cdl-feature-card,
+  .cdl-stat-card,
+  .cdl-program-card__body,
+  .cdl-testimonial-card,
+  .cdl-contact-card,
+  .cdl-form-panel {
+    padding: 1.05rem;
+  }
+
+  .cdl-feature-card__icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .cdl-stat-card {
+    min-height: 165px;
+  }
+
+  .cdl-program-card__arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .cdl-testimonial-card__avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  .cdl-form__control {
+    min-height: 48px;
+    font-size: 0.96rem;
+  }
+
+  .cdl-faq__question {
+    grid-template-columns: 29px minmax(0, 1fr) 29px;
+  }
+
+  .cdl-faq__index,
+  .cdl-faq__icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .cdl-faq__answer-content {
+    padding-left: 2.1rem;
+  }
+
+  .cdl-final-cta {
+    padding: 1.15rem;
+  }
+
+  .cdl-footer__brand .cdl-brand__icon {
+    width: 55px;
+    height: 42px;
+  }
+}
+
+/* ==========================================================================
+   Touch Devices
+   ========================================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .cdl-btn,
+  .cdl-icon-btn,
+  .cdl-slider-arrow,
+  .cdl-mobile-toggle,
+  .cdl-mobile-panel__close,
+  .cdl-tabs__button,
+  .cdl-faq__question,
+  .cdl-back-to-top {
+    min-height: 44px;
+  }
+
+  .cdl-primary-nav__link,
+  .cdl-mobile-nav__link,
+  .cdl-footer__link,
+  .cdl-footer__legal-link,
+  .cdl-service-nav__link {
+    min-height: 44px;
+  }
+
+  .cdl-feature-card:hover,
+  .cdl-stat-card:hover,
+  .cdl-contact-card:hover,
+  .cdl-testimonial-card:hover {
+    transform: none;
+  }
+
+  .cdl-program-card:hover .cdl-program-card__media img,
+  .cdl-program-card:hover .cdl-program-card__arrow {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Landscape Mobile
+   ========================================================================== */
+
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 600px) {
+  .cdl-mobile-panel {
+    max-height: calc(100dvh - var(--header-height) - 0.5rem);
+  }
+
+  .cdl-mobile-panel__inner {
+    padding: 0.9rem 1rem;
+  }
+
+  .cdl-mobile-panel__brand {
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .cdl-mobile-nav__link {
+    min-height: 44px;
+  }
+
+  .cdl-mobile-panel__cta {
+    margin-top: 0.8rem;
+  }
+
+  .cdl-mobile-panel__meta {
+    margin-top: 0.7rem;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .cdl-tabs__panel.is-active,
+  .cdl-legal-consent.is-visible {
+    animation: none;
+  }
+
+  [data-parallax],
+  [data-parallax] img,
+  [data-aos],
+  .cdl-program-card__media img,
+  .cdl-program-card__arrow,
+  .cdl-feature-card,
+  .cdl-stat-card,
+  .cdl-contact-card,
+  .cdl-testimonial-card {
+    transform: none;
+    transition-duration: 0.01ms;
+  }
+}
+
+/* ==========================================================================
+   High Contrast
+   ========================================================================== */
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-muted: #55555a;
+    --color-muted-light: #d0d0d4;
+    --color-border: #b8b8bd;
+    --color-border-dark: #68686f;
+  }
+
+  .cdl-btn,
+  .cdl-form__control,
+  .cdl-tabs__button,
+  .cdl-feature-card,
+  .cdl-stat-card,
+  .cdl-contact-card,
+  .cdl-testimonial-card,
+  .cdl-program-card,
+  .cdl-service-nav {
+    border-width: 2px;
+  }
+
+  .cdl-primary-nav__link::after,
+  .cdl-text-link::after {
+    height: 4px;
+  }
+}
+
+/* ==========================================================================
+   Print
+   ========================================================================== */
+
+@media print {
+  .cdl-grid--two,
+  .cdl-grid--three,
+  .cdl-grid--four,
+  .cdl-grid--sidebar {
+    display: block;
+  }
+
+  .cdl-feature-card,
+  .cdl-stat-card,
+  .cdl-program-card,
+  .cdl-testimonial-card,
+  .cdl-contact-card,
+  .cdl-form-panel,
+  .cdl-final-cta {
+    margin-bottom: 1rem;
+    break-inside: avoid;
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: none;
+    clip-path: none;
+  }
+
+  .cdl-program-card__body,
+  .cdl-program-card__title,
+  .cdl-testimonial-card__quote,
+  .cdl-testimonial-card__name,
+  .cdl-final-cta__title {
+    color: #000000;
+  }
+
+  .cdl-program-card__text,
+  .cdl-testimonial-card__program,
+  .cdl-final-cta__text {
+    color: #333333;
+  }
+
+  .cdl-tabs__panel {
+    display: block;
+  }
+
+  .cdl-faq__answer {
+    display: block;
+    visibility: visible;
+    grid-template-rows: 1fr;
+  }
+
+  .cdl-faq__answer-inner {
+    overflow: visible;
+  }
+}

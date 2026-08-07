@@ -1,0 +1,136 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 128 96"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">CDLWAY commercial truck logo</title>
+  <desc id="desc">Black commercial truck icon with yellow accent and transparent background.</desc>
+
+  <path
+    d="M14 16
+       C14 13 16 11 19 11
+       H69
+       C72 11 74 13 74 16
+       V58
+       H14
+       Z"
+    fill="#000000"
+  />
+
+  <path
+    d="M38 11
+       H53
+       V31
+       C53 33 51.5 34.5 49.5 34.5
+       H41.5
+       C39.5 34.5 38 33 38 31
+       Z"
+    fill="#FFFFFF"
+  />
+
+  <rect
+    x="41.5"
+    y="11"
+    width="8.5"
+    height="17"
+    fill="#000000"
+  />
+
+  <rect
+    x="14"
+    y="61"
+    width="60"
+    height="13"
+    fill="#000000"
+  />
+
+  <path
+    d="M79 24
+       H102
+       C105 24 107.2 25.2 108.5 28
+       L113.5 39
+       C114.5 41 115 42.5 115 44.5
+       V69
+       C115 72 112.8 74 110 74
+       H99
+       C98.6 66 92.2 59.8 84 59.8
+       C75.8 59.8 69.4 66 69 74
+       H74
+       V24
+       Z"
+    fill="#000000"
+  />
+
+  <path
+    d="M84 30
+       H98
+       C99.2 30 100.2 30.8 100.6 31.9
+       L104.4 40.8
+       C105 42.2 104 43.8 102.5 43.8
+       H84
+       C82.3 43.8 81 42.5 81 40.8
+       V33
+       C81 31.3 82.3 30 84 30
+       Z"
+    fill="#FFFFFF"
+  />
+
+  <rect
+    x="14"
+    y="58"
+    width="60"
+    height="3"
+    fill="#E59E1F"
+  />
+
+  <rect
+    x="79"
+    y="24"
+    width="20"
+    height="3"
+    fill="#E59E1F"
+  />
+
+  <circle
+    cx="38"
+    cy="74"
+    r="12"
+    fill="#000000"
+  />
+
+  <circle
+    cx="38"
+    cy="74"
+    r="6"
+    fill="#FFFFFF"
+  />
+
+  <circle
+    cx="38"
+    cy="74"
+    r="2.4"
+    fill="#E59E1F"
+  />
+
+  <circle
+    cx="88"
+    cy="74"
+    r="12"
+    fill="#000000"
+  />
+
+  <circle
+    cx="88"
+    cy="74"
+    r="6"
+    fill="#FFFFFF"
+  />
+
+  <circle
+    cx="88"
+    cy="74"
+    r="2.4"
+    fill="#E59E1F"
+  />
+</svg>
