@@ -2824,13 +2824,97 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 .service-curriculum__details > p:first-child {
+  margin: 0;
   color: var(--color-muted);
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 0.95rem;
+  line-height: 1.62;
+}
+
+.service-curriculum__details {
+  padding: clamp(1.15rem, 2vw, 1.6rem);
+  border: 1px solid rgba(17, 17, 19, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.64)),
+    var(--color-surface);
+  box-shadow: 0 16px 38px rgba(17, 17, 19, 0.08);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.service-curriculum__details:hover {
+  border-color: rgba(229, 158, 31, 0.5);
+  box-shadow: 0 22px 44px rgba(17, 17, 19, 0.12);
+  transform: translateY(-4px);
 }
 
 .service-curriculum__list {
-  margin-block: 2rem;
+  gap: 0.55rem;
+  margin-block: 1.15rem;
+}
+
+.service-curriculum__list .cdl-list__item {
+  min-height: 0;
+  padding: 0.58rem 0.75rem 0.58rem 2.15rem;
+  border: 1px solid rgba(17, 17, 19, 0.08);
+  background-color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.service-curriculum__list .cdl-list__item::before {
+  top: 50%;
+  left: 0.72rem;
+  width: 0.78rem;
+  height: 2px;
+  transform: translateY(-50%);
+  transition:
+    background-color var(--transition-fast),
+    width var(--transition-fast);
+}
+
+.service-curriculum__list .cdl-list__item:hover {
+  border-color: rgba(229, 158, 31, 0.58);
+  background-color: rgba(229, 158, 31, 0.12);
+  color: var(--color-dark);
+  transform: translateX(4px);
+}
+
+.service-curriculum__list .cdl-list__item:hover::before {
+  width: 1rem;
+  background-color: var(--color-accent-hover);
+}
+
+.service-curriculum__details .cdl-disclaimer {
+  margin-top: 0;
+  padding: 0.75rem 0.85rem;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 767px) {
+  .service-curriculum__list .cdl-list__item:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-curriculum__details,
+  .service-curriculum__list .cdl-list__item {
+    transition: none;
+  }
+
+  .service-curriculum__details:hover,
+  .service-curriculum__list .cdl-list__item:hover {
+    transform: none;
+  }
 }
 
 /* ==========================================================================
