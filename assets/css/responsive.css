@@ -316,6 +316,28 @@
     line-height: 1.68;
   }
 
+  .home-story__intro-copy,
+  .cdl-program-card__footer-label,
+  .home-program-content__details,
+  .service-overview__sidebar,
+  .service-overview__quick-facts,
+  .service-dark-feature__cards,
+  .service-curriculum__list,
+  .home-comparison,
+  .home-why__visual-note {
+    display: none;
+  }
+
+  .home-why__visual {
+    z-index: 0;
+  }
+
+  .home-why__content,
+  .home-why .cdl-section__title {
+    position: relative;
+    z-index: 2;
+  }
+
   .cdl-grid--two,
   .cdl-grid--three,
   .cdl-grid--four,
