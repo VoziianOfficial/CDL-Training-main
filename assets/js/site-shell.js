@@ -782,12 +782,6 @@
         aria-label="Back to top"
         data-back-to-top
       >
-        <span
-          class="cdl-back-to-top__label"
-          aria-hidden="true"
-        >
-          Back to top
-        </span>
         ${icons.up}
       </button>
     `;
