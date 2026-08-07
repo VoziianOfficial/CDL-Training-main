@@ -72,6 +72,86 @@
     ).length;
   };
 
+  const getSwiperWrapper = (container) => {
+    if (!container) {
+      return null;
+    }
+
+    return container.querySelector(
+      ":scope > .swiper-wrapper"
+    );
+  };
+
+  const removeDuplicateIds = (root) => {
+    if (!(root instanceof HTMLElement)) {
+      return;
+    }
+
+    if (root.hasAttribute("id")) {
+      root.removeAttribute("id");
+    }
+
+    root.querySelectorAll("[id]").forEach(
+      (element) => {
+        element.removeAttribute("id");
+      }
+    );
+  };
+
+  const prepareLoopSlides = (
+    container,
+    minimumSlideCount
+  ) => {
+    const wrapper = getSwiperWrapper(container);
+
+    if (!wrapper) {
+      return getSlideCount(container);
+    }
+
+    const originalSlides = Array.from(
+      wrapper.querySelectorAll(
+        ':scope > .swiper-slide:not([data-cdl-loop-copy="true"])'
+      )
+    );
+
+    const originalCount = originalSlides.length;
+
+    if (originalCount <= 1) {
+      return originalCount;
+    }
+
+    container.dataset.cdlOriginalSlideCount =
+      String(originalCount);
+
+    let currentCount =
+      wrapper.querySelectorAll(
+        ":scope > .swiper-slide"
+      ).length;
+
+    let cloneIndex = 0;
+
+    while (currentCount < minimumSlideCount) {
+      const source =
+        originalSlides[
+          cloneIndex % originalCount
+        ];
+
+      const clone = source.cloneNode(true);
+
+      clone.dataset.cdlLoopCopy = "true";
+      clone.dataset.swiperSlideIndex = String(
+        cloneIndex % originalCount
+      );
+      removeDuplicateIds(clone);
+      wrapper.append(clone);
+
+      currentCount += 1;
+      cloneIndex += 1;
+    }
+
+    return originalCount;
+  };
+
   const storeOriginalTabIndex = (element) => {
     if (!(element instanceof HTMLElement)) {
       return;
@@ -163,7 +243,9 @@
         const displayedIndex = Number.isFinite(
           originalIndex
         )
-          ? originalIndex
+          ? totalSlides > 0
+            ? originalIndex % totalSlides
+            : originalIndex
           : index;
 
         slide.setAttribute("role", "group");
@@ -211,7 +293,24 @@
           return;
         }
 
-        if (index === swiper.realIndex) {
+        const totalSlides = Number(
+          swiper.el?.dataset
+            ?.cdlOriginalSlideCount || 0
+        );
+
+        const activeIndex =
+          totalSlides > 0
+            ? swiper.realIndex % totalSlides
+            : swiper.realIndex;
+
+        if (index >= totalSlides && totalSlides > 0) {
+          bullet.hidden = true;
+          return;
+        }
+
+        bullet.hidden = false;
+
+        if (index === activeIndex) {
           bullet.setAttribute(
             "aria-current",
             "true"
@@ -285,7 +384,7 @@
     }
 
     const slideCount =
-      getSlideCount(container);
+      prepareLoopSlides(container, 4);
 
     const previousButton =
       document.querySelector(
@@ -470,7 +569,7 @@
     }
 
     const slideCount =
-      getSlideCount(container);
+      prepareLoopSlides(container, 8);
 
     const swiper = new window.Swiper(
       container,

@@ -205,6 +205,86 @@
     ).length;
   };
 
+  const getSwiperWrapper = (container) => {
+    if (!container) {
+      return null;
+    }
+
+    return container.querySelector(
+      ":scope > .swiper-wrapper"
+    );
+  };
+
+  const removeDuplicateIds = (root) => {
+    if (!isHTMLElement(root)) {
+      return;
+    }
+
+    if (root.hasAttribute("id")) {
+      root.removeAttribute("id");
+    }
+
+    root.querySelectorAll("[id]").forEach(
+      (element) => {
+        element.removeAttribute("id");
+      }
+    );
+  };
+
+  const prepareLoopSlides = (
+    container,
+    minimumSlideCount
+  ) => {
+    const wrapper = getSwiperWrapper(container);
+
+    if (!wrapper) {
+      return getSlideCount(container);
+    }
+
+    const originalSlides = Array.from(
+      wrapper.querySelectorAll(
+        ':scope > .swiper-slide:not([data-cdl-loop-copy="true"])'
+      )
+    );
+
+    const originalCount = originalSlides.length;
+
+    if (originalCount <= 1) {
+      return originalCount;
+    }
+
+    container.dataset.cdlOriginalSlideCount =
+      String(originalCount);
+
+    let currentCount =
+      wrapper.querySelectorAll(
+        ":scope > .swiper-slide"
+      ).length;
+
+    let cloneIndex = 0;
+
+    while (currentCount < minimumSlideCount) {
+      const source =
+        originalSlides[
+          cloneIndex % originalCount
+        ];
+
+      const clone = source.cloneNode(true);
+
+      clone.dataset.cdlLoopCopy = "true";
+      clone.dataset.swiperSlideIndex = String(
+        cloneIndex % originalCount
+      );
+      removeDuplicateIds(clone);
+      wrapper.append(clone);
+
+      currentCount += 1;
+      cloneIndex += 1;
+    }
+
+    return originalCount;
+  };
+
   const canUseLoop = (
     slideCount,
     maxSlidesPerView = 1,
@@ -309,7 +389,9 @@
         const displayedIndex = Number.isFinite(
           originalIndex
         )
-          ? originalIndex
+          ? totalSlides > 0
+            ? originalIndex % totalSlides
+            : originalIndex
           : index;
 
         slide.setAttribute("role", "group");
@@ -357,7 +439,24 @@
           return;
         }
 
-        if (index === swiper.realIndex) {
+        const totalSlides = Number(
+          swiper.el?.dataset
+            ?.cdlOriginalSlideCount || 0
+        );
+
+        const activeIndex =
+          totalSlides > 0
+            ? swiper.realIndex % totalSlides
+            : swiper.realIndex;
+
+        if (index >= totalSlides && totalSlides > 0) {
+          bullet.hidden = true;
+          return;
+        }
+
+        bullet.hidden = false;
+
+        if (index === activeIndex) {
           bullet.setAttribute(
             "aria-current",
             "true"
@@ -370,6 +469,60 @@
       });
   };
 
+  const synchronizeBulletPagination = (swiper) => {
+    const totalSlides = Number(
+      swiper?.el?.dataset
+        ?.cdlOriginalSlideCount || 0
+    );
+
+    if (!swiper?.pagination || totalSlides <= 0) {
+      return;
+    }
+
+    const paginationElements = Array.isArray(
+      swiper.pagination.el
+    )
+      ? swiper.pagination.el
+      : [swiper.pagination.el];
+
+    const activeIndex =
+      swiper.realIndex % totalSlides;
+
+    paginationElements.forEach((pagination) => {
+      if (!pagination) {
+        return;
+      }
+
+      pagination
+        .querySelectorAll(
+          ".swiper-pagination-bullet"
+        )
+        .forEach((bullet, index) => {
+          if (!isHTMLElement(bullet)) {
+            return;
+          }
+
+          if (index >= totalSlides) {
+            bullet.hidden = true;
+            return;
+          }
+
+          bullet.hidden = false;
+
+          if (index === activeIndex) {
+            bullet.setAttribute(
+              "aria-current",
+              "true"
+            );
+          } else {
+            bullet.removeAttribute(
+              "aria-current"
+            );
+          }
+        });
+    });
+  };
+
   const synchronizeSwiper = (
     swiper,
     options = {}
@@ -379,6 +532,8 @@
         swiper,
         options
       );
+
+      synchronizeBulletPagination(swiper);
 
       if (options.hero === true) {
         synchronizeHeroPagination(swiper);
@@ -476,7 +631,7 @@
     }
 
     const slideCount =
-      getSlideCount(container);
+      prepareLoopSlides(container, 4);
 
     const previousButton =
       document.querySelector(
@@ -661,7 +816,7 @@
     }
 
     const slideCount =
-      getSlideCount(container);
+      prepareLoopSlides(container, 8);
 
     const swiper = new window.Swiper(
       container,
@@ -772,7 +927,7 @@
     }
 
     const slideCount =
-      getSlideCount(container);
+      prepareLoopSlides(container, 4);
 
     const swiper = new window.Swiper(
       container,
@@ -883,7 +1038,7 @@
     }
 
     const slideCount =
-      getSlideCount(container);
+      prepareLoopSlides(container, 4);
 
     const swiper = new window.Swiper(
       container,
