@@ -635,7 +635,8 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-paths__swiper {
-  overflow: visible;
+  overflow: hidden;
+  width: 100%;
 }
 
 .home-paths__swiper .swiper-slide {

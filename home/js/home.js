@@ -478,7 +478,7 @@
     const swiper = new window.Swiper(
       container,
       {
-        slidesPerView: 1.05,
+        slidesPerView: 1,
         spaceBetween: 14,
         speed: prefersReducedMotion()
           ? 1
@@ -513,11 +513,11 @@
         },
         breakpoints: {
           600: {
-            slidesPerView: 1.5,
+            slidesPerView: 1,
             spaceBetween: 16
           },
           768: {
-            slidesPerView: 1.75,
+            slidesPerView: 2,
             spaceBetween: 18
           },
           1100: {
