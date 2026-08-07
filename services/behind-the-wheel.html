@@ -1279,9 +1279,12 @@
         class="cdl-section cdl-section--surface service-comparison"
         aria-labelledby="yard-road-comparison-title"
       >
-        <div class="cdl-container service-comparison__layout">
-          <div class="service-comparison__intro">
-            <div data-aos="fade-up">
+        <div class="cdl-container">
+          <div class="cdl-section__header">
+            <div
+              class="cdl-section__heading-group"
+              data-aos="fade-up"
+            >
               <p class="cdl-section__eyebrow">
                 Practice Comparison
               </p>
@@ -1300,163 +1303,222 @@
               </p>
             </div>
 
-            <div class="service-comparison__marker">
-              <span>Y</span>
-              <span>TO</span>
-              <span>R</span>
-            </div>
+            <div class="cdl-slider-controls">
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show previous comparison slide"
+                data-service-comparison-previous
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 12H5"></path>
+                  <path d="m11 6-6 6 6 6"></path>
+                </svg>
+              </button>
 
-            <p class="cdl-disclaimer">
-              The order, duration, exercises, and readiness criteria for yard
-              and road practice vary by provider, program, vehicle, and
-              jurisdiction.
-            </p>
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show next comparison slide"
+                data-service-comparison-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m13 6 6 6-6 6"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
           <div
-            class="service-comparison__table"
-            data-aos="fade-left"
+            class="service-comparison__shell"
+            data-aos="fade-up"
           >
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Comparison
-              </div>
+            <div
+              class="service-comparison__swiper swiper"
+              data-service-comparison-swiper
+              aria-label="Yard practice and road practice comparison"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-5.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 01 / 02
+                        </p>
 
-              <div class="service-comparison__cell service-comparison__cell--heading is-highlighted">
-                Yard Practice
-              </div>
+                        <h3 class="service-comparison__heading">
+                          Yard <em>Practice</em>
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Road Practice
-              </div>
-            </div>
+                      <div class="service-comparison__panel-foot">
+                        <span>Controlled space, precision, and repetition</span>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Environment
-              </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="../contact/#request-info"
+                          data-service-request-link
+                        >
+                          <span class="cdl-btn__label">
+                            Ask About Yard Practice
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Controlled Training Space</strong>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-17.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Yard Practice at a Glance
+                      </p>
 
-                <p>
-                  Exercises can be repeated with defined boundaries, markers,
-                  and lower-speed movement
-                </p>
-              </div>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Environment</strong>
+                          <span>
+                            Controlled training space — exercises can be
+                            repeated with defined boundaries, markers, and
+                            lower-speed movement
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell">
-                <strong>Dynamic Traffic Environment</strong>
+                        <li>
+                          <strong>Primary Focus</strong>
+                          <span>
+                            Precision and positioning — setup, backing,
+                            stopping, steering corrections, mirror use, and
+                            vehicle placement
+                          </span>
+                        </li>
 
-                <p>
-                  Conditions change based on traffic, intersections, road
-                  design, speed, and other road users
-                </p>
-              </div>
-            </div>
+                        <li>
+                          <strong>Feedback</strong>
+                          <span>
+                            Movement-based feedback — setup, reference points,
+                            correction timing, stopping, and final vehicle
+                            position
+                          </span>
+                        </li>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Primary Focus
-              </div>
+                        <li>
+                          <strong>Progression</strong>
+                          <span>
+                            Repeat before adding complexity — build stable
+                            control habits before moving to more demanding
+                            exercises or road conditions
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Precision and Positioning</strong>
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-12.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 02 / 02
+                        </p>
 
-                <p>
-                  Setup, backing, stopping, steering corrections, mirror use,
-                  and vehicle placement
-                </p>
-              </div>
+                        <h3 class="service-comparison__heading">
+                          Road <em>Practice</em>
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell">
-                <strong>Observation and Decision-Making</strong>
+                      <div class="service-comparison__panel-foot">
+                        <span>Traffic, observation, and decision-making</span>
 
-                <p>
-                  Scanning, lane control, speed selection, spacing, braking,
-                  communication, and hazard response
-                </p>
-              </div>
-            </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="../contact/#request-info"
+                          data-service-request-link
+                        >
+                          <span class="cdl-btn__label">
+                            Ask About Road Practice
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Feedback
-              </div>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-7.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Road Practice at a Glance
+                      </p>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Movement-Based Feedback</strong>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Environment</strong>
+                          <span>
+                            Dynamic traffic environment — conditions change
+                            based on traffic, intersections, road design,
+                            speed, and other road users
+                          </span>
+                        </li>
 
-                <p>
-                  Focus on setup, reference points, correction timing, stopping,
-                  and final vehicle position
-                </p>
-              </div>
+                        <li>
+                          <strong>Primary Focus</strong>
+                          <span>
+                            Observation and decision-making — scanning, lane
+                            control, speed selection, spacing, braking, and
+                            hazard response
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell">
-                <strong>Decision-Based Feedback</strong>
+                        <li>
+                          <strong>Feedback</strong>
+                          <span>
+                            Decision-based feedback — observation, planning,
+                            speed, spacing, lane use, braking, and traffic
+                            response
+                          </span>
+                        </li>
 
-                <p>
-                  Focus on observation, planning, speed, spacing, lane use,
-                  braking, and traffic response
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Progression
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Repeat Before Adding Complexity</strong>
-
-                <p>
-                  Build stable control habits before moving to more demanding
-                  exercises or road conditions
-                </p>
-              </div>
-
-              <div class="service-comparison__cell">
-                <strong>Expand Route Complexity Gradually</strong>
-
-                <p>
-                  Add intersections, lane changes, turns, traffic, and route
-                  decisions as readiness develops
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Next Step
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="../contact/#request-info"
-                  data-service-request-link
-                >
-                  <span class="cdl-btn__label">
-                    Ask About Yard Practice
-                  </span>
-                </a>
-              </div>
-
-              <div class="service-comparison__cell">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="../contact/#request-info"
-                  data-service-request-link
-                >
-                  <span class="cdl-btn__label">
-                    Ask About Road Practice
-                  </span>
-                </a>
+                        <li>
+                          <strong>Progression</strong>
+                          <span>
+                            Expand route complexity gradually — add
+                            intersections, lane changes, turns, traffic, and
+                            route decisions as readiness develops
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="service-comparison__footer">
+            <div
+              class="cdl-slider-dots"
+              data-service-comparison-pagination
+            ></div>
+          </div>
+
+          <p class="cdl-disclaimer">
+            The order, duration, exercises, and readiness criteria for yard
+            and road practice vary by provider, program, vehicle, and
+            jurisdiction.
+          </p>
         </div>
       </section>
 

@@ -1417,9 +1417,12 @@
         class="cdl-section cdl-section--surface service-comparison"
         aria-labelledby="class-a-comparison-title"
       >
-        <div class="cdl-container service-comparison__layout">
-          <div class="service-comparison__intro">
-            <div data-aos="fade-up">
+        <div class="cdl-container">
+          <div class="cdl-section__header">
+            <div
+              class="cdl-section__heading-group"
+              data-aos="fade-up"
+            >
               <p class="cdl-section__eyebrow">
                 Program Comparison
               </p>
@@ -1437,154 +1440,212 @@
               </p>
             </div>
 
-            <div class="service-comparison__marker">
-              <span>A</span>
-              <span>VS</span>
-              <span>B</span>
-            </div>
+            <div class="cdl-slider-controls">
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show previous comparison slide"
+                data-service-comparison-previous
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 12H5"></path>
+                  <path d="m11 6-6 6 6 6"></path>
+                </svg>
+              </button>
 
-            <p class="cdl-disclaimer">
-              Requirements, vehicle classifications, endorsements, and testing
-              procedures may vary by state and provider.
-            </p>
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show next comparison slide"
+                data-service-comparison-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m13 6 6 6-6 6"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
           <div
-            class="service-comparison__table"
-            data-aos="fade-left"
+            class="service-comparison__shell"
+            data-aos="fade-up"
           >
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Comparison
-              </div>
+            <div
+              class="service-comparison__swiper swiper"
+              data-service-comparison-swiper
+              aria-label="Class A and Class B comparison"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-1.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 01 / 02
+                        </p>
 
-              <div class="service-comparison__cell service-comparison__cell--heading is-highlighted">
-                Class A
-              </div>
+                        <h3 class="service-comparison__heading">
+                          Class <em>A</em>
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Class B
-              </div>
-            </div>
+                      <div class="service-comparison__panel-foot">
+                        <span>Combination vehicles &amp; freight routes</span>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Vehicle Direction
-              </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="../contact/#request-info"
+                          data-service-request-link
+                        >
+                          <span class="cdl-btn__label">
+                            Request Class A Info
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Combination Vehicles</strong>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-14.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Class A at a Glance
+                      </p>
 
-                <p>
-                  Applicable tractor-trailers and other vehicle combinations
-                </p>
-              </div>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Vehicle Direction</strong>
+                          <span>
+                            Combination vehicles — applicable tractor-trailers
+                            and other vehicle combinations
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell">
-                <strong>Single Commercial Vehicles</strong>
+                        <li>
+                          <strong>Inspection Focus</strong>
+                          <span>
+                            Tractor, trailer, and coupling — the complete
+                            combination and connection points
+                          </span>
+                        </li>
 
-                <p>
-                  Applicable straight trucks, buses, and similar vehicles
-                </p>
-              </div>
-            </div>
+                        <li>
+                          <strong>Practical Focus</strong>
+                          <span>
+                            Backing, articulation, trailer tracking, and
+                            combination positioning
+                          </span>
+                        </li>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Inspection Focus
-              </div>
+                        <li>
+                          <strong>Career Direction</strong>
+                          <span>
+                            Freight and logistics — regional, long-distance,
+                            and local roles
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Tractor, Trailer, and Coupling</strong>
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-9.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 02 / 02
+                        </p>
 
-                <p>
-                  Inspection of the complete combination and connection points
-                </p>
-              </div>
+                        <h3 class="service-comparison__heading">
+                          Class <em>B</em>
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell">
-                <strong>Single Vehicle Systems</strong>
+                      <div class="service-comparison__panel-foot">
+                        <span>Single commercial vehicles &amp; local routes</span>
 
-                <p>
-                  Inspection of the applicable straight truck or bus
-                </p>
-              </div>
-            </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="cdl-class-b.html"
+                        >
+                          <span class="cdl-btn__label">
+                            Explore Class B
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Practical Focus
-              </div>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-6.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Class B at a Glance
+                      </p>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Trailer Movement</strong>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Vehicle Direction</strong>
+                          <span>
+                            Single commercial vehicles — applicable straight
+                            trucks, buses, and similar vehicles
+                          </span>
+                        </li>
 
-                <p>
-                  Backing, articulation, trailer tracking, and combination
-                  positioning
-                </p>
-              </div>
+                        <li>
+                          <strong>Inspection Focus</strong>
+                          <span>
+                            Single vehicle systems — inspection of the
+                            applicable straight truck or bus
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell">
-                <strong>Single Vehicle Control</strong>
+                        <li>
+                          <strong>Practical Focus</strong>
+                          <span>
+                            Vehicle positioning, control skills, turns, and
+                            road habits
+                          </span>
+                        </li>
 
-                <p>
-                  Vehicle positioning, control skills, turns, and road habits
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Career Direction
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Freight and Logistics</strong>
-
-                <p>
-                  Regional, long-distance, local freight, and related roles
-                </p>
-              </div>
-
-              <div class="service-comparison__cell">
-                <strong>Local and Specialized Routes</strong>
-
-                <p>
-                  Delivery, transit, service, municipal, and related roles
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Next Step
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="../contact/#request-info"
-                  data-service-request-link
-                >
-                  <span class="cdl-btn__label">
-                    Request Class A Info
-                  </span>
-                </a>
-              </div>
-
-              <div class="service-comparison__cell">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="cdl-class-b.html"
-                >
-                  <span class="cdl-btn__label">
-                    Explore Class B
-                  </span>
-                </a>
+                        <li>
+                          <strong>Career Direction</strong>
+                          <span>
+                            Local and specialized routes — delivery, transit,
+                            service, and municipal roles
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="service-comparison__footer">
+            <div
+              class="cdl-slider-dots"
+              data-service-comparison-pagination
+            ></div>
+          </div>
+
+          <p class="cdl-disclaimer">
+            Requirements, vehicle classifications, endorsements, and testing
+            procedures may vary by state and provider.
+          </p>
         </div>
       </section>
 

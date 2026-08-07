@@ -1297,9 +1297,12 @@
         id="sponsorship-comparison"
         aria-labelledby="sponsorship-comparison-title"
       >
-        <div class="cdl-container service-comparison__layout">
-          <div class="service-comparison__intro">
-            <div data-aos="fade-up">
+        <div class="cdl-container">
+          <div class="cdl-section__header">
+            <div
+              class="cdl-section__heading-group"
+              data-aos="fade-up"
+            >
               <p class="cdl-section__eyebrow">
                 Training Route Comparison
               </p>
@@ -1318,162 +1321,221 @@
               </p>
             </div>
 
-            <div class="service-comparison__marker">
-              <span>I</span>
-              <span>VS</span>
-              <span>S</span>
-            </div>
+            <div class="cdl-slider-controls">
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show previous comparison slide"
+                data-service-comparison-previous
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 12H5"></path>
+                  <path d="m11 6-6 6 6 6"></path>
+                </svg>
+              </button>
 
-            <p class="cdl-disclaimer">
-              Actual tuition, aid, sponsorship, compensation, employment,
-              repayment, and contract terms must be confirmed in current
-              provider and employer documents.
-            </p>
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show next comparison slide"
+                data-service-comparison-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m13 6 6 6-6 6"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
           <div
-            class="service-comparison__table"
-            data-aos="fade-left"
+            class="service-comparison__shell"
+            data-aos="fade-up"
           >
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Comparison
-              </div>
+            <div
+              class="service-comparison__swiper swiper"
+              data-service-comparison-swiper
+              aria-label="Independent training and employer-sponsored training comparison"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-11.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 01 / 02
+                        </p>
 
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Independent Training
-              </div>
+                        <h3 class="service-comparison__heading">
+                          <em>Independent</em> Training
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell service-comparison__cell--heading is-highlighted">
-                Employer-Sponsored
-              </div>
-            </div>
+                      <div class="service-comparison__panel-foot">
+                        <span>Self-directed, with a broader post-training search</span>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Training Cost
-              </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="financial-aid.html"
+                        >
+                          <span class="cdl-btn__label">
+                            Explore Financial Aid
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-              <div class="service-comparison__cell">
-                <strong>Student Payment or Separate Aid</strong>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-17.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Independent Training at a Glance
+                      </p>
 
-                <p>
-                  The applicant may pay directly or arrange independent
-                  financial assistance
-                </p>
-              </div>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Training Cost</strong>
+                          <span>
+                            Student payment or separate aid — the applicant
+                            may pay directly or arrange independent financial
+                            assistance
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Employer-Supported Cost</strong>
+                        <li>
+                          <strong>Employer Choice</strong>
+                          <span>
+                            Broader post-training search — the graduate may
+                            research multiple employers after completing
+                            training
+                          </span>
+                        </li>
 
-                <p>
-                  The employer may cover stated costs subject to eligibility
-                  and written conditions
-                </p>
-              </div>
-            </div>
+                        <li>
+                          <strong>Eligibility</strong>
+                          <span>
+                            Provider requirements — admission, payment,
+                            permit, documentation, and program requirements
+                            apply
+                          </span>
+                        </li>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Employer Choice
-              </div>
+                        <li>
+                          <strong>Commitment</strong>
+                          <span>
+                            No employer service agreement — financial aid,
+                            loans, or payment plans may still contain separate
+                            obligations
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
 
-              <div class="service-comparison__cell">
-                <strong>Broader Post-Training Search</strong>
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-6.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 02 / 02
+                        </p>
 
-                <p>
-                  The graduate may research multiple employers after completing
-                  training
-                </p>
-              </div>
+                        <h3 class="service-comparison__heading">
+                          Employer-<em>Sponsored</em>
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Connected Employer Path</strong>
+                      <div class="service-comparison__panel-foot">
+                        <span>Employer-supported cost, with a connected work path</span>
 
-                <p>
-                  Training is commonly linked to a specific employer, affiliate,
-                  terminal, or work commitment
-                </p>
-              </div>
-            </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="../contact/#request-info"
+                          data-service-request-link
+                        >
+                          <span class="cdl-btn__label">
+                            Request Sponsorship Info
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Eligibility
-              </div>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-3.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Employer-Sponsored at a Glance
+                      </p>
 
-              <div class="service-comparison__cell">
-                <strong>Provider Requirements</strong>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Training Cost</strong>
+                          <span>
+                            Employer-supported cost — the employer may cover
+                            stated costs subject to eligibility and written
+                            conditions
+                          </span>
+                        </li>
 
-                <p>
-                  Admission, payment, permit, documentation, and program
-                  requirements apply
-                </p>
-              </div>
+                        <li>
+                          <strong>Employer Choice</strong>
+                          <span>
+                            Connected employer path — training is commonly
+                            linked to a specific employer, affiliate,
+                            terminal, or work commitment
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Provider and Employer Requirements</strong>
+                        <li>
+                          <strong>Eligibility</strong>
+                          <span>
+                            Provider and employer requirements — additional
+                            driving, medical, background, location, schedule,
+                            or work standards may apply
+                          </span>
+                        </li>
 
-                <p>
-                  Additional driving, medical, background, location, schedule,
-                  or work standards may apply
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Commitment
-              </div>
-
-              <div class="service-comparison__cell">
-                <strong>No Employer Service Agreement</strong>
-
-                <p>
-                  Financial aid, loans, or payment plans may still contain
-                  separate obligations
-                </p>
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Possible Work and Repayment Agreement</strong>
-
-                <p>
-                  Minimum service, location, repayment, or early-exit terms may
-                  apply
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Next Step
-              </div>
-
-              <div class="service-comparison__cell">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="financial-aid.html"
-                >
-                  <span class="cdl-btn__label">
-                    Explore Financial Aid
-                  </span>
-                </a>
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="../contact/#request-info"
-                  data-service-request-link
-                >
-                  <span class="cdl-btn__label">
-                    Request Sponsorship Info
-                  </span>
-                </a>
+                        <li>
+                          <strong>Commitment</strong>
+                          <span>
+                            Possible work and repayment agreement — minimum
+                            service, location, repayment, or early-exit terms
+                            may apply
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="service-comparison__footer">
+            <div
+              class="cdl-slider-dots"
+              data-service-comparison-pagination
+            ></div>
+          </div>
+
+          <p class="cdl-disclaimer">
+            Actual tuition, aid, sponsorship, compensation, employment,
+            repayment, and contract terms must be confirmed in current
+            provider and employer documents.
+          </p>
         </div>
       </section>
 
@@ -2179,7 +2241,7 @@
                 class="cdl-section__title"
                 id="sponsorship-faq-title"
               >
-                Sponsorship Questions
+                Frequently Asked Questions
               </h2>
 
               <p class="cdl-section__description">

@@ -93,6 +93,7 @@
     programSwiper: null,
     serviceSkillsSwipers: [],
     testimonialSwiper: null,
+    comparisonSwiper: null,
     sliders: new Map(),
     routeFrame: null,
     routeMap: null,
@@ -865,6 +866,116 @@
     );
   };
 
+  const initializeComparisonSwiper = () => {
+    const container = document.querySelector(
+      "[data-service-comparison-swiper]"
+    );
+
+    if (
+      !container ||
+      typeof window.Swiper !== "function"
+    ) {
+      return null;
+    }
+
+    const slideCount =
+      getSlideCount(container);
+
+    const swiper = new window.Swiper(
+      container,
+      {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: prefersReducedMotion()
+          ? 1
+          : 780,
+        loop: canUseLoop(slideCount),
+        grabCursor: true,
+        watchSlidesProgress: true,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+          pageUpDown: false
+        },
+        navigation: {
+          prevEl:
+            "[data-service-comparison-previous]",
+          nextEl:
+            "[data-service-comparison-next]"
+        },
+        pagination: {
+          el:
+            "[data-service-comparison-pagination]",
+          clickable: true
+        },
+        a11y: {
+          enabled: true,
+          containerMessage:
+            "Program comparison",
+          containerRoleDescriptionMessage:
+            "carousel",
+          itemRoleDescriptionMessage:
+            "comparison slide",
+          prevSlideMessage:
+            "Show previous comparison slide",
+          nextSlideMessage:
+            "Show next comparison slide"
+        },
+        on: {
+          init(instance) {
+            container.dataset.swiperReady =
+              "true";
+
+            synchronizeSwiper(
+              instance,
+              {
+                mode: "active",
+                totalSlides: slideCount
+              }
+            );
+          },
+
+          slideChangeTransitionStart(instance) {
+            synchronizeSwiper(
+              instance,
+              {
+                mode: "active",
+                totalSlides: slideCount
+              }
+            );
+          },
+
+          slideChangeTransitionEnd(instance) {
+            synchronizeSwiper(
+              instance,
+              {
+                mode: "active",
+                totalSlides: slideCount
+              }
+            );
+          },
+
+          resize(instance) {
+            synchronizeSwiper(
+              instance,
+              {
+                mode: "active",
+                totalSlides: slideCount
+              }
+            );
+          }
+        }
+      }
+    );
+
+    state.comparisonSwiper = swiper;
+
+    return registerSlider(
+      "serviceComparison",
+      swiper
+    );
+  };
+
   const formatSlideNumber = (value) => {
     return String(value).padStart(2, "0");
   };
@@ -1231,6 +1342,7 @@
     initializeProgramsSwiper();
     initializeSkillsSwipers();
     initializeTestimonialsSwiper();
+    initializeComparisonSwiper();
     refreshAOS();
   };
 

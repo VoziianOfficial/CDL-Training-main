@@ -1286,9 +1286,12 @@
         id="payment-comparison"
         aria-labelledby="payment-comparison-title"
       >
-        <div class="cdl-container service-comparison__layout">
-          <div class="service-comparison__intro">
-            <div data-aos="fade-up">
+        <div class="cdl-container">
+          <div class="cdl-section__header">
+            <div
+              class="cdl-section__heading-group"
+              data-aos="fade-up"
+            >
               <p class="cdl-section__eyebrow">
                 Payment Comparison
               </p>
@@ -1306,163 +1309,220 @@
               </p>
             </div>
 
-            <div class="service-comparison__marker">
-              <span>P</span>
-              <span>VS</span>
-              <span>A</span>
-            </div>
+            <div class="cdl-slider-controls">
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show previous comparison slide"
+                data-service-comparison-previous
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 12H5"></path>
+                  <path d="m11 6-6 6 6 6"></path>
+                </svg>
+              </button>
 
-            <p class="cdl-disclaimer">
-              This comparison is general educational information. Actual terms,
-              fees, assistance, approval, repayment, and legal obligations must
-              be confirmed with the provider or funding organization.
-            </p>
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show next comparison slide"
+                data-service-comparison-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m13 6 6 6-6 6"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
           <div
-            class="service-comparison__table"
-            data-aos="fade-left"
+            class="service-comparison__shell"
+            data-aos="fade-up"
           >
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Comparison
-              </div>
+            <div
+              class="service-comparison__swiper swiper"
+              data-service-comparison-swiper
+              aria-label="Self-payment and assistance-based payment comparison"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-8.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 01 / 02
+                        </p>
 
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Self-Payment
-              </div>
+                        <h3 class="service-comparison__heading">
+                          Self-<em>Payment</em>
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell service-comparison__cell--heading is-highlighted">
-                Assistance-Based Route
-              </div>
-            </div>
+                      <div class="service-comparison__panel-foot">
+                        <span>Direct payment, on your own schedule</span>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Eligibility
-              </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="../contact/#request-info"
+                          data-service-request-link
+                        >
+                          <span class="cdl-btn__label">
+                            Ask About Payment Plans
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-              <div class="service-comparison__cell">
-                <strong>Provider Enrollment Requirements</strong>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-13.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Self-Payment at a Glance
+                      </p>
 
-                <p>
-                  The applicant still must satisfy program and payment
-                  requirements
-                </p>
-              </div>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Eligibility</strong>
+                          <span>
+                            Provider enrollment requirements — the applicant
+                            still must satisfy program and payment requirements
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Additional Qualification Rules</strong>
+                        <li>
+                          <strong>Payment Timing</strong>
+                          <span>
+                            Direct payment schedule — deposit, installments, or
+                            full payment may be required under provider terms
+                          </span>
+                        </li>
 
-                <p>
-                  Funding may require separate applicant, program, document, or
-                  timing criteria
-                </p>
-              </div>
-            </div>
+                        <li>
+                          <strong>Documents</strong>
+                          <span>
+                            Enrollment and payment records — provider
+                            documentation and payment authorization may still
+                            be required
+                          </span>
+                        </li>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Payment Timing
-              </div>
+                        <li>
+                          <strong>Conditions</strong>
+                          <span>
+                            Provider contract terms — cancellation, refund,
+                            missed-payment, and completion terms should be
+                            reviewed
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
 
-              <div class="service-comparison__cell">
-                <strong>Direct Payment Schedule</strong>
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-3.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 02 / 02
+                        </p>
 
-                <p>
-                  Deposit, installments, or full payment may be required under
-                  provider terms
-                </p>
-              </div>
+                        <h3 class="service-comparison__heading">
+                          Assistance-<em>Based</em>
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Approval and Funding Timeline</strong>
+                      <div class="service-comparison__panel-foot">
+                        <span>Funding support, additional qualification steps</span>
 
-                <p>
-                  Payment may depend on review, authorization, funding cycles,
-                  or additional processing
-                </p>
-              </div>
-            </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="../contact/#request-info"
+                          data-service-request-link
+                        >
+                          <span class="cdl-btn__label">
+                            Ask About Assistance
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Documents
-              </div>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-10.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Assistance-Based Route at a Glance
+                      </p>
 
-              <div class="service-comparison__cell">
-                <strong>Enrollment and Payment Records</strong>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Eligibility</strong>
+                          <span>
+                            Additional qualification rules — funding may
+                            require separate applicant, program, document, or
+                            timing criteria
+                          </span>
+                        </li>
 
-                <p>
-                  Provider documentation and payment authorization may still be
-                  required
-                </p>
-              </div>
+                        <li>
+                          <strong>Payment Timing</strong>
+                          <span>
+                            Approval and funding timeline — payment may depend
+                            on review, authorization, funding cycles, or
+                            additional processing
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Additional Eligibility Records</strong>
+                        <li>
+                          <strong>Documents</strong>
+                          <span>
+                            Additional eligibility records — assistance may
+                            require income, employment, residency, benefits,
+                            or other supporting information
+                          </span>
+                        </li>
 
-                <p>
-                  Assistance may require income, employment, residency,
-                  benefits, or other supporting information
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Conditions
-              </div>
-
-              <div class="service-comparison__cell">
-                <strong>Provider Contract Terms</strong>
-
-                <p>
-                  Cancellation, refund, missed-payment, and completion terms
-                  should be reviewed
-                </p>
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Provider and Funding Conditions</strong>
-
-                <p>
-                  Attendance, progress, completion, repayment, or employment
-                  obligations may apply
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Next Step
-              </div>
-
-              <div class="service-comparison__cell">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="../contact/#request-info"
-                  data-service-request-link
-                >
-                  <span class="cdl-btn__label">
-                    Ask About Payment Plans
-                  </span>
-                </a>
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="../contact/#request-info"
-                  data-service-request-link
-                >
-                  <span class="cdl-btn__label">
-                    Ask About Assistance
-                  </span>
-                </a>
+                        <li>
+                          <strong>Conditions</strong>
+                          <span>
+                            Provider and funding conditions — attendance,
+                            progress, completion, repayment, or employment
+                            obligations may apply
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="service-comparison__footer">
+            <div
+              class="cdl-slider-dots"
+              data-service-comparison-pagination
+            ></div>
+          </div>
+
+          <p class="cdl-disclaimer">
+            This comparison is general educational information. Actual terms,
+            fees, assistance, approval, repayment, and legal obligations must
+            be confirmed with the provider or funding organization.
+          </p>
         </div>
       </section>
 

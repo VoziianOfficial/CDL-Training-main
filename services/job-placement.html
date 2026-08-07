@@ -1286,9 +1286,12 @@
         id="job-placement-comparison"
         aria-labelledby="job-placement-comparison-title"
       >
-        <div class="cdl-container service-comparison__layout">
-          <div class="service-comparison__intro">
-            <div data-aos="fade-up">
+        <div class="cdl-container">
+          <div class="cdl-section__header">
+            <div
+              class="cdl-section__heading-group"
+              data-aos="fade-up"
+            >
               <p class="cdl-section__eyebrow">
                 Career Direction Comparison
               </p>
@@ -1307,163 +1310,222 @@
               </p>
             </div>
 
-            <div class="service-comparison__marker">
-              <span>L</span>
-              <span>VS</span>
-              <span>R</span>
-            </div>
+            <div class="cdl-slider-controls">
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show previous comparison slide"
+                data-service-comparison-previous
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 12H5"></path>
+                  <path d="m11 6-6 6 6 6"></path>
+                </svg>
+              </button>
 
-            <p class="cdl-disclaimer">
-              Actual job duties, compensation, schedules, qualifications, and
-              employment terms vary by employer, location, position, and market
-              conditions.
-            </p>
+              <button
+                class="cdl-slider-arrow"
+                type="button"
+                aria-label="Show next comparison slide"
+                data-service-comparison-next
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m13 6 6 6-6 6"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
           <div
-            class="service-comparison__table"
-            data-aos="fade-left"
+            class="service-comparison__shell"
+            data-aos="fade-up"
           >
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Comparison
-              </div>
+            <div
+              class="service-comparison__swiper swiper"
+              data-service-comparison-swiper
+              aria-label="Local and regional route comparison"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-4.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 01 / 02
+                        </p>
 
-              <div class="service-comparison__cell service-comparison__cell--heading is-highlighted">
-                Local Direction
-              </div>
+                        <h3 class="service-comparison__heading">
+                          Local <em>Direction</em>
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Regional or Longer-Distance
-              </div>
-            </div>
+                      <div class="service-comparison__panel-foot">
+                        <span>Defined local area, more regular return pattern</span>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Route Pattern
-              </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="../contact/#request-info"
+                          data-service-request-link
+                        >
+                          <span class="cdl-btn__label">
+                            Discuss Local Roles
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Defined Local Area</strong>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-2.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Local Direction at a Glance
+                      </p>
 
-                <p>
-                  Routes may include delivery, transit, service, distribution,
-                  municipal, or terminal-based work
-                </p>
-              </div>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Route Pattern</strong>
+                          <span>
+                            Defined local area — routes may include delivery,
+                            transit, service, distribution, municipal, or
+                            terminal-based work
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell">
-                <strong>Broader Geographic Coverage</strong>
+                        <li>
+                          <strong>Schedule</strong>
+                          <span>
+                            Potentially more regular return pattern — daily
+                            start and finish expectations still vary by
+                            employer, route, shift, and workload
+                          </span>
+                        </li>
 
-                <p>
-                  Routes may cross regions or states and involve longer driving
-                  periods or multiple stops
-                </p>
-              </div>
-            </div>
+                        <li>
+                          <strong>Equipment</strong>
+                          <span>
+                            Class A or Class B vehicles — straight trucks,
+                            buses, service vehicles, day cabs, trailers, or
+                            other local equipment
+                          </span>
+                        </li>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Schedule
-              </div>
+                        <li>
+                          <strong>Work Responsibilities</strong>
+                          <span>
+                            More stops or customer interaction — loading,
+                            unloading, route service, passenger, or delivery
+                            responsibilities
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Potentially More Regular Return Pattern</strong>
+                <div class="swiper-slide service-comparison__slide">
+                  <div
+                    class="service-comparison__panel service-comparison__panel--left"
+                    style="background-image: url('../images/card-15.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <div>
+                        <p class="service-comparison__index">
+                          Comparison — 02 / 02
+                        </p>
 
-                <p>
-                  Daily start and finish expectations still vary by employer,
-                  route, shift, and workload
-                </p>
-              </div>
+                        <h3 class="service-comparison__heading">
+                          Regional <em>Reach</em>
+                        </h3>
+                      </div>
 
-              <div class="service-comparison__cell">
-                <strong>Potential Time Away from Home</strong>
+                      <div class="service-comparison__panel-foot">
+                        <span>Broader coverage, potential time away from home</span>
 
-                <p>
-                  Trip length, overnight requirements, reset periods, and route
-                  schedules depend on the role
-                </p>
-              </div>
-            </div>
+                        <a
+                          class="cdl-btn cdl-btn--accent cdl-btn--small"
+                          href="../contact/#request-info"
+                          data-service-request-link
+                        >
+                          <span class="cdl-btn__label">
+                            Discuss Regional Roles
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Equipment
-              </div>
+                  <div
+                    class="service-comparison__panel service-comparison__panel--right"
+                    style="background-image: url('../images/card-1.jpg')"
+                  >
+                    <div class="service-comparison__panel-inner">
+                      <p class="service-comparison__index">
+                        Regional or Longer-Distance at a Glance
+                      </p>
 
-              <div class="service-comparison__cell is-highlighted">
-                <strong>Class A or Class B Vehicles</strong>
+                      <ul class="service-comparison__facts">
+                        <li>
+                          <strong>Route Pattern</strong>
+                          <span>
+                            Broader geographic coverage — routes may cross
+                            regions or states and involve longer driving
+                            periods or multiple stops
+                          </span>
+                        </li>
 
-                <p>
-                  Straight trucks, buses, service vehicles, day cabs, trailers,
-                  or other local equipment
-                </p>
-              </div>
+                        <li>
+                          <strong>Schedule</strong>
+                          <span>
+                            Potential time away from home — trip length,
+                            overnight requirements, reset periods, and route
+                            schedules depend on the role
+                          </span>
+                        </li>
 
-              <div class="service-comparison__cell">
-                <strong>Commonly Tractor-Trailer Focused</strong>
+                        <li>
+                          <strong>Equipment</strong>
+                          <span>
+                            Commonly tractor-trailer focused — equipment may
+                            vary by freight, trailer type, route, employer,
+                            and endorsement requirements
+                          </span>
+                        </li>
 
-                <p>
-                  Equipment may vary by freight, trailer type, route, employer,
-                  and endorsement requirements
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Work Responsibilities
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <strong>More Stops or Customer Interaction</strong>
-
-                <p>
-                  Some local roles include loading, unloading, route service,
-                  passenger, or delivery responsibilities
-                </p>
-              </div>
-
-              <div class="service-comparison__cell">
-                <strong>Longer Driving Segments</strong>
-
-                <p>
-                  Some roles emphasize freight movement, route planning,
-                  inspection, documentation, and extended road operation
-                </p>
-              </div>
-            </div>
-
-            <div class="service-comparison__row">
-              <div class="service-comparison__cell service-comparison__cell--heading">
-                Next Step
-              </div>
-
-              <div class="service-comparison__cell is-highlighted">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="../contact/#request-info"
-                  data-service-request-link
-                >
-                  <span class="cdl-btn__label">
-                    Discuss Local Roles
-                  </span>
-                </a>
-              </div>
-
-              <div class="service-comparison__cell">
-                <a
-                  class="cdl-btn cdl-btn--outline cdl-btn--small"
-                  href="../contact/#request-info"
-                  data-service-request-link
-                >
-                  <span class="cdl-btn__label">
-                    Discuss Regional Roles
-                  </span>
-                </a>
+                        <li>
+                          <strong>Work Responsibilities</strong>
+                          <span>
+                            Longer driving segments — freight movement, route
+                            planning, inspection, documentation, and extended
+                            road operation
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="service-comparison__footer">
+            <div
+              class="cdl-slider-dots"
+              data-service-comparison-pagination
+            ></div>
+          </div>
+
+          <p class="cdl-disclaimer">
+            Actual job duties, compensation, schedules, qualifications, and
+            employment terms vary by employer, location, position, and market
+            conditions.
+          </p>
         </div>
       </section>
 
