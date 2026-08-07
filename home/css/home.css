@@ -1900,6 +1900,14 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
    Program Content
    ========================================================================== */
 
+.home-program-content,
+.home-programs,
+.home-career,
+.home-testimonials,
+.home-faq {
+  padding-block: calc(var(--section-space) / 2);
+}
+
 .home-program-content {
   overflow: clip;
 }
