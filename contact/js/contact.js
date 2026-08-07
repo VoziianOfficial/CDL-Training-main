@@ -475,14 +475,15 @@
     const swiper = new window.Swiper(
       container,
       {
-        slidesPerView: 1.08,
+        slidesPerView: 1,
         spaceBetween: 16,
         speed: prefersReducedMotion()
           ? 1
           : 740,
         grabCursor: true,
         watchSlidesProgress: true,
-        rewind: slideCount > 1,
+        loop: slideCount > 3,
+        loopAdditionalSlides: 3,
         keyboard: {
           enabled: true,
           onlyInViewport: true,
@@ -500,10 +501,6 @@
           type: "progressbar"
         },
         breakpoints: {
-          560: {
-            slidesPerView: 1.45,
-            spaceBetween: 18
-          },
           768: {
             slidesPerView: 2,
             spaceBetween: 20
