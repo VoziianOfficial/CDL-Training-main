@@ -1023,6 +1023,16 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
     transform var(--transition-fast);
 }
 
+.home-process__step-arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
 .home-process__step:hover .home-process__step-number {
   color: var(--color-accent);
 }
@@ -1030,6 +1040,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 .home-process__step:hover .home-process__step-arrow {
   border-color: var(--color-accent);
   background-color: var(--color-accent);
+  color: var(--color-dark);
   transform: rotate(-8deg);
 }
 
@@ -1415,10 +1426,16 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   overflow: hidden;
 }
 
+.home-programs__slider-container {
+  overflow: hidden;
+}
+
 .home-programs__swiper {
   width: 100%;
-  overflow: visible;
-  padding-inline: var(--container-gutter);
+  overflow: hidden;
+  padding-top: 14px;
+  padding-right: 12px;
+  padding-bottom: 12px;
 }
 
 .home-programs__swiper .swiper-wrapper {
@@ -1504,7 +1521,8 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 }
 
 .home-programs__card-content a::after {
-  content: "→";
+  display: none;
+  content: "";
   transition: transform var(--transition-fast);
 }
 
@@ -1524,20 +1542,20 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   background-color: rgba(17, 17, 19, 0.22);
 }
 
-.home-programs__swiper .swiper-slide-active .home-programs__card {
+.home-programs__swiper .swiper-slide-active.home-programs__card {
   box-shadow: 10px 10px 0 var(--color-dark);
   transform: translateY(-12px);
 }
 
-.home-programs__swiper .swiper-slide-active .home-programs__card-content {
+.home-programs__swiper .swiper-slide-active.home-programs__card .home-programs__card-content {
   color: var(--color-dark);
   background-color: var(--color-accent);
   transform: translateY(-6px);
 }
 
-.home-programs__swiper .swiper-slide-active .home-programs__card-content > span,
-.home-programs__swiper .swiper-slide-active .home-programs__card-content p,
-.home-programs__swiper .swiper-slide-active .home-programs__card-content a {
+.home-programs__swiper .swiper-slide-active.home-programs__card .home-programs__card-content > span,
+.home-programs__swiper .swiper-slide-active.home-programs__card .home-programs__card-content p,
+.home-programs__swiper .swiper-slide-active.home-programs__card .home-programs__card-content a {
   color: var(--color-dark);
 }
 
@@ -2155,7 +2173,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   }
 
   .home-programs__swiper {
-    padding-inline: clamp(2.5rem, 5vw, 6rem);
+    padding-right: 12px;
   }
 
   .home-route__map {
@@ -2697,7 +2715,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
     min-height: 540px;
   }
 
-  .home-programs__swiper .swiper-slide-active .home-programs__card {
+  .home-programs__swiper .swiper-slide-active.home-programs__card {
     transform: translateY(-6px);
   }
 
@@ -3018,8 +3036,8 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   }
 
   .home-programs__card:hover img,
-  .home-programs__swiper .swiper-slide-active .home-programs__card,
-  .home-programs__swiper .swiper-slide-active .home-programs__card-content,
+  .home-programs__swiper .swiper-slide-active.home-programs__card,
+  .home-programs__swiper .swiper-slide-active.home-programs__card .home-programs__card-content,
   .home-program-content__download:hover,
   .home-process__step:hover .home-process__step-arrow {
     transform: none;

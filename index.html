@@ -666,12 +666,6 @@
                         href="services/cdl-class-a.html"
                       >
                         Read Program
-                        <span
-                          class="cdl-text-link__arrow"
-                          aria-hidden="true"
-                        >
-                          →
-                        </span>
                       </a>
                     </div>
 
@@ -732,12 +726,6 @@
                         href="services/cdl-class-b.html"
                       >
                         Read Program
-                        <span
-                          class="cdl-text-link__arrow"
-                          aria-hidden="true"
-                        >
-                          →
-                        </span>
                       </a>
                     </div>
 
@@ -798,12 +786,6 @@
                         href="services/behind-the-wheel.html"
                       >
                         Read Program
-                        <span
-                          class="cdl-text-link__arrow"
-                          aria-hidden="true"
-                        >
-                          →
-                        </span>
                       </a>
                     </div>
 
@@ -1178,12 +1160,6 @@
                 href="contact/#request-info"
               >
                 Request Access
-                <span
-                  class="cdl-text-link__arrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
               </a>
             </div>
           </div>
@@ -1220,7 +1196,11 @@
                   class="home-process__step-arrow"
                   aria-hidden="true"
                 >
-                  ↗
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 6.5h14v9H9l-4 3.5z"></path>
+                    <path d="M8.5 10h7"></path>
+                    <path d="M8.5 13h4.5"></path>
+                  </svg>
                 </span>
               </article>
 
@@ -1242,7 +1222,14 @@
                   class="home-process__step-arrow"
                   aria-hidden="true"
                 >
-                  ↗
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 6h14"></path>
+                    <path d="M5 12h14"></path>
+                    <path d="M5 18h14"></path>
+                    <circle cx="8" cy="6" r="1.4"></circle>
+                    <circle cx="15.5" cy="12" r="1.4"></circle>
+                    <circle cx="10.5" cy="18" r="1.4"></circle>
+                  </svg>
                 </span>
               </article>
 
@@ -1264,7 +1251,13 @@
                   class="home-process__step-arrow"
                   aria-hidden="true"
                 >
-                  ↗
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="7"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                    <path d="M12 5v5"></path>
+                    <path d="m6.5 15 3.8-2.1"></path>
+                    <path d="m17.5 15-3.8-2.1"></path>
+                  </svg>
                 </span>
               </article>
             </div>
@@ -1834,131 +1827,133 @@
           </div>
         </div>
 
-        <div
-          class="swiper home-programs__swiper"
-          data-home-programs-swiper
-          aria-label="CDL programs and training formats"
-        >
-          <div class="swiper-wrapper">
-            <article class="swiper-slide home-programs__card">
-              <img
-                src="assets/images/programs/class-a.webp"
-                width="760"
-                height="620"
-                alt="Tractor-trailer used for Class A CDL training"
-                loading="lazy"
-                decoding="async"
-              >
+        <div class="cdl-container home-programs__slider-container">
+          <div
+            class="swiper home-programs__swiper"
+            data-home-programs-swiper
+            aria-label="CDL programs and training formats"
+          >
+            <div class="swiper-wrapper">
+              <article class="swiper-slide home-programs__card">
+                <img
+                  src="assets/images/programs/class-a.webp"
+                  width="760"
+                  height="620"
+                  alt="Tractor-trailer used for Class A CDL training"
+                  loading="lazy"
+                  decoding="async"
+                >
 
-              <div class="home-programs__card-content">
-                <h3>Class A Training</h3>
-                <p>Program length varies</p>
+                <div class="home-programs__card-content">
+                  <h3>Class A Training</h3>
+                  <p>Program length varies</p>
 
-                <a href="services/cdl-class-a.html">
-                  Program Details
-                </a>
-              </div>
-            </article>
+                  <a href="services/cdl-class-a.html">
+                    Program Details
+                  </a>
+                </div>
+              </article>
 
-            <article class="swiper-slide home-programs__card">
-              <img
-                src="assets/images/programs/class-b.webp"
-                width="760"
-                height="620"
-                alt="Straight truck used for Class B CDL training"
-                loading="lazy"
-                decoding="async"
-              >
+              <article class="swiper-slide home-programs__card">
+                <img
+                  src="assets/images/programs/class-b.webp"
+                  width="760"
+                  height="620"
+                  alt="Straight truck used for Class B CDL training"
+                  loading="lazy"
+                  decoding="async"
+                >
 
-              <div class="home-programs__card-content">
-                <h3>Class B Training</h3>
-                <p>Flexible schedule options</p>
+                <div class="home-programs__card-content">
+                  <h3>Class B Training</h3>
+                  <p>Flexible schedule options</p>
 
-                <a href="services/cdl-class-b.html">
-                  Program Details
-                </a>
-              </div>
-            </article>
+                  <a href="services/cdl-class-b.html">
+                    Program Details
+                  </a>
+                </div>
+              </article>
 
-            <article class="swiper-slide home-programs__card">
-              <img
-                src="assets/images/training/behind-wheel-session.webp"
-                width="760"
-                height="620"
-                alt="Instructor-led behind-the-wheel CDL practice"
-                loading="lazy"
-                decoding="async"
-              >
+              <article class="swiper-slide home-programs__card">
+                <img
+                  src="assets/images/training/behind-wheel-session.webp"
+                  width="760"
+                  height="620"
+                  alt="Instructor-led behind-the-wheel CDL practice"
+                  loading="lazy"
+                  decoding="async"
+                >
 
-              <div class="home-programs__card-content">
-                <h3>Behind-the-Wheel Practice</h3>
-                <p>Instructor-led sessions</p>
+                <div class="home-programs__card-content">
+                  <h3>Behind-the-Wheel Practice</h3>
+                  <p>Instructor-led sessions</p>
 
-                <a href="services/behind-the-wheel.html">
-                  Program Details
-                </a>
-              </div>
-            </article>
+                  <a href="services/behind-the-wheel.html">
+                    Program Details
+                  </a>
+                </div>
+              </article>
 
-            <article class="swiper-slide home-programs__card">
-              <img
-                src="assets/images/training/weekend-training.webp"
-                width="760"
-                height="620"
-                alt="Commercial driving students attending a weekend training session"
-                loading="lazy"
-                decoding="async"
-              >
+              <article class="swiper-slide home-programs__card">
+                <img
+                  src="assets/images/training/weekend-training.webp"
+                  width="760"
+                  height="620"
+                  alt="Commercial driving students attending a weekend training session"
+                  loading="lazy"
+                  decoding="async"
+                >
 
-              <div class="home-programs__card-content">
-                <h3>Weekend Training Format</h3>
-                <p>Availability on request</p>
+                <div class="home-programs__card-content">
+                  <h3>Weekend Training Format</h3>
+                  <p>Availability on request</p>
 
-                <a href="contact/#schedule-inquiry">
-                  Request Info
-                </a>
-              </div>
-            </article>
+                  <a href="contact/#schedule-inquiry">
+                    Request Info
+                  </a>
+                </div>
+              </article>
 
-            <article class="swiper-slide home-programs__card">
-              <img
-                src="assets/images/training/refresher-skills.webp"
-                width="760"
-                height="620"
-                alt="Commercial driver reviewing practical vehicle control skills"
-                loading="lazy"
-                decoding="async"
-              >
+              <article class="swiper-slide home-programs__card">
+                <img
+                  src="assets/images/training/refresher-skills.webp"
+                  width="760"
+                  height="620"
+                  alt="Commercial driver reviewing practical vehicle control skills"
+                  loading="lazy"
+                  decoding="async"
+                >
 
-              <div class="home-programs__card-content">
-                <h3>Refresher Skills</h3>
-                <p>Training scope varies</p>
+                <div class="home-programs__card-content">
+                  <h3>Refresher Skills</h3>
+                  <p>Training scope varies</p>
 
-                <a href="contact/#request-info">
-                  Request Info
-                </a>
-              </div>
-            </article>
+                  <a href="contact/#request-info">
+                    Request Info
+                  </a>
+                </div>
+              </article>
 
-            <article class="swiper-slide home-programs__card">
-              <img
-                src="assets/images/programs/company-sponsored.webp"
-                width="760"
-                height="620"
-                alt="Commercial driver discussing an employer-sponsored CDL training route"
-                loading="lazy"
-                decoding="async"
-              >
+              <article class="swiper-slide home-programs__card">
+                <img
+                  src="assets/images/programs/company-sponsored.webp"
+                  width="760"
+                  height="620"
+                  alt="Commercial driver discussing an employer-sponsored CDL training route"
+                  loading="lazy"
+                  decoding="async"
+                >
 
-              <div class="home-programs__card-content">
-                <h3>Company-Sponsored Path</h3>
-                <p>Eligibility-based option</p>
+                <div class="home-programs__card-content">
+                  <h3>Company-Sponsored Path</h3>
+                  <p>Eligibility-based option</p>
 
-                <a href="services/company-sponsorships.html">
-                  Program Details
-                </a>
-              </div>
-            </article>
+                  <a href="services/company-sponsorships.html">
+                    Program Details
+                  </a>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
 
@@ -2012,12 +2007,6 @@
               href="services/behind-the-wheel.html"
             >
               Explore Practical Training
-              <span
-                class="cdl-text-link__arrow"
-                aria-hidden="true"
-              >
-                →
-              </span>
             </a>
           </div>
 
@@ -2309,12 +2298,6 @@
                 href="services/financial-aid.html"
               >
                 Learn More
-                <span
-                  class="cdl-text-link__arrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
               </a>
             </article>
 
@@ -2344,12 +2327,6 @@
                 href="services/financial-aid.html"
               >
                 Check Options
-                <span
-                  class="cdl-text-link__arrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
               </a>
             </article>
 
@@ -2380,12 +2357,6 @@
                 href="services/company-sponsorships.html"
               >
                 Compare Routes
-                <span
-                  class="cdl-text-link__arrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
               </a>
             </article>
 
@@ -2417,12 +2388,6 @@
                 href="services/company-sponsorships.html"
               >
                 Discuss Sponsorship
-                <span
-                  class="cdl-text-link__arrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
               </a>
             </article>
           </div>
