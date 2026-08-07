@@ -1258,15 +1258,20 @@
               processImages[index] ||
               sourceImage.currentSrc ||
               sourceImage.src;
+            const resolvedImageSource =
+              new URL(
+                imageSource,
+                window.location.href
+              ).href;
 
             item.style.setProperty(
               "--process-card-image",
-              `url("${imageSource}")`
+              `url("${resolvedImageSource}")`
             );
 
             thumb.className = "service-process__thumb";
             thumb.setAttribute("aria-hidden", "true");
-            image.src = imageSource;
+            image.src = resolvedImageSource;
             image.alt = "";
             image.loading = "lazy";
             image.decoding = "async";
