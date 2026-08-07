@@ -348,6 +348,10 @@
     transform var(--transition-fast);
 }
 
+.contact-hero__pagination .swiper-pagination-bullet[hidden] {
+  display: none;
+}
+
 .contact-hero__pagination .swiper-pagination-bullet:hover {
   border-color: var(--color-dark);
   color: var(--color-dark);

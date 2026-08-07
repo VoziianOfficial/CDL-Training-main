@@ -430,6 +430,18 @@
           clickable: true,
           bulletElement: "button",
           renderBullet(index, className) {
+            if (index >= slideCount) {
+              return `
+                <button
+                  class="${className}"
+                  type="button"
+                  hidden
+                  aria-hidden="true"
+                  tabindex="-1"
+                ></button>
+              `;
+            }
+
             const number = String(
               index + 1
             ).padStart(2, "0");
