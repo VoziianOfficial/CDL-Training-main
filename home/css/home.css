@@ -2028,7 +2028,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   transform: none !important;
 }
 
-.home-program-content__download {
+.home-program-content__action {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -2041,7 +2041,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   box-shadow: 6px 6px 0 var(--color-dark);
 }
 
-.home-program-content__download:hover {
+.home-program-content__action:hover {
   border-color: var(--color-accent);
   color: var(--color-dark);
   background-color: var(--color-accent);
@@ -2049,7 +2049,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   transform: translate(3px, 3px);
 }
 
-.home-program-content__download-icon {
+.home-program-content__action-icon {
   display: grid;
   width: 52px;
   height: 52px;
@@ -2059,11 +2059,11 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   background-color: var(--color-accent);
 }
 
-.home-program-content__download:hover .home-program-content__download-icon {
+.home-program-content__action:hover .home-program-content__action-icon {
   background-color: var(--color-light);
 }
 
-.home-program-content__download-icon svg {
+.home-program-content__action-icon svg {
   width: 1.25rem;
   height: 1.25rem;
   fill: none;
@@ -2073,12 +2073,12 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   stroke-linejoin: round;
 }
 
-.home-program-content__download small,
-.home-program-content__download strong {
+.home-program-content__action small,
+.home-program-content__action strong {
   display: block;
 }
 
-.home-program-content__download small {
+.home-program-content__action small {
   margin-bottom: 0.25rem;
   color: var(--color-muted);
   font-size: 0.68rem;
@@ -2087,7 +2087,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   text-transform: uppercase;
 }
 
-.home-program-content__download strong {
+.home-program-content__action strong {
   font-family: var(--font-heading);
   font-size: 0.92rem;
 }
@@ -4098,7 +4098,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
     min-height: 460px;
   }
 
-  .home-program-content__download {
+  .home-program-content__action {
     width: 100%;
   }
 
@@ -4240,7 +4240,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   .home-programs__card:hover img,
   .home-programs__swiper .swiper-slide-active.home-programs__card,
   .home-programs__swiper .swiper-slide-active.home-programs__card .home-programs__card-content,
-  .home-program-content__download:hover,
+  .home-program-content__action:hover,
   .home-why__benefits .cdl-feature-card:hover,
   .home-why__benefits .cdl-feature-card:hover .cdl-feature-card__icon,
   .home-process__step:hover,
