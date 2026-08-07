@@ -844,6 +844,80 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   margin-top: 2.5rem;
 }
 
+.home-why__benefits .cdl-feature-card {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  padding: clamp(1.1rem, 2vw, 1.45rem) clamp(1.1rem, 2vw, 1.45rem) clamp(1.2rem, 2.2vw, 1.55rem);
+  border: 1px solid rgba(17, 17, 19, 0.14);
+  background-color: var(--color-surface);
+  box-shadow: 4px 4px 0 rgba(17, 17, 19, 0.05);
+  clip-path: none;
+  transition:
+    border-color var(--transition-base),
+    background-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.home-why__benefits .cdl-feature-card::before {
+  content: none;
+}
+
+.home-why__benefits .cdl-feature-card:hover {
+  border-color: var(--color-dark);
+  background-color: var(--color-light);
+  box-shadow: var(--shadow-offset-accent);
+  transform: translate(-7px, -7px);
+}
+
+.home-why__benefits .cdl-feature-card__icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  align-self: flex-end;
+  margin-bottom: 0.9rem;
+  border: none;
+  place-items: center;
+  background-color: var(--color-accent);
+  clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 0 100%);
+  transition:
+    background-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.home-why__benefits .cdl-feature-card:hover .cdl-feature-card__icon {
+  background-color: var(--color-dark);
+  transform: rotate(-6deg);
+}
+
+.home-why__benefits .cdl-feature-card__icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: none;
+  stroke: var(--color-light);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke var(--transition-base);
+}
+
+.home-why__benefits .cdl-feature-card:hover .cdl-feature-card__icon svg {
+  stroke: var(--color-accent);
+}
+
+.home-why__benefits .cdl-feature-card__title {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.home-why__benefits .cdl-feature-card__text {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+
 /* ==========================================================================
    Class Comparison
    ========================================================================== */

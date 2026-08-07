@@ -120,6 +120,14 @@
       !formActionAttribute.toLowerCase().startsWith("javascript:")
         ? formActionAttribute
         : configuredAction;
+    const configApi = window[APP_NAMESPACE].config;
+
+    if (
+      configApi &&
+      typeof configApi.resolveUrl === "function"
+    ) {
+      return configApi.resolveUrl(selectedAction);
+    }
 
     try {
       return new URL(selectedAction, window.location.href).href;

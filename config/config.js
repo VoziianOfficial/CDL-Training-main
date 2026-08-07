@@ -373,6 +373,18 @@
     return new URL("/config/site-config.json", window.location.href).href;
   };
 
+  const getSiteBaseUrl = () => {
+    const configScript = findConfigScript();
+
+    if (configScript?.src) {
+      return new URL("../", configScript.src).href;
+    }
+
+    return window.location.origin !== "null"
+      ? `${window.location.origin}/`
+      : new URL("./", window.location.href).href;
+  };
+
   const loadConfig = async () => {
     const response = await fetch(getConfigUrl(), {
       method: "GET",
@@ -442,15 +454,17 @@
 
     const useConfiguredDomain = options.useConfiguredDomain === true;
     const configuredBase = state.value?.siteUrl;
-    const baseUrl =
-      useConfiguredDomain && configuredBase
-        ? configuredBase
-        : window.location.origin !== "null"
-          ? `${window.location.origin}/`
-          : window.location.href;
+    const baseUrl = useConfiguredDomain && configuredBase
+      ? `${configuredBase.replace(/\/+$/, "")}/`
+      : normalizedPath.startsWith("/")
+        ? getSiteBaseUrl()
+        : window.location.href;
+    const urlPath = normalizedPath.startsWith("/")
+      ? normalizedPath.replace(/^\/+/, "")
+      : normalizedPath;
 
     try {
-      return new URL(normalizedPath, baseUrl).href;
+      return new URL(urlPath, baseUrl).href;
     } catch {
       return normalizedPath;
     }

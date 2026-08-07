@@ -133,6 +133,19 @@
     return window.SITE_CONFIG || null;
   };
 
+  const resolveUrl = (path) => {
+    const configApi = window[APP_NAMESPACE].config;
+
+    if (
+      configApi &&
+      typeof configApi.resolveUrl === "function"
+    ) {
+      return configApi.resolveUrl(path);
+    }
+
+    return path;
+  };
+
   const getSlideCount = (container) => {
     if (!container) {
       return 0;
@@ -944,7 +957,7 @@
           return;
         }
 
-        link.href = service.url;
+        link.href = resolveUrl(service.url);
         link.dataset.serviceKey = serviceKey;
       });
 

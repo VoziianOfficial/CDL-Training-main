@@ -206,11 +206,11 @@
 
     if (
       normalizedUrl.startsWith("#") ||
-      normalizedUrl.startsWith("/") ||
       normalizedUrl.startsWith("./") ||
-      normalizedUrl.startsWith("../")
+      normalizedUrl.startsWith("../") ||
+      normalizedUrl.startsWith("/")
     ) {
-      return normalizedUrl;
+      return resolveUrl(normalizedUrl);
     }
 
     try {
