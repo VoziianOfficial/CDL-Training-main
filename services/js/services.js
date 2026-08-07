@@ -52,6 +52,7 @@
     serviceKey: "",
     heroSwiper: null,
     programSwiper: null,
+    serviceSkillsSwipers: [],
     testimonialSwiper: null,
     sliders: new Map(),
     routeFrame: null,
@@ -814,6 +815,358 @@
     );
   };
 
+  const formatSlideNumber = (value) => {
+    return String(value).padStart(2, "0");
+  };
+
+  const createSkillsArrow = (
+    label,
+    modifier
+  ) => {
+    const button =
+      document.createElement("button");
+
+    button.type = "button";
+    button.className = [
+      "cdl-slider-arrow",
+      "cdl-slider-arrow--round",
+      "service-skills__arrow",
+      modifier
+    ].join(" ");
+    button.setAttribute(
+      "aria-label",
+      label
+    );
+    button.innerHTML = `
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="m13 6 6 6-6 6"></path>
+      </svg>
+    `;
+
+    return button;
+  };
+
+  const updateSkillsFraction = (
+    swiper,
+    elements,
+    totalSlides
+  ) => {
+    const current =
+      formatSlideNumber(swiper.realIndex + 1);
+    const total =
+      formatSlideNumber(totalSlides);
+
+    elements.forEach((element) => {
+      if (!element) {
+        return;
+      }
+
+      const currentElement =
+        element.querySelector(
+          "[data-service-skills-current]"
+        );
+
+      const totalElement =
+        element.querySelector(
+          "[data-service-skills-total]"
+        );
+
+      if (currentElement) {
+        currentElement.textContent = current;
+      }
+
+      if (totalElement) {
+        totalElement.textContent = total;
+      }
+    });
+  };
+
+  const prepareSkillsSwiperMarkup = (
+    section,
+    sectionIndex
+  ) => {
+    const container = section.querySelector(
+      ":scope .service-skills__grid"
+    );
+
+    if (
+      !container ||
+      container.dataset.serviceSkillsPrepared ===
+        "true"
+    ) {
+      return null;
+    }
+
+    let wrapper = container.querySelector(
+      ":scope > .swiper-wrapper"
+    );
+
+    let slides = [];
+
+    if (!wrapper) {
+      slides = Array.from(
+        container.querySelectorAll(
+          ":scope > .service-skills__item"
+        )
+      );
+
+      if (!slides.length) {
+        return null;
+      }
+
+      wrapper =
+        document.createElement("div");
+      wrapper.className =
+        "swiper-wrapper";
+
+      slides.forEach((slide) => {
+        wrapper.appendChild(slide);
+      });
+
+      container.appendChild(wrapper);
+    } else {
+      slides = Array.from(
+        wrapper.querySelectorAll(
+          ":scope > .service-skills__item"
+        )
+      );
+    }
+
+    slides.forEach((slide) => {
+      slide.classList.add("swiper-slide");
+      slide.removeAttribute("data-aos");
+      slide.removeAttribute("data-aos-delay");
+    });
+
+    const titleId =
+      section.getAttribute("aria-labelledby");
+    const title =
+      titleId
+        ? document.getElementById(titleId)
+        : null;
+    const titleText =
+      title?.textContent?.trim();
+
+    container.classList.add(
+      "swiper",
+      "service-skills__swiper"
+    );
+    container.dataset.serviceSkillsSwiper =
+      String(sectionIndex + 1);
+    container.dataset.serviceSkillsPrepared =
+      "true";
+    container.setAttribute(
+      "aria-label",
+      titleText
+        ? `${titleText} carousel`
+        : "CDL skills carousel"
+    );
+
+    const previousButton =
+      createSkillsArrow(
+        "Show previous skill",
+        "service-skills__arrow--previous cdl-slider-arrow--previous"
+      );
+
+    const nextButton =
+      createSkillsArrow(
+        "Show next skill",
+        "service-skills__arrow--next"
+      );
+
+    const controls =
+      document.createElement("div");
+    controls.className =
+      "service-skills__controls cdl-slider-controls";
+    controls.append(
+      previousButton,
+      nextButton
+    );
+
+    const footer =
+      document.createElement("div");
+    footer.className =
+      "service-skills__footer";
+    footer.innerHTML = `
+      <div
+        class="cdl-slider-progress service-skills__progress"
+        data-service-skills-progress
+      ></div>
+      <div
+        class="cdl-slider-fraction service-skills__fraction"
+        aria-live="polite"
+      >
+        <span
+          class="cdl-slider-fraction__current"
+          data-service-skills-current
+        >01</span>
+        <span>/</span>
+        <span data-service-skills-total>${formatSlideNumber(slides.length)}</span>
+      </div>
+    `;
+
+    container.insertAdjacentElement(
+      "afterend",
+      controls
+    );
+    controls.insertAdjacentElement(
+      "afterend",
+      footer
+    );
+
+    return {
+      container,
+      controls,
+      footer,
+      nextButton,
+      previousButton,
+      progress:
+        footer.querySelector(
+          "[data-service-skills-progress]"
+        ),
+      slideCount: slides.length
+    };
+  };
+
+  const initializeSkillsSwipers = () => {
+    const sections = Array.from(
+      document.querySelectorAll(
+        ".service-skills"
+      )
+    );
+
+    sections.forEach(
+      (section, sectionIndex) => {
+        const prepared =
+          prepareSkillsSwiperMarkup(
+            section,
+            sectionIndex
+          );
+
+        if (
+          !prepared ||
+          typeof window.Swiper !== "function"
+        ) {
+          return;
+        }
+
+        const swiper = new window.Swiper(
+          prepared.container,
+          {
+            slidesPerView: 1,
+            spaceBetween: 18,
+            speed: prefersReducedMotion()
+              ? 1
+              : 720,
+            rewind:
+              prepared.slideCount > 1,
+            grabCursor: true,
+            watchSlidesProgress: true,
+            autoHeight: true,
+            keyboard: {
+              enabled: true,
+              onlyInViewport: true,
+              pageUpDown: false
+            },
+            navigation: {
+              prevEl:
+                prepared.previousButton,
+              nextEl:
+                prepared.nextButton
+            },
+            pagination: {
+              el: prepared.progress,
+              type: "progressbar"
+            },
+            a11y: {
+              enabled: true,
+              containerMessage:
+                "CDL skill topics",
+              containerRoleDescriptionMessage:
+                "carousel",
+              itemRoleDescriptionMessage:
+                "skill",
+              prevSlideMessage:
+                "Show previous skill",
+              nextSlideMessage:
+                "Show next skill"
+            },
+            on: {
+              init(instance) {
+                prepared.container.dataset.swiperReady =
+                  "true";
+
+                updateSkillsFraction(
+                  instance,
+                  [prepared.footer],
+                  prepared.slideCount
+                );
+
+                synchronizeSwiper(
+                  instance,
+                  {
+                    mode: "active",
+                    totalSlides:
+                      prepared.slideCount
+                  }
+                );
+              },
+
+              slideChangeTransitionStart(instance) {
+                updateSkillsFraction(
+                  instance,
+                  [prepared.footer],
+                  prepared.slideCount
+                );
+
+                synchronizeSwiper(
+                  instance,
+                  {
+                    mode: "active",
+                    totalSlides:
+                      prepared.slideCount
+                  }
+                );
+              },
+
+              slideChangeTransitionEnd(instance) {
+                synchronizeSwiper(
+                  instance,
+                  {
+                    mode: "active",
+                    totalSlides:
+                      prepared.slideCount
+                  }
+                );
+              },
+
+              resize(instance) {
+                synchronizeSwiper(
+                  instance,
+                  {
+                    mode: "active",
+                    totalSlides:
+                      prepared.slideCount
+                  }
+                );
+              }
+            }
+          }
+        );
+
+        state.serviceSkillsSwipers.push(
+          swiper
+        );
+
+        registerSlider(
+          `serviceSkills${sectionIndex + 1}`,
+          swiper
+        );
+      }
+    );
+  };
+
   const initializeSwipers = () => {
     if (typeof window.Swiper !== "function") {
       document.documentElement.classList.add(
@@ -825,6 +1178,7 @@
 
     initializeHeroSwiper();
     initializeProgramsSwiper();
+    initializeSkillsSwipers();
     initializeTestimonialsSwiper();
     refreshAOS();
   };
@@ -1491,6 +1845,10 @@
             ? 1
             : name ===
                 "serviceTestimonials"
+              ? 720
+              : name.startsWith(
+                    "serviceSkills"
+                  )
               ? 720
               : 740;
       }
