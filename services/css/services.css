@@ -609,13 +609,11 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
   min-height: 175px;
   padding: 1.1rem 1.15rem;
   overflow: hidden;
-  border: 1px solid var(--overview-card-border, var(--color-border));
+  border: 2px solid var(--color-dark);
   border-radius: 8px;
-  background-color: var(--overview-card-bg, var(--color-light));
-  box-shadow:
-    0 16px 34px rgba(17, 17, 19, 0.09),
-    5px 5px 0 var(--overview-card-shadow, rgba(17, 17, 19, 0.08)),
-    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  color: var(--color-dark);
+  background-color: var(--color-accent);
+  box-shadow: 4px 4px 0 var(--color-dark);
   transition:
     transform var(--transition-base),
     border-color var(--transition-base),
@@ -624,31 +622,19 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 .service-overview__card:nth-child(1) {
-  --overview-card-bg: var(--color-accent-soft);
-  --overview-card-border: rgba(229, 158, 31, 0.5);
-  --overview-card-shadow: rgba(229, 158, 31, 0.32);
-  --overview-card-hover-shadow: rgba(229, 158, 31, 0.48);
+  --overview-card-line: var(--color-dark);
 }
 
 .service-overview__card:nth-child(2) {
-  --overview-card-bg: var(--color-surface);
-  --overview-card-border: rgba(17, 17, 19, 0.14);
-  --overview-card-shadow: rgba(17, 17, 19, 0.16);
-  --overview-card-hover-shadow: rgba(17, 17, 19, 0.24);
+  --overview-card-line: var(--color-dark);
 }
 
 .service-overview__card:nth-child(3) {
-  --overview-card-bg: var(--color-success-surface);
-  --overview-card-border: rgba(38, 106, 67, 0.32);
-  --overview-card-shadow: rgba(38, 106, 67, 0.24);
-  --overview-card-hover-shadow: rgba(38, 106, 67, 0.36);
+  --overview-card-line: var(--color-dark);
 }
 
 .service-overview__card:nth-child(4) {
-  --overview-card-bg: var(--color-warning-surface);
-  --overview-card-border: rgba(138, 92, 8, 0.3);
-  --overview-card-shadow: rgba(138, 92, 8, 0.22);
-  --overview-card-hover-shadow: rgba(138, 92, 8, 0.34);
+  --overview-card-line: var(--color-dark);
 }
 
 .service-overview__card::before {
@@ -658,7 +644,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
   width: 2.2rem;
   height: 0.32rem;
   border-radius: var(--radius-pill);
-  background-color: var(--color-accent);
+  background-color: var(--overview-card-line, var(--color-dark));
   content: "";
   opacity: 0.85;
 }
@@ -666,12 +652,10 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 
 .service-overview__card:hover,
 .service-overview__card:focus-within {
-  border-color: var(--overview-card-border);
-  box-shadow:
-    0 24px 48px rgba(17, 17, 19, 0.14),
-    8px 8px 0 var(--overview-card-hover-shadow, rgba(17, 17, 19, 0.18)),
-    inset 0 1px 0 rgba(255, 255, 255, 0.92);
-  transform: translateY(-6px);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  box-shadow: 2px 2px 0 var(--color-accent);
+  transform: translate(2px, 2px);
 }
 
 .service-overview__card:hover::after,
@@ -683,7 +667,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 .service-overview__card span {
   display: block;
   margin-bottom: 1.05rem;
-  color: var(--color-accent-hover);
+  color: inherit;
   font-family: var(--font-heading);
   font-size: 0.68rem;
   font-weight: 800;
@@ -694,13 +678,13 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 .service-overview__card h3 {
   max-width: calc(100% - 2.2rem);
   margin-bottom: 0.5rem;
-  color: var(--color-dark);
+  color: inherit;
   font-size: 1.02rem;
   line-height: 1.2;
 }
 
 .service-overview__card p {
-  color: var(--color-muted);
+  color: inherit;
   font-size: 0.76rem;
   line-height: 1.5;
 }
