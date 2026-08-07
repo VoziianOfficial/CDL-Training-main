@@ -2361,7 +2361,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
    ========================================================================== */
 
 .service-process {
-  overflow: hidden;
+  overflow: visible;
   padding-block: clamp(2rem, 3.4vw, 3.9rem);
 }
 
@@ -2397,23 +2397,30 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 .service-process__steps {
+  position: sticky;
+  top: calc(var(--header-height-scrolled) + 2rem);
+  align-self: start;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--color-border);
+  gap: 0.65rem;
 }
 
 .service-process__step {
-  padding: clamp(1rem, 1.55vw, 1.35rem) 0;
-  border-bottom: 1px solid var(--color-border);
+  padding: clamp(0.95rem, 1.35vw, 1.2rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-light);
   cursor: pointer;
+  box-shadow: 0 10px 28px rgba(17, 17, 19, 0.04);
 }
 
 .service-process__step:first-child {
-  padding-top: clamp(1rem, 1.55vw, 1.35rem);
+  padding-top: clamp(0.95rem, 1.35vw, 1.2rem);
 }
 
-.service-process__step:last-child {
-  border-bottom: 0;
+.service-process__step.is-open {
+  border-color: color-mix(in srgb, var(--color-accent) 52%, var(--color-border));
+  box-shadow: 0 18px 40px rgba(17, 17, 19, 0.08);
 }
 
 .service-process__body {
@@ -2429,10 +2436,13 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 .service-process__body h3 {
-  max-width: 18ch;
+  max-width: none;
   margin: 0;
-  font-size: clamp(1.25rem, 1.75vw, 1.9rem);
+  overflow: hidden;
+  font-size: clamp(1.18rem, 1.55vw, 1.7rem);
   line-height: 1.12;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   transition: color var(--transition-fast);
 }
 
@@ -3577,6 +3587,10 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
     position: static;
   }
 
+  .service-process__steps {
+    position: static;
+  }
+
   .service-process__intro-image {
     max-width: 760px;
   }
@@ -3962,7 +3976,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
   }
 
   .service-process__step {
-    padding: 1.75rem 0;
+    padding: 1.2rem;
   }
 
   .service-comparison__marker {
@@ -4129,7 +4143,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
   }
 
   .service-process__step {
-    padding: 1.5rem 0;
+    padding: 1rem;
   }
 
   .service-comparison__marker span {

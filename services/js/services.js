@@ -23,6 +23,45 @@
     companySponsorships: "company-sponsorships"
   });
 
+  const SERVICE_PROCESS_IMAGES = Object.freeze({
+    classA: [
+      "../images/card-1.jpg",
+      "../images/card-7.jpg",
+      "../images/card-13.jpg",
+      "../images/card-16.jpg"
+    ],
+    classB: [
+      "../images/card-2.jpg",
+      "../images/card-8.jpg",
+      "../images/card-14.jpg",
+      "../images/card-17.jpg"
+    ],
+    behindTheWheel: [
+      "../images/card-13.jpg",
+      "../images/card-3.jpg",
+      "../images/card-9.jpg",
+      "../images/card-15.jpg"
+    ],
+    jobPlacement: [
+      "../images/card-11.jpg",
+      "../images/card-4.jpg",
+      "../images/card-10.jpg",
+      "../images/card-16.jpg"
+    ],
+    financialAid: [
+      "../images/card-1.jpg",
+      "../images/card-5.jpg",
+      "../images/card-12.jpg",
+      "../images/card-17.jpg"
+    ],
+    companySponsorships: [
+      "../images/card-13.jpg",
+      "../images/card-6.jpg",
+      "../images/card-14.jpg",
+      "../images/card-15.jpg"
+    ]
+  });
+
   const SERVICE_PATH_MATCHERS = Object.freeze({
     classA: "/services/cdl-class-a",
     classB: "/services/cdl-class-b",
@@ -1201,6 +1240,9 @@
           ".service-process__intro-image img"
         );
 
+        const processImages =
+          SERVICE_PROCESS_IMAGES[state.serviceKey] || [];
+
         items.forEach((item, index) => {
           const hasThumb = item.querySelector(
             ".service-process__thumb"
@@ -1212,11 +1254,14 @@
           ) {
             const thumb = document.createElement("div");
             const image = document.createElement("img");
+            const imageSource =
+              processImages[index] ||
+              sourceImage.currentSrc ||
+              sourceImage.src;
 
             thumb.className = "service-process__thumb";
             thumb.setAttribute("aria-hidden", "true");
-            image.src =
-              sourceImage.currentSrc || sourceImage.src;
+            image.src = imageSource;
             image.alt = "";
             image.loading = "lazy";
             image.decoding = "async";
@@ -1251,6 +1296,14 @@
         };
 
         items.forEach((item) => {
+          item.addEventListener("mouseenter", () => {
+            openItem(item);
+          });
+
+          item.addEventListener("focus", () => {
+            openItem(item);
+          });
+
           item.addEventListener("click", () => {
             openItem(item);
           });
