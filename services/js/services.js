@@ -204,6 +204,17 @@
     ).length;
   };
 
+  const canUseLoop = (
+    slideCount,
+    maxSlidesPerView = 1,
+    slidesPerGroup = 1
+  ) => {
+    return (
+      slideCount >
+      maxSlidesPerView + slidesPerGroup
+    );
+  };
+
   const storeOriginalTabIndex = (element) => {
     if (
       !isHTMLElement(element) ||
@@ -485,7 +496,7 @@
         speed: prefersReducedMotion()
           ? 1
           : 900,
-        loop: slideCount > 1,
+        loop: canUseLoop(slideCount),
         grabCursor: true,
         simulateTouch: true,
         allowTouchMove: true,
@@ -657,7 +668,7 @@
           : 740,
         grabCursor: true,
         watchSlidesProgress: true,
-        loop: slideCount > 1,
+        loop: canUseLoop(slideCount, 3),
         loopAdditionalSlides: 1,
         keyboard: {
           enabled: true,
@@ -766,7 +777,7 @@
         speed: prefersReducedMotion()
           ? 1
           : 720,
-        loop: slideCount > 1,
+        loop: canUseLoop(slideCount),
         grabCursor: true,
         watchSlidesProgress: true,
         autoHeight: true,
@@ -1100,6 +1111,7 @@
               : 720,
             rewind:
               prepared.slideCount > 1,
+            loop: false,
             grabCursor: true,
             watchSlidesProgress: true,
             autoHeight: true,
