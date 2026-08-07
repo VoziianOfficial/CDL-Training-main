@@ -216,6 +216,10 @@
     );
   };
 
+  const canUseCircularLoop = (slideCount) => {
+    return slideCount > 1;
+  };
+
   const storeOriginalTabIndex = (element) => {
     if (
       !isHTMLElement(element) ||
@@ -669,7 +673,7 @@
           : 740,
         grabCursor: true,
         watchSlidesProgress: true,
-        loop: canUseLoop(slideCount, 3),
+        loop: canUseCircularLoop(slideCount),
         loopAdditionalSlides: 1,
         keyboard: {
           enabled: true,
@@ -889,7 +893,7 @@
         speed: prefersReducedMotion()
           ? 1
           : 780,
-        loop: canUseLoop(slideCount),
+        loop: canUseCircularLoop(slideCount),
         grabCursor: true,
         watchSlidesProgress: true,
         keyboard: {
