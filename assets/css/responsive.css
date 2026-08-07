@@ -338,6 +338,14 @@
     z-index: 2;
   }
 
+  .home-real-world__card:nth-child(n + 4),
+  .home-why__benefits .cdl-feature-card:nth-child(n + 4),
+  .home-career__service:nth-child(n + 4),
+  .service-overview__card:nth-child(n + 4),
+  .service-career__item:nth-child(n + 4) {
+    display: none;
+  }
+
   .cdl-grid--two,
   .cdl-grid--three,
   .cdl-grid--four,
