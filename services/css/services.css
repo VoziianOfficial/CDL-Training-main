@@ -663,20 +663,6 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
   opacity: 0.85;
 }
 
-.service-overview__card::after {
-  position: absolute;
-  right: -31px;
-  bottom: -31px;
-  width: 86px;
-  height: 86px;
-  border: 14px solid var(--color-accent);
-  border-radius: 50%;
-  content: "";
-  opacity: 0.14;
-  transition:
-    opacity var(--transition-base),
-    transform var(--transition-base);
-}
 
 .service-overview__card:hover,
 .service-overview__card:focus-within {
@@ -2888,16 +2874,45 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 .service-career__items {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
   margin-top: 2.5rem;
-  border-top: 1px solid var(--color-border);
-  border-left: 1px solid var(--color-border);
 }
 
 .service-career__item {
-  min-height: 180px;
-  padding: 1.4rem;
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  min-height: 145px;
+  overflow: hidden;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--color-border) 78%, var(--color-dark) 22%);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.38)),
+    var(--color-surface);
+  box-shadow:
+    0 14px 34px rgba(17, 17, 19, 0.1),
+    5px 5px 0 rgba(229, 158, 31, 0.2);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.service-career__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-accent);
+  content: "";
+}
+
+.service-career__item:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 54%, var(--color-border));
+  box-shadow:
+    0 18px 42px rgba(17, 17, 19, 0.13),
+    7px 7px 0 rgba(229, 158, 31, 0.28);
+  transform: translate(-2px, -2px);
 }
 
 .service-career__item span {
