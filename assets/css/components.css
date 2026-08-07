@@ -1535,7 +1535,7 @@ select.cdl-form__control {
   display: grid;
   width: 100%;
   min-height: 82px;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: clamp(0.85rem, 2vw, 1.5rem);
   padding-block: 1.1rem;
@@ -2363,7 +2363,7 @@ select.cdl-form__control {
 
   .cdl-faq__question {
     min-height: 72px;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .cdl-faq__index {

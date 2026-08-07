@@ -1072,7 +1072,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 .service-process__step {
   position: relative;
   display: grid;
-  grid-template-columns: 86px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.4rem;
   padding-bottom: 2.4rem;
 }
