@@ -13,7 +13,7 @@
   "corporateEmail": "hello@cdlway.example",
   "companyAddress": "Training location details are provided with program information.",
   "faviconPath": "/assets/images/brand/truck-logo.svg",
-  "defaultOgImage": "/assets/images/hero/class-a-training.webp",
+  "defaultOgImage": "/images/card-6.jpg",
   "copyrightText": "© {year} {siteName}. All rights reserved.",
   "footerDescription": "Professional CDL training pathways designed to help adult learners prepare for commercial driving tests, build practical skills, and explore transportation careers.",
   "navigationLabels": {
@@ -108,7 +108,7 @@
       "text": "Build the skills required for Class A commercial driving and prepare for a career in transportation.",
       "ctaLabel": "Explore Class A",
       "ctaLink": "/services/cdl-class-a.html",
-      "image": "/assets/images/hero/class-a-training.webp",
+      "image": "/images/card-13.jpg",
       "imageAlt": "Adult CDL trainee beside a commercial tractor-trailer"
     },
     {
@@ -118,7 +118,7 @@
       "text": "Develop confidence through structured yard sessions, pre-trip inspection practice, and behind-the-wheel training.",
       "ctaLabel": "View Training Path",
       "ctaLink": "/services/behind-the-wheel.html",
-      "image": "/assets/images/hero/behind-the-wheel.webp",
+      "image": "/images/card-2.jpg",
       "imageAlt": "CDL instructor guiding a trainee inside a commercial truck cab"
     },
     {
@@ -128,7 +128,7 @@
       "text": "Compare CDL pathways, explore career support, and request information about your next available start date.",
       "ctaLabel": "Request Program Info",
       "ctaLink": "/contact/#request-info",
-      "image": "/assets/images/hero/career-support.webp",
+      "image": "/images/card-8.jpg",
       "imageAlt": "Commercial driver reviewing career information with a training advisor"
     }
   ],
@@ -326,7 +326,7 @@
         "location": "Demo location",
         "rating": 5,
         "quote": "The structured mix of classroom preparation and yard practice helped me understand what to work on before each session.",
-        "avatar": "/assets/images/testimonials/jordan-brooks.webp",
+        "avatar": "/images/card-12.jpg",
         "isDemo": true
       },
       {
@@ -335,7 +335,7 @@
         "location": "Demo location",
         "rating": 5,
         "quote": "The instructors explained each maneuver clearly and gave me practical feedback I could apply during the next attempt.",
-        "avatar": "/assets/images/testimonials/maria-torres.webp",
+        "avatar": "/images/card-3.jpg",
         "isDemo": true
       },
       {
@@ -344,7 +344,7 @@
         "location": "Demo location",
         "rating": 4,
         "quote": "Comparing the program options made it easier to choose the commercial license path that matched my goals.",
-        "avatar": "/assets/images/testimonials/ethan-cole.webp",
+        "avatar": "/images/card-7.jpg",
         "isDemo": true
       }
     ]
@@ -398,47 +398,47 @@
   "seoPages": {
     "home": {
       "canonicalPath": "/",
-      "ogImage": "/assets/images/hero/class-a-training.webp"
+      "ogImage": "/images/card-1.jpg"
     },
     "contact": {
       "canonicalPath": "/contact/",
-      "ogImage": "/assets/images/hero/request-information.webp"
+      "ogImage": "/images/card-4.jpg"
     },
     "cdlClassA": {
       "canonicalPath": "/services/cdl-class-a.html",
-      "ogImage": "/assets/images/hero/class-a-training.webp"
+      "ogImage": "/images/card-5.jpg"
     },
     "cdlClassB": {
       "canonicalPath": "/services/cdl-class-b.html",
-      "ogImage": "/assets/images/hero/class-b-training.webp"
+      "ogImage": "/images/card-11.jpg"
     },
     "behindTheWheel": {
       "canonicalPath": "/services/behind-the-wheel.html",
-      "ogImage": "/assets/images/hero/behind-the-wheel.webp"
+      "ogImage": "/images/card-15.jpg"
     },
     "jobPlacement": {
       "canonicalPath": "/services/job-placement.html",
-      "ogImage": "/assets/images/hero/career-support.webp"
+      "ogImage": "/images/card-10.jpg"
     },
     "financialAid": {
       "canonicalPath": "/services/financial-aid.html",
-      "ogImage": "/assets/images/hero/financial-aid.webp"
+      "ogImage": "/images/card-9.jpg"
     },
     "companySponsorships": {
       "canonicalPath": "/services/company-sponsorships.html",
-      "ogImage": "/assets/images/hero/company-sponsorships.webp"
+      "ogImage": "/images/card-14.jpg"
     },
     "privacyPolicy": {
       "canonicalPath": "/legal/privacy-policy.html",
-      "ogImage": "/assets/images/hero/class-a-training.webp"
+      "ogImage": "/images/card-6.jpg"
     },
     "termsAndConditions": {
       "canonicalPath": "/legal/terms-and-conditions.html",
-      "ogImage": "/assets/images/hero/class-a-training.webp"
+      "ogImage": "/images/card-13.jpg"
     },
     "cookiePolicy": {
       "canonicalPath": "/legal/cookie-policy.html",
-      "ogImage": "/assets/images/hero/class-a-training.webp"
+      "ogImage": "/images/card-2.jpg"
     }
   },
   "organizationSchema": {
