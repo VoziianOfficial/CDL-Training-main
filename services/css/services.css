@@ -360,6 +360,10 @@
     transform var(--transition-fast);
 }
 
+.service-hero__pagination .swiper-pagination-bullet[hidden] {
+  display: none;
+}
+
 .service-hero__pagination .swiper-pagination-bullet:hover {
   border-color: var(--color-dark);
   color: var(--color-dark);
