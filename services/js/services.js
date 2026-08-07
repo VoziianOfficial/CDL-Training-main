@@ -1183,6 +1183,95 @@
     refreshAOS();
   };
 
+  const initializeProcessAccordions = () => {
+    document
+      .querySelectorAll(".service-process")
+      .forEach((section) => {
+        const items = Array.from(
+          section.querySelectorAll(
+            ".service-process__step"
+          )
+        ).filter(isHTMLElement);
+
+        if (!items.length) {
+          return;
+        }
+
+        const sourceImage = section.querySelector(
+          ".service-process__intro-image img"
+        );
+
+        items.forEach((item, index) => {
+          const hasThumb = item.querySelector(
+            ".service-process__thumb"
+          );
+
+          if (
+            sourceImage instanceof HTMLImageElement &&
+            !hasThumb
+          ) {
+            const thumb = document.createElement("div");
+            const image = document.createElement("img");
+
+            thumb.className = "service-process__thumb";
+            thumb.setAttribute("aria-hidden", "true");
+            image.src =
+              sourceImage.currentSrc || sourceImage.src;
+            image.alt = "";
+            image.loading = "lazy";
+            image.decoding = "async";
+
+            thumb.append(image);
+            item
+              .querySelector(".service-process__body")
+              ?.append(thumb);
+          }
+
+          item.setAttribute("role", "button");
+          item.setAttribute("tabindex", "0");
+          item.setAttribute(
+            "aria-expanded",
+            index === 0 ? "true" : "false"
+          );
+          item.classList.toggle("is-open", index === 0);
+        });
+
+        const openItem = (activeItem) => {
+          items.forEach((item) => {
+            const isActive = item === activeItem;
+
+            item.classList.toggle("is-open", isActive);
+            item.setAttribute(
+              "aria-expanded",
+              isActive ? "true" : "false"
+            );
+          });
+
+          refreshAOS();
+        };
+
+        items.forEach((item) => {
+          item.addEventListener("click", () => {
+            openItem(item);
+          });
+
+          item.addEventListener("keydown", (event) => {
+            if (
+              event.key !== "Enter" &&
+              event.key !== " "
+            ) {
+              return;
+            }
+
+            event.preventDefault();
+            openItem(item);
+          });
+        });
+
+        section.classList.add("is-process-ready");
+      });
+  };
+
   const linkMatchesCurrentService = (
     link,
     serviceKey
@@ -1926,6 +2015,7 @@
     initializeAdjacentNavigation();
     initializeServiceForms();
     initializeRequestLinks();
+    initializeProcessAccordions();
     initializeSwipers();
     initializeRouteAnimation();
     initializeFormSuccessHandling();
