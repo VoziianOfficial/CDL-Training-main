@@ -472,16 +472,20 @@
 
     const slideCount =
       getSlideCount(container);
+    const section =
+      container.closest(".home-paths");
 
     const swiper = new window.Swiper(
       container,
       {
-        slidesPerView: 1.08,
-        spaceBetween: 16,
+        slidesPerView: 1.05,
+        spaceBetween: 14,
         speed: prefersReducedMotion()
           ? 1
           : 720,
         grabCursor: true,
+        loop: slideCount > 1,
+        loopAdditionalSlides: slideCount,
         watchSlidesProgress: true,
         keyboard: {
           enabled: true,
@@ -489,27 +493,36 @@
         },
         navigation: {
           prevEl:
+            section?.querySelector(
+              "[data-home-paths-previous]"
+            ) ||
             "[data-home-paths-previous]",
           nextEl:
+            section?.querySelector(
+              "[data-home-paths-next]"
+            ) ||
             "[data-home-paths-next]"
         },
         pagination: {
           el:
+            section?.querySelector(
+              "[data-home-paths-pagination]"
+            ) ||
             "[data-home-paths-pagination]",
           clickable: true
         },
         breakpoints: {
           600: {
             slidesPerView: 1.5,
-            spaceBetween: 18
+            spaceBetween: 16
           },
           768: {
-            slidesPerView: 2,
-            spaceBetween: 20
+            slidesPerView: 1.75,
+            spaceBetween: 18
           },
           1100: {
-            slidesPerView: 3,
-            spaceBetween: 24
+            slidesPerView: 2,
+            spaceBetween: 20
           }
         },
         a11y: {

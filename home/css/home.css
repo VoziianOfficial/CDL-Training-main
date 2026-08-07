@@ -618,6 +618,7 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
 
 .home-paths {
   overflow: hidden;
+  padding-block: clamp(2rem, 4vw, 3rem);
 }
 
 .home-paths::before {
@@ -641,17 +642,131 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   height: auto;
 }
 
+.home-paths .cdl-section__header {
+  position: relative;
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+  gap: 1.15rem;
+  margin-bottom: clamp(1.35rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.home-paths .cdl-section__heading-group {
+  width: min(100%, 860px);
+  max-width: none;
+  justify-self: center;
+  margin-inline: auto;
+}
+
+.home-paths .cdl-section__eyebrow {
+  justify-content: center;
+}
+
+.home-paths .cdl-section__description {
+  max-width: 680px;
+  margin-top: 0.75rem;
+  line-height: 1.55;
+}
+
+.home-paths .cdl-slider-controls {
+  position: absolute;
+  right: 0;
+  bottom: 0.15rem;
+}
+
+.home-paths .cdl-program-card__media {
+  aspect-ratio: 16 / 8.6;
+}
+
+.home-paths .cdl-program-card__body {
+  padding: clamp(1rem, 1.7vw, 1.45rem);
+}
+
+.home-paths .cdl-program-card__title {
+  margin-bottom: 0.55rem;
+  font-size: clamp(1.25rem, 1.65vw, 1.55rem);
+}
+
+.home-paths .cdl-program-card__text {
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+
+.home-paths .cdl-program-card__meta {
+  margin-bottom: 1rem;
+}
+
+.home-paths .cdl-program-card__footer {
+  padding-top: 0.9rem;
+}
+
 .home-paths__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1.15rem;
 }
 
 .home-paths__pagination {
   position: static;
   width: auto;
+}
+
+@media (min-width: 768px) {
+  .home-paths .cdl-section__title {
+    margin-inline: auto;
+    white-space: nowrap;
+  }
+
+  .home-paths .cdl-section__description {
+    margin-inline: auto;
+  }
+
+  .home-paths .cdl-program-card__media {
+    aspect-ratio: 16 / 6.8;
+  }
+
+  .home-paths .cdl-program-card__body {
+    padding: clamp(0.9rem, 1.5vw, 1.2rem);
+  }
+
+  .home-paths .cdl-program-card__title {
+    margin-bottom: 0.45rem;
+    font-size: clamp(1.18rem, 1.45vw, 1.42rem);
+  }
+
+  .home-paths .cdl-program-card__text {
+    margin-bottom: 0.75rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .home-paths .cdl-program-card__meta {
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .home-paths .cdl-program-card__tag {
+    min-height: 26px;
+    padding: 0.3rem 0.58rem;
+  }
+
+  .home-paths .cdl-program-card__footer {
+    padding-top: 0.75rem;
+  }
+
+  .home-paths .cdl-program-card__arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .home-paths .cdl-slider-arrow {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 /* ==========================================================================
@@ -2611,6 +2726,10 @@ html.cdl-js .home-hero__slide.swiper-slide-active .home-hero__wordmark {
   .home-paths__footer {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .home-paths .cdl-slider-controls {
+    position: static;
   }
 
   .home-paths__footer .cdl-btn {
