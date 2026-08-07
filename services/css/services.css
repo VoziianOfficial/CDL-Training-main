@@ -2758,7 +2758,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
    ========================================================================== */
 
 .service-curriculum {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .service-curriculum__layout {
@@ -2774,7 +2774,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 .service-curriculum__intro {
   grid-area: intro;
   min-width: 0;
-  max-width: 1180px;
+  max-width: min(100%, 1320px);
 }
 
 .service-curriculum__intro .cdl-section__eyebrow {
@@ -2797,9 +2797,10 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 .service-curriculum__intro .cdl-section__title {
-  max-width: 1080px;
-  font-size: clamp(3.1rem, 7.4vw, 7.3rem);
-  line-height: 0.98;
+  max-width: none;
+  font-size: clamp(2.8rem, 5.2vw, 5.45rem);
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .service-curriculum__intro .cdl-heading-line {
@@ -2874,8 +2875,10 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 .service-curriculum__visual {
-  position: relative;
+  position: sticky;
+  top: clamp(6rem, 9vw, 8rem);
   grid-area: visual;
+  align-self: start;
   min-height: 0;
 }
 
@@ -2921,7 +2924,7 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 
 .service-curriculum__list .cdl-list__item {
   min-height: 0;
-  padding: 0.15rem 0 0.15rem 2.35rem;
+  padding: 0.12rem 0 0.12rem 2.55rem;
   border: 0;
   background-color: transparent;
   color: var(--color-text);
@@ -2935,28 +2938,27 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 }
 
 .service-curriculum__list .cdl-list__item::before {
-  top: 0.07rem;
+  top: 0;
   left: 0;
-  width: 1.55rem;
-  height: 1.55rem;
-  border: 2px solid var(--color-dark);
-  border-radius: 50%;
-  background-color: transparent;
+  width: 1.72rem;
+  height: 1.72rem;
+  border: 1px solid rgba(17, 17, 19, 0.18);
+  border-radius: 0.55rem;
+  background-color: var(--color-accent);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 12.5 10 16l7.5-8' stroke='%23111113' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.05rem;
+  box-shadow: 4px 4px 0 var(--color-dark);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .service-curriculum__list .cdl-list__item::after {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.43rem;
-  width: 0.66rem;
-  height: 0.34rem;
-  border-bottom: 2px solid var(--color-dark);
-  border-left: 2px solid var(--color-dark);
-  content: "";
-  transform: rotate(-45deg);
-  transition:
-    border-color var(--transition-fast),
-    transform var(--transition-fast);
+  display: none;
 }
 
 .service-curriculum__list .cdl-list__item:hover {
@@ -2967,11 +2969,12 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
 .service-curriculum__list .cdl-list__item:hover::before {
   border-color: var(--color-accent-hover);
   background-color: var(--color-accent);
+  box-shadow: 2px 2px 0 var(--color-dark);
+  transform: translate(2px, 2px);
 }
 
 .service-curriculum__list .cdl-list__item:hover::after {
-  border-color: var(--color-dark);
-  transform: rotate(-45deg) scale(1.08);
+  transform: none;
 }
 
 .service-curriculum__list .cdl-list__item:nth-child(n + 7) {
@@ -4247,7 +4250,13 @@ html.cdl-js .service-hero__slide.swiper-slide-active .service-hero__wordmark {
     grid-template-columns: 1fr;
   }
 
+  .service-curriculum__intro .cdl-section__title {
+    white-space: normal;
+  }
+
   .service-curriculum__visual {
+    position: relative;
+    top: auto;
     grid-row: auto;
     min-height: 0;
   }
