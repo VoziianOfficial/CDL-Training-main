@@ -175,6 +175,7 @@ img {
 .cdl-page-shell {
   position: relative;
   min-height: 100vh;
+  padding-top: var(--header-height);
   overflow-x: hidden;
 }
 
@@ -1004,6 +1005,10 @@ html.cdl-no-scroll {
 
   .cdl-page {
     overflow: visible;
+  }
+
+  .cdl-page-shell {
+    padding-top: 0;
   }
 
   .cdl-section,

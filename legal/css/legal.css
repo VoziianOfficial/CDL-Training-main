@@ -444,6 +444,10 @@
   overflow: visible;
 }
 
+.legal-page .cdl-page-shell {
+  overflow-x: clip;
+}
+
 .legal-document__layout {
   display: grid;
   grid-template-columns: minmax(250px, 0.66fr) minmax(0, 1.34fr);
@@ -453,7 +457,9 @@
 
 .legal-document__sidebar {
   position: sticky;
-  top: calc(var(--header-height-scrolled) + 1.5rem);
+  top: calc(var(--header-height) + 1.5rem);
+  z-index: var(--z-sticky);
+  align-self: start;
 }
 
 .legal-document__sidebar-card {
@@ -1406,10 +1412,6 @@ html.cdl-js.cdl-legal-ready .legal-hero__document {
     grid-template-columns: 1fr;
   }
 
-  .legal-document__sidebar {
-    position: static;
-  }
-
   .legal-document__sidebar-card {
     display: grid;
     grid-template-columns: 230px minmax(0, 1fr);
@@ -1417,9 +1419,9 @@ html.cdl-js.cdl-legal-ready .legal-hero__document {
 
   .legal-toc {
     display: grid;
-    max-height: none;
+    max-height: calc(100dvh - var(--header-height) - 7rem);
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    overflow: visible;
+    overflow-y: auto;
   }
 
   .legal-toc__link {
@@ -1525,6 +1527,7 @@ html.cdl-js.cdl-legal-ready .legal-hero__document {
 
   .legal-toc {
     display: flex;
+    max-height: calc(100dvh - var(--header-height) - 6rem);
     grid-template-columns: none;
   }
 
