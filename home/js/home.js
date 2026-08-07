@@ -485,7 +485,6 @@
           : 720,
         grabCursor: true,
         loop: slideCount > 1,
-        loopAdditionalSlides: slideCount,
         watchSlidesProgress: true,
         keyboard: {
           enabled: true,
